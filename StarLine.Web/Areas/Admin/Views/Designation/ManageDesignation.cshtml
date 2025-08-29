@@ -1,0 +1,80 @@
+﻿@model StarLine.Core.Models.DesignationModel
+
+@{
+    ViewData["Title"] = "Add Update Designation";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                @if (Model.Id > 0)
+                {
+                    <h5 class="card-title">Modify Designation</h5>
+                }
+                else
+                {
+                    <h5 class="card-title">Add New Designation</h5>
+                }
+            </div>
+            <form asp-action="ManageDesignation">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" class="form-control" />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="DepartmentId" class="control-label required"></label>
+                            <div class="form-group">
+                                <select asp-for="DepartmentId" class="form-control form-select" asp-items="@ViewBag.departmentList">
+                                    <option value="">Select Department</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mt-4">
+                                <span asp-validation-for="DepartmentId" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label asp-for="DesignationName" class="control-label required"></label>
+                            <div class="form-group">
+                                <input asp-for="DesignationName" class="form-control" />
+                                <span asp-validation-for="DesignationName" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <label asp-for="Description" class="control-label"></label>
+                            <div class="form-group">
+                                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        @if (Model.Id > 0)
+                        {
+                            <input type="submit" value="Update" class="btn btn-sm btn-primary" />
+                        }
+                        else
+                        {
+                            <input type="submit" value="Add New" class="btn btn-sm btn-primary" />
+                        }
+                        <a asp-action="Index" asp-controller="Designation" class="btn btn-sm btn-outline-secondary">Back to List</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

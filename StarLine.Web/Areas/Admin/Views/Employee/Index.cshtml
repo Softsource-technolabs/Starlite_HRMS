@@ -1,0 +1,52 @@
+﻿@model IEnumerable<StarLine.Core.Models.EmployeeModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title">Employee List</h5>
+                <a asp-area="Admin" asp-controller="Employee" asp-action="ManageEmployee" class="btn btn-sm btn-primary">Add New</a>
+            </div>
+            <div class="card-body">
+                <table id="tblEmployeeList" class="table table-bordered dataTable" data-url="@Url.Action("Get", "Employee")"
+                       data-delete="@Url.Action("DeleteEmployee", "Employee")" data-toggleStatus="@Url.Action("ToggleActivation", "Employee")">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EmployeeCode)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FirstName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LastName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Gender)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PhoneNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.RoleId)
+                            </th>
+                            <th>Is Active</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/pages/employee.js"></script>

@@ -1,0 +1,142 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background: #fff;
+}
+
+label.required::after {
+    content: " *";
+    color: red;
+}
+
+#main-header {
+    height: 4.5rem;
+    width: 18rem;
+}
+
+.brand-logo {
+    background: #fff;
+    height: 100%;
+}
+
+.card-header, .card-footer {
+    background: #fff;
+}
+
+.toggle-handle {
+    background-color: #fff;
+}
+
+.starlite-theme {
+    height: 100vh;
+    width: 100%;
+    background-color: #f1f9ff;
+    padding: 0;
+}
+
+.sidebar {
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    box-shadow: 0 8px 10px #b7c0ce33;
+}
+
+#main-menu ul {
+    list-style: none;
+}
+
+    #main-menu ul li a {
+        text-decoration: none;
+        font-weight: 500;
+        color: black;
+        display: block;
+        transition: 0.3s;
+        font-size: 17px;
+        padding: 10px;
+        padding-left: 1.5rem;
+    }
+
+    #main-menu ul li :hover {
+        background-color: darkblue;
+        color: white;
+    }
+
+.page-content {
+    padding-left: 15%;
+    padding-right: 0px;
+}
+
+.header {
+    background: white;
+    height: 58px;
+    padding: 10px;
+    box-shadow: 0 1px 5px #00000040;
+}
+
+.toggle-button {
+    position: fixed;
+    top: 10px;
+    color: black;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#sidebarToggle:not(:checked) ~ .sidebar {
+    transform: translateX(-100%);
+}
+
+/* Move main content full-width when sidebar is hidden */
+#sidebarToggle:not(:checked) ~ .main-content {
+    margin-left: 0;
+}
+
+/* Optional: Push main content when sidebar is visible */
+#sidebarToggle:checked ~ .main-content {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+}
+
+.header-user img {
+    width: 15%;
+}
+
+.sidebar-profile {
+    width: 15%;
+}
+
+#dropdownMenuButton.show {
+    border-color: white !important;
+}
+
+#dropdownMenuButton.btn:focus {
+    box-shadow: 0 0 0 0.1rem white;
+}

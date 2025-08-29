@@ -1,0 +1,42 @@
+﻿@model IEnumerable<StarLine.Core.Models.RoleModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title">Role List</h5>
+                <a asp-controller="Role" asp-action="ManageRole" class="btn btn-sm btn-primary">Add New</a>
+            </div>
+            <div class="card-body">
+                <table id="tblRolesList" class="table table-bordered dataTable" data-url="@Url.Action("GetData", "Department")" data-delete="@Url.Action("DeleteDepartment", "Department")" data-toggleStatus="@Url.Action("ToggleActivation", "Department")">
+                    <thead>
+                        <tr>
+                            <th>Role Name</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>
+                                    <a asp-action="ManageRole" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Update</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#tblRolesList").dataTable();
+    })
+</script>

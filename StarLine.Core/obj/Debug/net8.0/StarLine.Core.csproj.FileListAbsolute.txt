@@ -1,0 +1,12 @@
+D:\Projects\StarLine\StarLite\StarLine.Core\bin\Debug\net8.0\StarLine.Core.deps.json
+D:\Projects\StarLine\StarLite\StarLine.Core\bin\Debug\net8.0\StarLine.Core.dll
+D:\Projects\StarLine\StarLite\StarLine.Core\bin\Debug\net8.0\StarLine.Core.pdb
+D:\Projects\StarLine\StarLite\StarLine.Core\obj\Debug\net8.0\StarLine.Core.csproj.AssemblyReference.cache
+D:\Projects\StarLine\StarLite\StarLine.Core\obj\Debug\net8.0\StarLine.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\StarLine\StarLite\StarLine.Core\obj\Debug\net8.0\StarLine.Core.AssemblyInfoInputs.cache
+D:\Projects\StarLine\StarLite\StarLine.Core\obj\Debug\net8.0\StarLine.Core.AssemblyInfo.cs
+D:\Projects\StarLine\StarLite\StarLine.Core\obj\Debug\net8.0\StarLine.Core.csproj.CoreCompileInputs.cache
+D:\Projects\StarLine\StarLite\StarLine.Core\obj\Debug\net8.0\StarLine.Core.dll
+D:\Projects\StarLine\StarLite\StarLine.Core\obj\Debug\net8.0\refint\StarLine.Core.dll
+D:\Projects\StarLine\StarLite\StarLine.Core\obj\Debug\net8.0\StarLine.Core.pdb
+D:\Projects\StarLine\StarLite\StarLine.Core\obj\Debug\net8.0\ref\StarLine.Core.dll

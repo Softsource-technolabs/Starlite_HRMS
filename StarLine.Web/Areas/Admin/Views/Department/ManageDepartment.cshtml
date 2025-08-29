@@ -1,0 +1,65 @@
+﻿@model StarLine.Core.Models.DepartmentModel
+
+@{
+    ViewData["Title"] = "Add Update Department";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                @if (Model.Id > 0)
+                {
+                    <h5 class="card-title">Modify Department</h5>
+                }
+                else
+                {
+                    <h5 class="card-title">Add New Department</h5>
+                }
+            </div>
+            <form asp-action="ManageDepartment">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" class="form-control" />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label asp-for="DepartmentName" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="DepartmentName" class="form-control" />
+                                <span asp-validation-for="DepartmentName" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <label asp-for="Description" class="control-label"></label>
+                            <div class="form-group">
+                                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        @if (Model.Id > 0)
+                        {
+                            <input type="submit" value="Update" class="btn btn-sm btn-primary" />
+                        }
+                        else
+                        {
+                            <input type="submit" value="Add New" class="btn btn-sm btn-primary" />
+                        }
+                        <a asp-action="Index" asp-controller="Department" class="btn btn-sm btn-outline-secondary">Back to List</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

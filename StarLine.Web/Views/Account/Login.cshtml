@@ -1,0 +1,81 @@
+﻿@model StarLine.Core.Models.LoginModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    @await Component.InvokeAsync("NToastNotify")
+    <div class="d-flex vh-100 align-items-center">
+        <div class="col-md-3 mx-auto">
+            <form asp-action="Login">
+                <div class="card">
+                    <div class="card-body">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <img src="~/Logo.webp" class="img-fluid" />
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                <label asp-for="emailAddress" class="control-label"></label>
+                                <div class="form-group">
+                                    <input asp-for="emailAddress" class="form-control" />
+                                    <span asp-validation-for="emailAddress" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                <label asp-for="password" class="control-label"></label>
+                                <div class="form-group">
+                                    <input type="password" asp-for="password" class="form-control" />
+                                    <span asp-validation-for="password" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                <label asp-for="RememberMe" class="form-label">
+                                    <input class="form-check-input" asp-for="RememberMe" />
+                                    @Html.DisplayNameFor(m => m.RememberMe)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                <a asp-action="ForgotPassword" asp-controller="Account">Forgot Password?</a>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary" style="width:100%">Login <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

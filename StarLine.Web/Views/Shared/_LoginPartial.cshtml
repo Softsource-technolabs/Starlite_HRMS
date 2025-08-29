@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+
+<div class="sidebar-profile dropdown">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        string imageURL = User.Claims.FirstOrDefault(_ => _.Type == "Avtar").Value ?? "";
+        <button class="btn dropdown-toggle flex-wrap text-end" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="header-user me-2"><img src="@imageURL" /></span>
+            <span class="fw-semibold">Hello</span> <span class="fw-semibold">@User.Identity?.Name!</span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li>
+                <form class="dropdown-item" asp-action="Logout" asp-controller="Account" asp-area="">
+                    <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                </form>
+            </li>
+        </ul>
+    }
+</div>

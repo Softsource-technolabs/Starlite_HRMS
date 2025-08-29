@@ -1,0 +1,37 @@
+﻿@model IEnumerable<StarLine.Core.Models.DepartmentModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title">Department List</h5>
+                <a asp-controller="Department" asp-action="ManageDepartment" class="btn btn-sm btn-primary">Add New</a>
+            </div>
+            <div class="card-body">
+                <table id="tblDepartmentList" class="table table-bordered dataTable" data-url="@Url.Action("GetData", "Department")" data-delete="@Url.Action("DeleteDepartment", "Department")" data-toggleStatus="@Url.Action("ToggleActivation", "Department")">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DepartmentName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Description)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IsActive)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/pages/department.js"></script>

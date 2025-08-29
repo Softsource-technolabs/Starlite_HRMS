@@ -1,0 +1,43 @@
+﻿@model StarLine.Core.Models.RoleModel
+@{
+    ViewData["Title"] = "Add Update Role";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title">Department List</h5>
+                <a asp-controller="Department" asp-action="ManageDepartment" class="btn btn-sm btn-primary">Add New</a>
+            </div>
+            <form asp-action="ManageRole">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" class="form-control" />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label asp-for="Name" class="control-label">Role Name</label>
+                            <div class="form-group">
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="form-group">
+                            @if (!string.IsNullOrEmpty(Model.Id) && !string.IsNullOrEmpty(Model.Name))
+                            {
+                                <input type="submit" value="Update" class="btn btn-sm btn-primary" />
+                            }
+                            else
+                            {
+                                <input type="submit" value="Add New" class="btn btn-sm btn-primary" />
+                            }
+                            <a asp-action="Index" asp-controller="Role" class="btn btn-sm btn-outline-secondary">Back to List</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

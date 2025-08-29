@@ -1,0 +1,50 @@
+{
+  "version": "3.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap@5.3.7",
+      "destination": "wwwroot/lib/bootstrap/"
+    },
+    {
+      "library": "jquery@3.7.1",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
+      "library": "jquery-validate@1.21.0",
+      "destination": "wwwroot/lib/jquery-validate/"
+    },
+    {
+      "library": "jquery-validation-unobtrusive@4.0.0",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
+    },
+    {
+      "library": "bootstrap-datepicker@1.10.0",
+      "destination": "wwwroot/lib/bootstrap-datepicker/"
+    },
+    {
+      "library": "bootstrap-select@1.13.18",
+      "destination": "wwwroot/lib/bootstrap-select/"
+    },
+    {
+      "library": "font-awesome@7.0.0",
+      "destination": "wwwroot/lib/font-awesome/"
+    },
+    {
+      "library": "jquery-confirm@3.3.4",
+      "destination": "wwwroot/lib/jquery-confirm/"
+    },
+    {
+      "library": "bootstrap-toggle@2.2.2",
+      "destination": "wwwroot/lib/bootstrap-toggle/"
+    },
+    {
+      "library": "datatables.net-bs5@2.3.2",
+      "destination": "wwwroot/lib/datatables.net-bs5/"
+    },
+    {
+      "library": "datatables.net@2.3.2",
+      "destination": "wwwroot/lib/datatables.net/"
+    }
+  ]
+}

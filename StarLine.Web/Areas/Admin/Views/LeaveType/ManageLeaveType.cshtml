@@ -1,0 +1,99 @@
+﻿@model StarLine.Core.Models.LeaveTypeModel
+
+@{
+    ViewData["Title"] = "ManageLeaveType";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                @if (Model.Id > 0)
+                {
+                    <h5 class="card-title">Modify Leave Type</h5>
+                }
+                else
+                {
+                    <h5 class="card-title">Add New Leave Type</h5>
+                }
+            </div>
+            <form asp-action="ManageLeaveType">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" class="form-control" />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label asp-for="TypeName" class="control-label required"></label>
+                            <div class="form-group">
+                                <input asp-for="TypeName" class="form-control" />
+                                <span asp-validation-for="TypeName" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label asp-for="Description" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="Description" class="form-control" />
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label asp-for="MaxDaysPerMonth" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="MaxDaysPerMonth" class="form-control" type="number" />
+                                <span asp-validation-for="MaxDaysPerMonth" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label asp-for="IsCarryForward" class="control-label"></label>
+                                <div class="form-group">
+                                    <select asp-for="IsCarryForward" class="form-select">
+                                        <option value="">Select value</option>
+                                        <option value="true">yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                    <span asp-validation-for="IsCarryForward" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="GenderContraint" class="control-label"></label>
+                            <div class="form-group">
+                                <select asp-for="IsCarryForward" class="form-select">
+                                    <option value="0">Not Specified</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+                                <span asp-validation-for="GenderContraint" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        @if (Model.Id > 0)
+                        {
+                            <input type="submit" value="Update" class="btn btn-sm btn-primary" />
+                        }
+                        else
+                        {
+                            <input type="submit" value="Add New" class="btn btn-sm btn-primary" />
+                        }
+                        <a asp-action="Index" asp-controller="LeaveType" class="btn btn-sm btn-outline-secondary">Back to List</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

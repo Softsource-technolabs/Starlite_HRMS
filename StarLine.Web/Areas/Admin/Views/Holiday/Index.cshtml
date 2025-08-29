@@ -1,0 +1,43 @@
+﻿@model IEnumerable<StarLine.Core.Models.HolidayModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title">Holiday List</h5>
+                <a class="btn btn-sm btn-primary" onclick="AddUpdateHoliday(0)">Add New</a>
+            </div>
+            <div class="card-body">
+                <table id="tblHolidayList" class="table table-bordered dataTable" data-create="@Url.Action("ManageHoliday", "Holiday")" data-url="@Url.Action("Get", "Holiday")" data-delete="@Url.Action("Delete", "Holiday")" data-toggleStatus="@Url.Action("ToggleActivation", "Holiday")">
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.Name)</th>
+                            <th>@Html.DisplayNameFor(model => model.HolidayType)</th>
+                            <th>@Html.DisplayNameFor(model => model.HolidayDate)</th>
+                            <th>@Html.DisplayNameFor(model => model.IsActive)</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+            var openOffcanvas = '@(ViewBag.OpenOffcanvas ?? false)';
+
+            if (openOffcanvas.toLowerCase() === 'true') {
+                var myOffcanvas = new bootstrap.Offcanvas(document.getElementById('createOffcanvas'));
+                myOffcanvas.show();
+            }
+        });
+</script>
+<script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/js/pages/holiday.js"></script>

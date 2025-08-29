@@ -1,0 +1,45 @@
+﻿@model IEnumerable<StarLine.Core.Models.LeaveTypeModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title">Leave Type List</h5>
+                <a asp-controller="LeaveType" asp-action="ManageLeaveType" class="btn btn-sm btn-primary">Add New</a>
+            </div>
+            <div class="card-body">
+                <table id="tblLeaveType" class="table table-bordered dataTable" data-url="@Url.Action("Get", "LeaveType")" data-delete="@Url.Action("Delete", "LeaveType")" data-toggleStatus="@Url.Action("ToggleActivation", "LeaveType")">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TypeName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Description)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaxDaysPerMonth)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IsCarryForward)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GenderContraint)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IsActive)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/pages/leavetype.js"></script>

@@ -1,0 +1,253 @@
+﻿@model StarLine.Core.Models.EmployeeModel
+
+@{
+    ViewData["Title"] = "Add Update Employee";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="ManageEmployee">
+            <div class="card">
+                <div class="card-header">
+                    @if (Model.Id > 0)
+                    {
+                        <h5 class="card-title">Modify Employee Details</h5>
+                    }
+                    else
+                    {
+                        <h5 class="card-title">Add New Employee</h5>
+                    }
+                </div>
+                <div class="card-body">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <input asp-for="Id" class="form-control" type="hidden" />
+                    <input asp-for="AspNetUserId" class="form-control" type="hidden" />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label asp-for="EmployeeCode" class="control-label required"></label>
+                            <div class="form-group">
+                                <input asp-for="EmployeeCode" class="form-control" />
+                                <span asp-validation-for="EmployeeCode" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="FirstName" class="control-label required"></label>
+                            <div class="form-group">
+                                <input asp-for="FirstName" class="form-control" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="LastName" class="control-label required"></label>
+                            <div class="form-group">
+                                <input asp-for="LastName" class="form-control" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-4">
+                            <label asp-for="DateOfBirth" class="control-label required"></label>
+                            <div class="form-group">
+                                <input asp-for="DateOfBirth" class="form-control" type="date" value="@Model.DateOfBirth.ToString("yyyy-MM-dd")" />
+                                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="JoiningDate" class="control-label required"></label>
+                            <div class="form-group">
+                                <input asp-for="JoiningDate" class="form-control" type="date" value="@Model.JoiningDate.ToString("yyyy-MM-dd")" />
+                                <span asp-validation-for="JoiningDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="RoleId" class="control-label">User Role</label>
+                            <div class="form-group">
+                                <select asp-for="RoleId" class="form-control form-select" asp-items="ViewBag.rolesList">
+                                    <option value="">Select User Role</option>
+                                </select>
+                                <span asp-validation-for="RoleId" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-4">
+                            <label asp-for="Gender" class="control-label"></label>
+                            <div class="form-group">
+                                <select asp-for="Gender" class="form-control form-select" asp-items="ViewBag.Genders">
+                                    <option value="">Select Gender</option>
+                                </select>
+                                <span asp-validation-for="Gender" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Email" class="control-label required"></label>
+                            <div class="form-group">
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="PhoneNumber" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="PhoneNumber" class="form-control" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-4">
+                            <label asp-for="DepartmentId" class="control-label required"></label>
+                            <div class="form-group">
+                                <select asp-for="DepartmentId" class="form-control form-select" asp-items="ViewBag.departmentList">
+                                    <option value="">Select Department</option>
+                                </select>
+                                <span asp-validation-for="DepartmentId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="DesignationId" class="control-label required"></label>
+                            <div class="form-group">
+                                <select asp-for="DesignationId" class="form-control form-select">
+                                    <option value="">Select Designation</option>
+                                </select>
+                                <span asp-validation-for="DesignationId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="ReportingManagerId" class="control-label required"></label>
+                            <div class="form-group">
+                                <select asp-for="ReportingManagerId" class="form-control" asp-items="ViewBag.managerList">
+                                    <option value="">Select Manager</option>
+                                </select>
+                                <span asp-validation-for="ReportingManagerId" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-4">
+                            <label asp-for="EmploymentType" class="control-label"></label>
+                            <div class="form-group">
+                                <select asp-for="EmploymentType" class="form-control form-select" asp-items="ViewBag.EmployementType">
+                                    <option value="">Select Employment Type</option>
+                                </select>
+                                <span asp-validation-for="EmploymentType" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Qualification" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="Qualification" class="form-control" />
+                                <span asp-validation-for="Qualification" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="ExperienceInYears" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="ExperienceInYears" class="form-control" />
+                                <span asp-validation-for="ExperienceInYears" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-3">
+                            <label asp-for="LicenseNumber" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="LicenseNumber" class="form-control" />
+                                <span asp-validation-for="LicenseNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="BloodGroup" class="control-label"></label>
+                            <div class="form-group">
+                                <select asp-for="BloodGroup" class="form-control form-select" asp-items="ViewBag.BloodGroups">
+                                    <option value="">Select Blood Group</option>
+                                </select>
+                                <span asp-validation-for="BloodGroup" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="EmergencyContactName" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="EmergencyContactName" class="form-control" />
+                                <span asp-validation-for="EmergencyContactName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="EmergencyContactNumber" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="EmergencyContactNumber" class="form-control" />
+                                <span asp-validation-for="EmergencyContactNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <label asp-for="CurrentAddress" class="control-label"></label>
+                            <div class="form-group">
+                                <textarea asp-for="CurrentAddress" class="form-control" rows="3"></textarea>
+                                <span asp-validation-for="CurrentAddress" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="PermanentAddress" class="control-label"></label>
+                            <div class="form-group">
+                                <textarea asp-for="PermanentAddress" class="form-control" rows="3"></textarea>
+                                <span asp-validation-for="PermanentAddress" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        @if (Model.Id > 0)
+                        {
+                            <input type="submit" value="Update" class="btn btn-sm btn-primary" />
+                        }
+                        else
+                        {
+                            <input type="submit" value="Add New" class="btn btn-sm btn-primary" />
+                        }
+                        <a asp-action="Index" asp-controller="Employee" class="btn btn-sm btn-outline-secondary">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+        <script type="text/javascript">
+
+            document.addEventListener('DOMContentLoaded', function () {
+                debugger;
+                    $('#DepartmentId').change();
+            });
+
+            $('#DepartmentId').on("change",function () {
+                var deptId = $(this).val();
+                $('#DesignationId').empty().append('<option value="">Select Designation</option>');
+
+                if (deptId) {
+                    $.get('/Admin/Employee/GetDesignation', { id: deptId }, function (data) {
+                        $.each(data, function (i, desig) {
+                            $('#DesignationId').append(
+                                $('<option>', { value: desig.id, text: desig.designationName })
+                            );
+                        });
+                        $('#DesignationId').val("@Model.DesignationId").change();
+                    });
+                }
+            });
+        </script>
+    }
+}

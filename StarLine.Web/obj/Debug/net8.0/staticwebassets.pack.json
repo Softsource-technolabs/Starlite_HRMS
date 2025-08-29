@@ -1,0 +1,2361 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Sumit-SoftSource\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\noty.js",
+      "PackagePath": "staticwebassets\\noty.js"
+    },
+    {
+      "Id": "C:\\Users\\Sumit-SoftSource\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\toastr.js",
+      "PackagePath": "staticwebassets\\toastr.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\StarLine.Web.bundle.scp.css",
+      "PackagePath": "staticwebassets\\StarLine.Web.j1gk7xot4m.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\Logo.webp",
+      "PackagePath": "staticwebassets\\Logo.webp"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\UserAvtars\\059c25a3-e70d-42c9-bdd1-133dbe18f89f.png",
+      "PackagePath": "staticwebassets\\UserAvtars\\059c25a3-e70d-42c9-bdd1-133dbe18f89f.png"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\UserAvtars\\20d6a03b-0514-44ff-9290-07ed9f46b77f.png",
+      "PackagePath": "staticwebassets\\UserAvtars\\20d6a03b-0514-44ff-9290-07ed9f46b77f.png"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\UserAvtars\\6aec46b0-0c6c-4468-b467-88f121e7f8d6.png",
+      "PackagePath": "staticwebassets\\UserAvtars\\6aec46b0-0c6c-4468-b467-88f121e7f8d6.png"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\UserAvtars\\6d2ea613-609e-40ab-b5a2-ed206880d6e2.png",
+      "PackagePath": "staticwebassets\\UserAvtars\\6d2ea613-609e-40ab-b5a2-ed206880d6e2.png"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\UserAvtars\\871ea465-a3b4-4ff9-b486-5e8d0208d71d.png",
+      "PackagePath": "staticwebassets\\UserAvtars\\871ea465-a3b4-4ff9-b486-5e8d0208d71d.png"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\UserAvtars\\977b9d98-dd02-463f-b8ef-f795a29168e3.png",
+      "PackagePath": "staticwebassets\\UserAvtars\\977b9d98-dd02-463f-b8ef-f795a29168e3.png"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\UserAvtars\\c33df970-7790-4e7d-aa70-71a0611ffd22.png",
+      "PackagePath": "staticwebassets\\UserAvtars\\c33df970-7790-4e7d-aa70-71a0611ffd22.png"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\UserAvtars\\d2d3ac91-8e56-4714-aa22-763b1f28cf37.png",
+      "PackagePath": "staticwebassets\\UserAvtars\\d2d3ac91-8e56-4714-aa22-763b1f28cf37.png"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\UserAvtars\\default.png",
+      "PackagePath": "staticwebassets\\UserAvtars\\default.png"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\js\\Pages\\LeaveType.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\LeaveType.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\js\\Pages\\department.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\department.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\js\\Pages\\designation.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\designation.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\js\\Pages\\employee.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\employee.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\js\\Pages\\holiday.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\holiday.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\js\\Pages\\teams.js",
+      "PackagePath": "staticwebassets\\js\\Pages\\teams.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker.standalone.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker.standalone.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker.standalone.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker.standalone.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker.standalone.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker.standalone.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker3.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker3.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker3.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker3.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker3.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker3.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker3.standalone.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker3.standalone.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker3.standalone.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker3.standalone.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker3.standalone.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\css\\bootstrap-datepicker3.standalone.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\js\\bootstrap-datepicker.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\js\\bootstrap-datepicker.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\js\\bootstrap-datepicker.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\js\\bootstrap-datepicker.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker-en-ca.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker-en-ca.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ar-dz.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ar-dz.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ar-tn.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ar-tn.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ar.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ar.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.az.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.az.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.bg.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.bg.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.bm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.bm.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.bn.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.bn.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.br.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.br.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.bs.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.bs.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ca.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ca.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.cs.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.cs.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.cy.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.cy.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.da.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.da.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.de.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.de.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.el.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.el.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-au.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-au.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-ca.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-ca.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-gb.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-gb.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-ie.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-ie.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-nz.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-nz.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-us.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-us.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-za.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.en-za.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.eo.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.eo.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.es.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.es.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.et.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.et.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.eu.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.eu.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.fa.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.fa.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.fi.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.fi.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.fo.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.fo.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.fr-ch.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.fr-ch.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.fr.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.fr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.gl.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.gl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.he.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.he.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.hi.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.hi.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.hr.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.hr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.hu.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.hu.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.hy.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.hy.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.id.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.id.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.is.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.is.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.it-ch.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.it-ch.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.it.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.it.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ja.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ja.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ka.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ka.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.kh.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.kh.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.kk.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.kk.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.km.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.km.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ko.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ko.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.kr.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.kr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.lt.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.lt.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.lv.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.lv.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.me.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.me.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.mk.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.mk.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.mn.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.mn.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.mr.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.mr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ms.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ms.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.nl-be.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.nl-be.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.nl.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.nl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.no.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.no.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.oc.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.oc.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.pl.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.pl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.pt-br.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.pt-br.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.pt.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.pt.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ro.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ro.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.rs-latin.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.rs-latin.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.rs.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.rs.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ru.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ru.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.si.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.si.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sk.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sk.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sl.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sq.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sq.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sr-latin.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sr-latin.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sr.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sv.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sv.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sw.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.sw.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ta.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.ta.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.tg.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.tg.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.th.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.th.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.tk.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.tk.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.tr.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.tr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.uk.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.uk.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.uz-cyrl.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.uz-cyrl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.uz-latn.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.uz-latn.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.vi.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.vi.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.zh-cn.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.zh-cn.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.zh-tw.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-datepicker\\locales\\bootstrap-datepicker.zh-tw.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\css\\bootstrap-select.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\css\\bootstrap-select.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\css\\bootstrap-select.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\css\\bootstrap-select.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\css\\bootstrap-select.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\css\\bootstrap-select.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\bootstrap-select.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\bootstrap-select.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\bootstrap-select.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\bootstrap-select.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\bootstrap-select.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\bootstrap-select.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\bootstrap-select.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\bootstrap-select.min.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-am_et.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-am_et.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-am_et.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-am_et.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-am_et.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-am_et.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ar_ar.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ar_ar.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ar_ar.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ar_ar.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ar_ar.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ar_ar.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-bg_bg.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-bg_bg.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-bg_bg.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-bg_bg.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-bg_bg.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-bg_bg.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-cs_cz.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-cs_cz.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-cs_cz.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-cs_cz.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-cs_cz.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-cs_cz.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-da_dk.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-da_dk.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-da_dk.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-da_dk.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-da_dk.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-da_dk.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-de_de.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-de_de.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-de_de.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-de_de.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-de_de.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-de_de.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-en_us.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-en_us.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-en_us.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-en_us.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-en_us.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-en_us.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-es_cl.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-es_cl.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-es_cl.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-es_cl.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-es_cl.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-es_cl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-es_es.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-es_es.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-es_es.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-es_es.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-es_es.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-es_es.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-et_ee.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-et_ee.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-et_ee.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-et_ee.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-et_ee.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-et_ee.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-eu.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-eu.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-eu.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-eu.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-eu.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-eu.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-fa_ir.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-fa_ir.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-fa_ir.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-fa_ir.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-fa_ir.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-fa_ir.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-fi_fi.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-fi_fi.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-fi_fi.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-fi_fi.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-fi_fi.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-fi_fi.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-fr_fr.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-fr_fr.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-fr_fr.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-fr_fr.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-fr_fr.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-fr_fr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-hr_hr.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-hr_hr.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-hr_hr.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-hr_hr.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-hr_hr.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-hr_hr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-hu_hu.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-hu_hu.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-hu_hu.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-hu_hu.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-hu_hu.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-hu_hu.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-id_id.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-id_id.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-id_id.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-id_id.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-id_id.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-id_id.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-it_it.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-it_it.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-it_it.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-it_it.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-it_it.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-it_it.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ja_jp.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ja_jp.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ja_jp.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ja_jp.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ja_jp.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ja_jp.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-kh_km.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-kh_km.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-kh_km.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-kh_km.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-kh_km.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-kh_km.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ko_kr.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ko_kr.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ko_kr.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ko_kr.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ko_kr.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ko_kr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-lt_lt.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-lt_lt.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-lt_lt.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-lt_lt.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-lt_lt.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-lt_lt.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-lv_lv.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-lv_lv.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-lv_lv.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-lv_lv.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-lv_lv.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-lv_lv.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-nb_no.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-nb_no.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-nb_no.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-nb_no.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-nb_no.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-nb_no.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-nl_nl.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-nl_nl.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-nl_nl.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-nl_nl.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-nl_nl.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-nl_nl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-pl_pl.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-pl_pl.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-pl_pl.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-pl_pl.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-pl_pl.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-pl_pl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-pt_br.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-pt_br.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-pt_br.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-pt_br.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-pt_br.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-pt_br.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-pt_pt.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-pt_pt.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-pt_pt.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-pt_pt.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-pt_pt.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-pt_pt.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ro_ro.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ro_ro.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ro_ro.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ro_ro.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ro_ro.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ro_ro.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ru_ru.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ru_ru.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ru_ru.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ru_ru.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ru_ru.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ru_ru.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-sk_sk.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-sk_sk.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-sk_sk.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-sk_sk.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-sk_sk.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-sk_sk.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-sl_si.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-sl_si.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-sl_si.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-sl_si.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-sl_si.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-sl_si.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-sr_sp.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-sr_sp.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-sr_sp.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-sr_sp.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-sr_sp.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-sr_sp.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-sv_se.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-sv_se.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-sv_se.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-sv_se.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-sv_se.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-sv_se.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-th_th.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-th_th.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-th_th.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-th_th.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-th_th.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-th_th.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-tr_tr.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-tr_tr.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-tr_tr.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-tr_tr.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-tr_tr.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-tr_tr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ua_ua.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ua_ua.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ua_ua.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ua_ua.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-ua_ua.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-ua_ua.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-vi_vn.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-vi_vn.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-vi_vn.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-vi_vn.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-vi_vn.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-vi_vn.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-zh_cn.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-zh_cn.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-zh_cn.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-zh_cn.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-zh_cn.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-zh_cn.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-zh_tw.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-zh_tw.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-zh_tw.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-zh_tw.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-select\\js\\i18n\\defaults-zh_tw.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-select\\js\\i18n\\defaults-zh_tw.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-toggle\\css\\bootstrap-toggle.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-toggle\\css\\bootstrap-toggle.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-toggle\\css\\bootstrap-toggle.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-toggle\\css\\bootstrap-toggle.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-toggle\\css\\bootstrap2-toggle.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-toggle\\css\\bootstrap2-toggle.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-toggle\\css\\bootstrap2-toggle.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-toggle\\css\\bootstrap2-toggle.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-toggle\\js\\bootstrap-toggle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-toggle\\js\\bootstrap-toggle.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-toggle\\js\\bootstrap-toggle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-toggle\\js\\bootstrap-toggle.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-toggle\\js\\bootstrap-toggle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-toggle\\js\\bootstrap-toggle.min.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-toggle\\js\\bootstrap2-toggle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-toggle\\js\\bootstrap2-toggle.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-toggle\\js\\bootstrap2-toggle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-toggle\\js\\bootstrap2-toggle.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap-toggle\\js\\bootstrap2-toggle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap-toggle\\js\\bootstrap2-toggle.min.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_accordion.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_accordion.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_alert.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_alert.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_badge.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_badge.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_breadcrumb.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_button-group.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_button-group.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_buttons.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_card.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_card.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_carousel.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_carousel.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_close.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_close.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_containers.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_containers.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_dropdown.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_forms.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_forms.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_functions.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_functions.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_grid.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_grid.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_helpers.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_helpers.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_images.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_images.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_list-group.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_maps.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_maps.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_modal.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_modal.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_nav.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_nav.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_navbar.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_navbar.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_offcanvas.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_offcanvas.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_pagination.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_placeholders.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_placeholders.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_popover.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_popover.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_progress.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_progress.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_reboot.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_reboot.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_root.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_root.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_spinners.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_spinners.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_tables.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_tables.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_toasts.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_toasts.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_tooltip.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_transitions.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_transitions.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_type.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_type.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_utilities.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_variables-dark.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_variables-dark.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\bootstrap-utilities.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\bootstrap-utilities.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\forms\\_floating-labels.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\forms\\_floating-labels.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\forms\\_form-check.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\forms\\_form-check.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\forms\\_form-control.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\forms\\_form-control.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\forms\\_form-range.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\forms\\_form-range.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\forms\\_form-select.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\forms\\_form-select.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\forms\\_form-text.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\forms\\_form-text.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\forms\\_input-group.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\forms\\_input-group.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\forms\\_labels.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\forms\\_labels.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\forms\\_validation.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\forms\\_validation.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\helpers\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\helpers\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\helpers\\_color-bg.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\helpers\\_color-bg.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\helpers\\_colored-links.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\helpers\\_colored-links.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\helpers\\_focus-ring.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\helpers\\_focus-ring.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\helpers\\_icon-link.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\helpers\\_icon-link.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\helpers\\_position.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\helpers\\_position.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\helpers\\_ratio.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\helpers\\_ratio.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\helpers\\_stacks.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\helpers\\_stacks.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\helpers\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\helpers\\_stretched-link.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\helpers\\_text-truncation.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\helpers\\_text-truncation.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\helpers\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\helpers\\_visually-hidden.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\helpers\\_vr.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\helpers\\_vr.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_backdrop.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_backdrop.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_banner.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_banner.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_color-mode.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_color-mode.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_color-scheme.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_color-scheme.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_container.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_container.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_image.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_table-variants.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_table-variants.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_utilities.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\mixins\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\mixins\\_visually-hidden.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\utilities\\_api.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\utilities\\_api.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\scss\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\datatables.net-bs5\\datatables.bootstrap5.css",
+      "PackagePath": "staticwebassets\\lib\\datatables.net-bs5\\datatables.bootstrap5.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\datatables.net-bs5\\datatables.bootstrap5.js",
+      "PackagePath": "staticwebassets\\lib\\datatables.net-bs5\\datatables.bootstrap5.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\datatables.net-bs5\\datatables.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables.net-bs5\\datatables.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\datatables.net-bs5\\datatables.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables.net-bs5\\datatables.bootstrap5.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\datatables.net\\datatables.js",
+      "PackagePath": "staticwebassets\\lib\\datatables.net\\datatables.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\datatables.net\\datatables.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables.net\\datatables.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\all.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\all.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\all.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\brands.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\brands.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\brands.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\brands.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\fontawesome.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\fontawesome.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\regular.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\regular.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\regular.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\regular.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\solid.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\solid.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\solid.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\solid.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\svg-with-js.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\svg-with-js.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\svg-with-js.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\svg-with-js.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\svg.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\svg.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\svg.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\svg.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\v4-font-face.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v4-font-face.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\v4-font-face.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v4-font-face.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\v4-shims.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v4-shims.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\v4-shims.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v4-shims.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\v5-font-face.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v5-font-face.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\css\\v5-font-face.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v5-font-face.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\all.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\all.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\all.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\all.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\brands.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\brands.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\brands.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\brands.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\conflict-detection.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\conflict-detection.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\conflict-detection.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\conflict-detection.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\fontawesome.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\fontawesome.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\fontawesome.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\fontawesome.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\regular.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\regular.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\regular.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\regular.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\solid.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\solid.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\solid.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\solid.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\v4-shims.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\v4-shims.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\js\\v4-shims.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\v4-shims.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\sprites\\brands.svg",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\sprites\\brands.svg"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\sprites\\regular.svg",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\sprites\\regular.svg"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\sprites\\solid.svg",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\sprites\\solid.svg"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\font-awesome\\webfonts\\fa-v4compatibility.woff2",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-v4compatibility.woff2"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-confirm\\jquery-confirm.min.css",
+      "PackagePath": "staticwebassets\\lib\\jquery-confirm\\jquery-confirm.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-confirm\\jquery-confirm.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-confirm\\jquery-confirm.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\jquery-validation-sri.json",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\jquery-validation-sri.json"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ar.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ar.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ar.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ar.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_az.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_az.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_az.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_az.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_bg.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_bg.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_bg.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_bg.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_bn_bd.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_bn_bd.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_bn_bd.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_bn_bd.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ca.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ca.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ca.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ca.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_cs.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_cs.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_cs.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_cs.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_da.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_da.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_da.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_da.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_de.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_de.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_de.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_de.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_el.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_el.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_el.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_el.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_es.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_es.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_es.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_es.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_es_ar.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_es_ar.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_es_ar.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_es_ar.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_es_pe.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_es_pe.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_es_pe.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_es_pe.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_et.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_et.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_et.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_et.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_eu.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_eu.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_eu.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_eu.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_fa.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_fa.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_fa.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_fa.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_fi.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_fi.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_fi.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_fi.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_fr.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_fr.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_fr.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_fr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ge.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ge.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ge.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ge.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_gl.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_gl.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_gl.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_gl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_he.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_he.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_he.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_he.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_hi.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_hi.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_hi.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_hi.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_hr.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_hr.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_hr.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_hr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_hu.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_hu.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_hu.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_hu.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_hy_am.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_hy_am.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_hy_am.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_hy_am.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_id.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_id.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_id.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_id.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_is.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_is.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_is.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_is.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_it.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_it.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_it.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_it.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ja.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ja.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ja.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ja.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ka.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ka.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ka.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ka.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_kk.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_kk.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_kk.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_kk.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ko.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ko.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ko.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ko.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_lt.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_lt.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_lt.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_lt.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_lv.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_lv.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_lv.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_lv.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_mk.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_mk.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_mk.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_mk.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_my.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_my.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_my.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_my.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_nl.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_nl.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_nl.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_nl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_no.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_no.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_no.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_no.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_pl.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_pl.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_pl.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_pl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_pt_br.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_pt_br.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_pt_br.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_pt_br.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_pt_pt.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_pt_pt.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_pt_pt.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_pt_pt.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ro.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ro.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ro.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ro.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ru.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ru.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ru.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ru.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_sd.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_sd.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_sd.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_sd.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_si.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_si.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_si.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_si.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_sk.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_sk.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_sk.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_sk.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_sl.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_sl.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_sl.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_sl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_sr.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_sr.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_sr.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_sr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_sr_lat.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_sr_lat.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_sr_lat.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_sr_lat.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_sv.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_sv.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_sv.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_sv.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_th.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_th.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_th.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_th.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_tj.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_tj.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_tj.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_tj.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_tr.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_tr.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_tr.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_tr.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_uk.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_uk.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_uk.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_uk.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ur.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ur.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_ur.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_ur.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_vi.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_vi.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_vi.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_vi.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_zh.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_zh.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_zh.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_zh.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_zh_tw.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_zh_tw.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\messages_zh_tw.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\messages_zh_tw.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\methods_de.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\methods_de.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\methods_de.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\methods_de.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\methods_es_cl.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\methods_es_cl.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\methods_es_cl.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\methods_es_cl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\methods_fi.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\methods_fi.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\methods_fi.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\methods_fi.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\methods_it.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\methods_it.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\methods_it.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\methods_it.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\methods_nl.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\methods_nl.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\methods_nl.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\methods_nl.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\methods_pt.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\methods_pt.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validate\\localization\\methods_pt.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validate\\localization\\methods_pt.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\jquery.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\jquery.slim.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\jquery.slim.min.js"
+    },
+    {
+      "Id": "D:\\Projects\\StarLine\\StarLite\\StarLine.Web\\wwwroot\\lib\\jquery\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\jquery.slim.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.StarLine.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.StarLine.Web.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.StarLine.Web.props",
+      "PackagePath": "build\\StarLine.Web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.StarLine.Web.props",
+      "PackagePath": "buildMultiTargeting\\StarLine.Web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.StarLine.Web.props",
+      "PackagePath": "buildTransitive\\StarLine.Web.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
