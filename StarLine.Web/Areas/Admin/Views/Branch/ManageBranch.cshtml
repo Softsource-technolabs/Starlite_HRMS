@@ -1,0 +1,120 @@
+﻿@model StarLine.Core.Models.BranchModel
+
+@{
+    ViewData["Title"] = "Manage Branch";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                @if (Model.Id > 0)
+                {
+                    <h5 class="card-title">Modify Branch</h5>
+                }
+                else
+                {
+                    <h5 class="card-title">Add New Branch</h5>
+                }
+            </div>
+            <form asp-action="ManageBranch">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" class="form-control" />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label asp-for="BranchCode" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="BranchCode" class="form-control" />
+                                <span asp-validation-for="BranchCode" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <label asp-for="BranchName" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="BranchName" class="form-control" />
+                                <span asp-validation-for="BranchName" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <label asp-for="Address" class="control-label"></label>
+                        <div class="form-group">
+                            <textarea asp-for="Address" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-4">
+                            <label asp-for="City" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="City" class="form-control" />
+                                <span asp-validation-for="City" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="State" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="State" class="form-control" />
+                                <span asp-validation-for="State" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Country" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="Country" class="form-control" />
+                                <span asp-validation-for="Country" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-4">
+                            <label asp-for="ContactNumber" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="ContactNumber" class="form-control" />
+                                <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="EmailAddress" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="EmailAddress" class="form-control" />
+                                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="ParentBranchId" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="ParentBranchId" class="form-control" />
+                                <span asp-validation-for="ParentBranchId" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        @if (Model.Id > 0)
+                        {
+                            <input type="submit" value="Update" class="btn btn-sm btn-primary" />
+                        }
+                        else
+                        {
+                            <input type="submit" value="Add New" class="btn btn-sm btn-primary" />
+                        }
+                        <a asp-action="Index" asp-controller="Branch" class="btn btn-sm btn-outline-secondary">Back to List</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

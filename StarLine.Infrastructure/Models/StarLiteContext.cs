@@ -27,6 +27,8 @@ public partial class StarLiteContext : DbContext
 
     public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; }
 
+    public virtual DbSet<Branch> Branches { get; set; }
+
     public virtual DbSet<Department> Departments { get; set; }
 
     public virtual DbSet<Designation> Designations { get; set; }
@@ -38,6 +40,12 @@ public partial class StarLiteContext : DbContext
     public virtual DbSet<Leaf> Leaves { get; set; }
 
     public virtual DbSet<LeaveType> LeaveTypes { get; set; }
+
+    public virtual DbSet<Shift> Shifts { get; set; }
+
+    public virtual DbSet<ShiftGroup> ShiftGroups { get; set; }
+
+    public virtual DbSet<ShiftGroupMapping> ShiftGroupMappings { get; set; }
 
     public virtual DbSet<Team> Teams { get; set; }
 
@@ -122,6 +130,45 @@ public partial class StarLiteContext : DbContext
             entity.Property(e => e.Name).HasMaxLength(128);
 
             entity.HasOne(d => d.User).WithMany(p => p.AspNetUserTokens).HasForeignKey(d => d.UserId);
+        });
+
+        modelBuilder.Entity<Branch>(entity =>
+        {
+            entity.Property(e => e.Address)
+                .IsRequired()
+                .HasMaxLength(500)
+                .IsUnicode(false);
+            entity.Property(e => e.BranchCode)
+                .IsRequired()
+                .HasMaxLength(10)
+                .IsUnicode(false);
+            entity.Property(e => e.BranchName)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.City)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.ContactNumber)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.Country)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.DeletedDate).HasColumnType("datetime");
+            entity.Property(e => e.EmailAddress)
+                .IsRequired()
+                .HasMaxLength(150)
+                .IsUnicode(false);
+            entity.Property(e => e.State)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
         });
 
         modelBuilder.Entity<Department>(entity =>
@@ -275,6 +322,57 @@ public partial class StarLiteContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+        });
+
+        modelBuilder.Entity<Shift>(entity =>
+        {
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.DeletedDate).HasColumnType("datetime");
+            entity.Property(e => e.ShiftCode)
+                .IsRequired()
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.ShiftName)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+            entity.Property(e => e.WorkingHours).HasColumnType("decimal(5, 2)");
+        });
+
+        modelBuilder.Entity<ShiftGroup>(entity =>
+        {
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.DeletedDate).HasColumnType("datetime");
+            entity.Property(e => e.Description)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+            entity.Property(e => e.GroupCode)
+                .IsRequired()
+                .HasMaxLength(20)
+                .IsUnicode(false);
+            entity.Property(e => e.GroupName)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+        });
+
+        modelBuilder.Entity<ShiftGroupMapping>(entity =>
+        {
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.DeletedDate).HasColumnType("datetime");
+            entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+
+            entity.HasOne(d => d.ShiftGroup).WithMany(p => p.ShiftGroupMappings)
+                .HasForeignKey(d => d.ShiftGroupId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_ShiftGroupMappings_ShiftGroups");
+
+            entity.HasOne(d => d.Shift).WithMany(p => p.ShiftGroupMappings)
+                .HasForeignKey(d => d.ShiftId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_ShiftGroupMappings_Shifts");
         });
 
         modelBuilder.Entity<Team>(entity =>

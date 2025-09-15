@@ -1,0 +1,93 @@
+﻿@model StarLine.Core.Models.TeamEmployeeViewModel
+
+@{
+    ViewData["Title"] = "ViewTeamMembers";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Team Employee List</h5>
+            </div>
+            <div class="card-body">
+                <div class="row border-bottom pb-2">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-4"><label class="control-label fw-bold">Team Name</label></div>
+                            <div class="col-md-8">@Model.TeamName</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-4"><label class="control-label fw-bold">Team Type</label></div>
+                            <div class="col-md-8">@Model.TeamType</div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-6"><label class="control-label fw-bold">Total Member Count</label></div>
+                            <div class="col-md-6" id="divempCount"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table id="employeeTable" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Employee Name</th>
+                                        <th>Email Address</th>
+                                        <th>Designation</th>
+                                        <th>Department</th>
+                                        <th>Working Shift</th>
+                                        <th>Location</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a asp-action="Index" asp-controller="Team" class="btn btn-sm btn-outline-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        <script type="text/javascript">
+                    document.addEventListener('DOMContentLoaded', function () {
+                var url = '@Url.Action("GetTeamEmployee", "Team")?teamId=@Model.Id';
+                $.get(url, function (response) {
+                    if (response.success === true) {
+                        var count = response.data.length;
+                        $.each(response.data, function (index, row) {
+                            var $tr = "<tr>"
+                                + "<td>" + row.fullName + "</td>"
+                                + "<td>" + row.email + "</td>"
+                                + "<td>" + row.designation + "</td>"
+                                + "<td>" + row.department + "</td>"
+                                + "<td>NA</td>"
+                                + "<td>NA</td>"
+                                + "<td>NA</td>"
+                                + "<td><a href='#' class='btn btn-sm btn-outline-secondary'>View</a></td>"
+                                + "</tr>";
+
+                            $("#employeeTable tbody").append($tr);
+                        });
+                        $("#employeeTable").dataTable();
+                        $("#divempCount").html(count);
+                    }
+                });
+            });
+        </script>
+    }
+}

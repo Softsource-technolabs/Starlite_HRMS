@@ -14,7 +14,7 @@ using StarLine.Web.IdentityServices;
 namespace StarLine.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Super-Admin,Admin,HR-Manager")]
+    [Authorize(Policy = "AdminPolicy")]
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;

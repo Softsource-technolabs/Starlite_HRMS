@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZCoKNu7gXig=",
+  "dgSpecHash": "/qDsFeRHok4=",
   "success": true,
-  "projectFilePath": "D:\\Projects\\StarLine\\StarLite\\StarLine.Infrastructure\\StarLine.Infrastructure.csproj",
+  "projectFilePath": "D:\\SoftSourceTech\\Starlite_HRMS\\StarLine.Infrastructure\\StarLine.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sumit-SoftSource\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\Sumit-SoftSource\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

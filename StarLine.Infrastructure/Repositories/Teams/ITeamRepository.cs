@@ -11,5 +11,6 @@ namespace StarLine.Infrastructure.Repositories.Teams
         Task<BaseApiResponse> DeleteTeam(long id);
         Task<ApiPostResponse<TeamModel>> GetTeamById(long id);
         Task<PagedResponse<List<TeamModel>>> GetAllTeams(PaginationModel model);
+        Task<ApiPostResponse<List<EmployeeListModel>>> GetTeamEmployees(long id);
     }
 }

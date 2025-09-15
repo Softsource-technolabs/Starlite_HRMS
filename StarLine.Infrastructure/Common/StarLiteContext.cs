@@ -28,6 +28,7 @@ namespace StarLine.Infrastructure.Models
                 // Handle CreatedDate
                 if (entry.State == EntityState.Added && properties.Contains("CreatedDate"))
                 {
+                    entry.CurrentValues["IsActive"] = true;
                     entry.CurrentValues["CreatedDate"] = now;
                 }
                 // Handle UpdatedDate

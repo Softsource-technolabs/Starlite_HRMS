@@ -8,7 +8,7 @@ using StarLine.Infrastructure.Repositories.Holidays;
 namespace StarLine.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Super-Admin,Admin,HR-Manager")]
+    [Authorize(Policy = "AdminPolicy")]
     public class HolidayController(IHolidayRepository repository, IToastNotification toastNotification) : Controller
     {
         private readonly IHolidayRepository _repository = repository;

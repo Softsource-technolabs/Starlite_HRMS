@@ -9,7 +9,7 @@ using StarLine.Infrastructure.Repositories.Teams;
 
 namespace StarLine.Web.Controllers
 {
-    [Authorize("Department-Head")]
+    [Authorize(Policy = "EmployeePolicy")]
     public class TeamController : Controller
     {
         private readonly ITeamRepository _teamRepository;
@@ -39,12 +39,6 @@ namespace StarLine.Web.Controllers
         public async Task<IActionResult> ManageTeam(long? id)
         {
             var model = new TeamModel();
-            var employees = await _teamRepository.GetTeamLead();
-            ViewBag.TeamLeads = employees.Select(_ => new SelectListItem
-            {
-                Text = _.FirstName + " " + _.LastName + $" ({_.AspNetUser.Roles.FirstOrDefault().Name})",
-                Value = _.Id.ToString()
-            }).ToList();
             var departments = await _departmentRepository.GetDepartmentList();
             ViewBag.TeamTypes = CommonFunctions.GetEnumSelectList<TeamType>();
             ViewBag.departments = departments.Data.Select(_ => new SelectListItem
@@ -79,12 +73,6 @@ namespace StarLine.Web.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            var employees = await _teamRepository.GetTeamLead();
-            ViewBag.TeamLeads = employees.Select(_ => new SelectListItem
-            {
-                Text = _.FirstName + " " + _.LastName + $" ({_.AspNetUser.Roles.FirstOrDefault().Name})",
-                Value = _.Id.ToString()
-            }).ToList();
             var departments = await _departmentRepository.GetDepartmentList();
             ViewBag.TeamTypes = CommonFunctions.GetEnumSelectList<TeamType>();
             ViewBag.departments = departments.Data.Select(_ => new SelectListItem
@@ -96,9 +84,27 @@ namespace StarLine.Web.Controllers
         }
 
         [HttpGet]
-        public Task<IActionResult> ViewTeamMembers(long teamId)
+        public async Task<IActionResult> ViewTeamMembers(long teamId)
         {
+            var result = await _teamRepository.GetTeamById(teamId);
+            var model = new TeamEmployeeViewModel
+            {
+                Id = result.Data.Id,
+                TeamName = result.Data.Name,
+                TeamType = result.Data.TeamTypeName
+            };
+            return View(model);
+        }
 
+        [HttpGet]
+        public async Task<IActionResult> GetTeamEmployee(long teamId)
+        {
+            var result = await _teamRepository.GetTeamEmployees(teamId);
+            if (result.Success)
+            {
+                return Json(new { success = true, data = result.Data });
+            }
+            return Json(new { success = false, data = result.Data });
         }
 
         [HttpGet]

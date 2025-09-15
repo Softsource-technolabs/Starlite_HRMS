@@ -10,24 +10,3 @@ function formatUTC(input) {
     const yyyy = d.getUTCFullYear();
     return `${mm}/${dd}/${yyyy}`;
 }
-
-$.validator.addMethod("requiredif", function (value, element, params) {
-    var dependentProperty = params["dependentproperty"];
-    var targetValue = params["targetvalue"];
-
-    var dependentElement = $("[name='" + dependentProperty + "']");
-    var dependentValue = dependentElement.val();
-
-    if (dependentValue === targetValue) {
-        return $.trim(value).length > 0; // must be filled
-    }
-    return true; // not required
-});
-
-$.validator.unobtrusive.adapters.add("requiredif", ["dependentproperty", "targetvalue"], function (options) {
-    options.rules["requiredif"] = {
-        dependentproperty: options.params.dependentproperty,
-        targetvalue: options.params.targetvalue
-    };
-    options.messages["requiredif"] = options.message;
-});

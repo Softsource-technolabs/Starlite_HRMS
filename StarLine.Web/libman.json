@@ -45,6 +45,10 @@
     {
       "library": "datatables.net@2.3.2",
       "destination": "wwwroot/lib/datatables.net/"
+    },
+    {
+      "library": "datatables.net-rowreorder-bs5@1.5.0",
+      "destination": "wwwroot/lib/datatables.net-rowreorder-bs5/"
     }
   ]
 }

@@ -102,6 +102,48 @@ namespace StarLine.Infrastructure.Repositories.Teams
             return new ApiPostResponse<TeamModel> { Success = false, Message = "Team not found" };
         }
 
+        public async Task<ApiPostResponse<List<EmployeeListModel>>> GetTeamEmployees(long id)
+        {
+            var result = await _context.TeamMembers.Include(_ => _.Employee).ThenInclude(_ => _.AspNetUser).ThenInclude(_ => _.Roles)
+                .Include(_ => _.Employee).ThenInclude(_ => _.Department).ThenInclude(_ => _.Designations)
+                .Where(_ => _.TeamId == id && _.Employee.IsDeleted == false && _.Employee.IsActive == true).ToListAsync();
+
+            if (result != null)
+            {
+                var employees = result
+                .Select(tm => new EmployeeListModel
+                {
+                    BloodGroup = tm.Employee.BloodGroup,
+                    CurrentAddress = tm.Employee.CurrentAddress,
+                    DateOfBirth = tm.Employee.DateOfBirth.ToString("dd MMM yyyy"),
+                    Department = tm.Employee.Department.DepartmentName,
+                    Designation = tm.Employee.Department.Designations.FirstOrDefault().DesignationName,
+                    Email = tm.Employee.Email,
+                    EmergencyContactName = tm.Employee.EmergencyContactName,
+                    EmergencyContactNumber = tm.Employee.EmergencyContactNumber,
+                    EmployeeCode = tm.Employee.EmployeeCode,
+                    EmploymentType = tm.Employee.EmploymentType,
+                    ExperienceInYears = (decimal)tm.Employee.ExperienceInYears,
+                    FirstName = tm.Employee.FirstName,
+                    Gender = tm.Employee.Gender,
+                    Id = tm.Employee.Id,
+                    IsActive = tm.Employee.IsActive,
+                    JoiningDate = tm.Employee.JoiningDate.ToString("dd MMM yyyy"),
+                    LastName = tm.Employee.LastName,
+                    LicenseNumber = tm.Employee.LicenseNumber,
+                    PermanentAddress = tm.Employee.PermanentAddress,
+                    PhoneNumber = tm.Employee.PhoneNumber,
+                    Qualification = tm.Employee.Qualification,
+                    ReportingManagerId = tm.Employee.ReportingManagerId,
+                    UserImages = tm.Employee.UserImages,
+                    RoleName = tm.Employee.AspNetUser.Roles.FirstOrDefault().Name,
+                }).ToList();
+
+                return new ApiPostResponse<List<EmployeeListModel>> { Data = employees, Message = "Team employees found", Success = true };
+            }
+            return new ApiPostResponse<List<EmployeeListModel>> { Message = "Team employees not found", Success = false };
+        }
+
         public async Task<BaseApiResponse> ToggleStatusTeam(long id)
         {
             var team = await _context.Teams.FirstOrDefaultAsync(_ => _.Id == id && _.IsDeleted == false);

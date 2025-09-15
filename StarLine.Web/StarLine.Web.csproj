@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Admin\Views\ShiftGroup\**" />
+    <Content Remove="Areas\Admin\Views\ShiftGroup\**" />
+    <EmbeddedResource Remove="Areas\Admin\Views\ShiftGroup\**" />
+    <None Remove="Areas\Admin\Views\ShiftGroup\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="15.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.18" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.18" />

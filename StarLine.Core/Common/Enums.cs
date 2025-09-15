@@ -79,11 +79,20 @@ public enum TeamType
     [Display(Name = "Cross-Functional")]
     Functional,
 }
-
-public enum TeamMemberRole
+public enum ShiftRotationType
 {
-    [Display(Name = "Team Leader")]
-    TeamLead = 1,
-    [Display(Name = "Team Member")]
-    Member
+    [Display(Name = "Fixed")]
+    Fixed = 1,
+    [Display(Name = "Daily")]
+    Daily,
+    [Display(Name = "Every Week")]
+    Weekly,
+    [Display(Name = "Every Month")]
+    Monthly,
+    [Display(Name = "Every 3 Months")]
+    Quarterly,
+    [Display(Name = "Every 6 Months")]
+    HalfYearly,
+    [Display(Name = "Every Year")]
+    yearly
 }

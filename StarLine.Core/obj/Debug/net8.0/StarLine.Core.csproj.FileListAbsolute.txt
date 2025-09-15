@@ -10,3 +10,16 @@ D:\Projects\StarLine\StarLite\StarLine.Core\obj\Debug\net8.0\StarLine.Core.dll
 D:\Projects\StarLine\StarLite\StarLine.Core\obj\Debug\net8.0\refint\StarLine.Core.dll
 D:\Projects\StarLine\StarLite\StarLine.Core\obj\Debug\net8.0\StarLine.Core.pdb
 D:\Projects\StarLine\StarLite\StarLine.Core\obj\Debug\net8.0\ref\StarLine.Core.dll
+D:\SoftSourceTech\Starlite_HRMS\StarLine.Core\bin\Debug\net8.0\StarLine.Core.deps.json
+D:\SoftSourceTech\Starlite_HRMS\StarLine.Core\bin\Debug\net8.0\StarLine.Core.dll
+D:\SoftSourceTech\Starlite_HRMS\StarLine.Core\bin\Debug\net8.0\StarLine.Core.pdb
+D:\SoftSourceTech\Starlite_HRMS\StarLine.Core\obj\Debug\net8.0\StarLine.Core.csproj.AssemblyReference.cache
+D:\SoftSourceTech\Starlite_HRMS\StarLine.Core\obj\Debug\net8.0\StarLine.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\SoftSourceTech\Starlite_HRMS\StarLine.Core\obj\Debug\net8.0\StarLine.Core.AssemblyInfoInputs.cache
+D:\SoftSourceTech\Starlite_HRMS\StarLine.Core\obj\Debug\net8.0\StarLine.Core.AssemblyInfo.cs
+D:\SoftSourceTech\Starlite_HRMS\StarLine.Core\obj\Debug\net8.0\StarLine.Core.csproj.CoreCompileInputs.cache
+D:\SoftSourceTech\Starlite_HRMS\StarLine.Core\obj\Debug\net8.0\StarLine.Core.sourcelink.json
+D:\SoftSourceTech\Starlite_HRMS\StarLine.Core\obj\Debug\net8.0\StarLine.Core.dll
+D:\SoftSourceTech\Starlite_HRMS\StarLine.Core\obj\Debug\net8.0\refint\StarLine.Core.dll
+D:\SoftSourceTech\Starlite_HRMS\StarLine.Core\obj\Debug\net8.0\StarLine.Core.pdb
+D:\SoftSourceTech\Starlite_HRMS\StarLine.Core\obj\Debug\net8.0\ref\StarLine.Core.dll

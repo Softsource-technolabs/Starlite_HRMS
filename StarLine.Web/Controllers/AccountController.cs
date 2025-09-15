@@ -9,6 +9,7 @@ using System.Text;
 
 namespace StarLine.Web.Controllers
 {
+    [AllowAnonymous]
     public class AccountController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -79,7 +80,7 @@ namespace StarLine.Web.Controllers
                     if (employee != null)
                     {
                         _toastNotification.AddSuccessToastMessage("Login Successfully");
-                        if (await _userManager.IsInRoleAsync(user, "super admin") || await _userManager.IsInRoleAsync(user, "Super Admin- Starlite Owner"))
+                        if (await _userManager.IsInRoleAsync(user, "Admin") || await _userManager.IsInRoleAsync(user, "Super-Admin"))
                         {
                             return RedirectToAction("Index", "Home", new { area = "Admin" });
                         }

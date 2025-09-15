@@ -20,4 +20,12 @@ namespace StarLine.Core.Models
         public string DepartmentName { get; set; } = null!;
         public string TeamTypeName => CommonFunctions.GetDisplayName<TeamType>(TeamType);
     }
+
+    public class TeamEmployeeViewModel
+    {
+        public long Id { get; set; }
+        public string TeamName { get; set; }
+        public string TeamType { get; set; }
+        public List<EmployeeListModel> Employees { get; set; }
+    }
 }

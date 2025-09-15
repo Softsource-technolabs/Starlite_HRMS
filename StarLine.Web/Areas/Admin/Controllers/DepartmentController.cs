@@ -8,7 +8,7 @@ using StarLine.Infrastructure.Repositories.Departments;
 namespace StarLine.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Super-Admin,Admin,HR-Manager")]
+    [Authorize(Policy = "AdminPolicy")]
     public class DepartmentController : Controller
     {
         private readonly IDepartmentRepository _departmentRepository;

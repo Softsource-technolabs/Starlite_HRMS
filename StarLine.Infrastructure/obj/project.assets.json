@@ -6446,11 +6446,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\StarLine\\StarLite\\StarLine.Infrastructure\\StarLine.Infrastructure.csproj",
+      "projectUniqueName": "D:\\SoftSourceTech\\Starlite_HRMS\\StarLine.Infrastructure\\StarLine.Infrastructure.csproj",
       "projectName": "StarLine.Infrastructure",
-      "projectPath": "D:\\Projects\\StarLine\\StarLite\\StarLine.Infrastructure\\StarLine.Infrastructure.csproj",
+      "projectPath": "D:\\SoftSourceTech\\Starlite_HRMS\\StarLine.Infrastructure\\StarLine.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Sumit-SoftSource\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\StarLine\\StarLite\\StarLine.Infrastructure\\obj\\",
+      "outputPath": "D:\\SoftSourceTech\\Starlite_HRMS\\StarLine.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6471,8 +6471,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Projects\\StarLine\\StarLite\\StarLine.Core\\StarLine.Core.csproj": {
-              "projectPath": "D:\\Projects\\StarLine\\StarLite\\StarLine.Core\\StarLine.Core.csproj"
+            "D:\\SoftSourceTech\\Starlite_HRMS\\StarLine.Core\\StarLine.Core.csproj": {
+              "projectPath": "D:\\SoftSourceTech\\Starlite_HRMS\\StarLine.Core\\StarLine.Core.csproj"
             }
           }
         }

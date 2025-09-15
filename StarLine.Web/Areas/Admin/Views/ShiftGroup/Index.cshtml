@@ -1,0 +1,72 @@
+﻿@model IEnumerable<StarLine.Core.Models.ShiftGroupModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title">Shift Group List</h5>
+                <a asp-controller="ShiftGroup" asp-action="ManageShiftGroup" class="btn btn-sm btn-primary">Add New</a>
+            </div>
+            <div class="card-body">
+                <table id="tblShiftGroupList" class="table table-bordered dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GroupCode)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GroupName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.RotationType)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EffectiveFrom)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EffectiveTo)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GroupCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GroupName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RotationTypeName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EffectiveFrom)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EffectiveTo)
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("ManageShiftGroup","ShiftGroup", new {id = item.Id})" class="btn btn-sm btn-outline-secondary"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a class="btn btn-sm btn-outline-danger" id="btn-Delete" data-id='item.id'><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#tblShiftGroupList").dataTable();
+    });
+</script>

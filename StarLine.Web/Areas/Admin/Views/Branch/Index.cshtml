@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Branch List";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title">Branch List</h5>
+                <a asp-controller="Branch" asp-action="ManageBranch" class="btn btn-sm btn-primary">Add New</a>
+            </div>
+            <div class="card-body">
+                <table id="tblBranchList" class="table table-bordered dataTable" data-url="@Url.Action("Get", "Branch")" data-delete="@Url.Action("Delete", "Branch")" data-toggleStatus="@Url.Action("ToggleStatus", "Branch")">
+                    <thead>
+                        <tr>
+                            <th>BranchCode</th>
+                            <th>BranchName</th>
+                            <th>City</th>
+                            <th>ContactNumber</th>
+                            <th>EmailAddress</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/pages/branch.js"></script>

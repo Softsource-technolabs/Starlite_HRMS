@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace StarLine.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Super-Admin,Admin,HR-Manager")]
+    [Authorize(Policy = "AdminPolicy")]
     public class HomeController : Controller
     {
         public IActionResult Index()

@@ -1,0 +1,99 @@
+﻿@model StarLine.Core.Models.ShiftGroupModel
+
+@{
+    ViewData["Title"] = "Manage Shift Group";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                @if (Model.Id > 0)
+                {
+                    <h5 class="card-title">Modify Shift Group</h5>
+                }
+                else
+                {
+                    <h5 class="card-title">Add New Shift Group</h5>
+                }
+            </div>
+            <form asp-action="ManageShiftGroup">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" class="form-control" />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label asp-for="GroupCode" class="control-label required"></label>
+                            <div class="form-group">
+                                <input asp-for="GroupCode" class="form-control" />
+                                <span asp-validation-for="GroupCode" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="GroupName" class="control-label required"></label>
+                            <div class="form-group">
+                                <input asp-for="GroupName" class="form-control" />
+                                <span asp-validation-for="GroupName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="RotationType" class="control-label required"></label>
+                            <div class="form-group">
+                                <select asp-for="RotationType" class="form-select" asp-items="ViewBag.RotationTypes">
+                                    <option value="">Select Shift Rotation</option>
+                                </select>
+                                <span asp-validation-for="RotationType" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <label asp-for="EffectiveFrom" class="control-label required"></label>
+                            <div class="form-group">
+                                <input type="date" asp-for="EffectiveFrom" class="form-control" />
+                                <span asp-validation-for="EffectiveFrom" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="EffectiveTo" class="control-label"></label>
+                            <div class="form-group">
+                                <input type="date" asp-for="EffectiveTo" class="form-control" />
+                                <span asp-validation-for="EffectiveTo" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <label asp-for="Description" class="control-label"></label>
+                            <div class="form-group">
+                                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        @if (Model.Id > 0)
+                        {
+                            <input type="submit" value="Update" class="btn btn-sm btn-primary" />
+                        }
+                        else
+                        {
+                            <input type="submit" value="Add New" class="btn btn-sm btn-primary" />
+                        }
+                        <a asp-action="Index" asp-controller="Shift" class="btn btn-sm btn-outline-secondary">Back to List</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

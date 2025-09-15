@@ -1,5 +1,6 @@
 ﻿using StarLine.Core.Common;
 using StarLine.Core.Session;
+using System.IO;
 
 namespace StarLine.Web.Middleware
 {
@@ -16,7 +17,7 @@ namespace StarLine.Web.Middleware
             if (context.User.Identity.IsAuthenticated)
             {
                 var claims = context.User.Claims;
-
+                var path = context.Request.Path.Value;
                 userSession.Current = new UserSessionModel
                 {
                     AspNetId = claims.FirstOrDefault(c => c.Type == "AspNetUser")?.Value ?? "",
@@ -27,17 +28,18 @@ namespace StarLine.Web.Middleware
                     UserId = int.TryParse(claims.FirstOrDefault(c => c.Type == "UserId")?.Value, out var userId) ? userId : 0
                 };
 
-                if (context.User.Identity.IsAuthenticated && context.Request.Path == "/")
+                if (path == "/" || path.Equals("/Home/Index", StringComparison.OrdinalIgnoreCase))
                 {
-                    var roleName = context.User.FindFirst("RoleName")?.Value;
-
-                    if (userSession.Current.RoleName.ToLower() == "admin" || userSession.Current.RoleName.ToLower() == "super admin")
+                    if (context.User.IsInRole("Admin") || context.User.IsInRole("Super-Admin") || context.User.IsInRole("HR-Manager"))
                     {
-                        context.Response.Redirect("/admin/home");
+                        context.Response.Redirect("/Admin/Index");
                         return;
                     }
-                    context.Response.Redirect("/Home/Index");
-                    return;
+                    else if (context.User.IsInRole("Employee") || context.User.IsInRole("Department-Head"))
+                    {
+                        context.Response.Redirect("/Employee/Index");
+                        return;
+                    }
                 }
             }
             await _next(context);

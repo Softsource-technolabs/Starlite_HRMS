@@ -1,0 +1,74 @@
+﻿@model IEnumerable<StarLine.Core.Models.ShiftGroupModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title">Shift List</h5>
+                <a asp-controller="Shift" asp-action="ManageShift" class="btn btn-sm btn-primary">Add New</a>
+            </div>
+            <div class="card-body">
+                <table id="tblshift" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GroupCode)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GroupName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EffectiveFrom)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EffectiveTo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.RotationType)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GroupCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GroupName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EffectiveFrom)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EffectiveTo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RotationTypeName)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#tblshift").dataTable();
+    })
+</script>

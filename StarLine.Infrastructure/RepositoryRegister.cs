@@ -1,8 +1,10 @@
-﻿using StarLine.Infrastructure.Repositories.Departments;
+﻿using StarLine.Infrastructure.Repositories.Branches;
+using StarLine.Infrastructure.Repositories.Departments;
 using StarLine.Infrastructure.Repositories.Designations;
 using StarLine.Infrastructure.Repositories.Employees;
 using StarLine.Infrastructure.Repositories.Holidays;
 using StarLine.Infrastructure.Repositories.LeaveTypes;
+using StarLine.Infrastructure.Repositories.Shifts;
 using StarLine.Infrastructure.Repositories.Teams;
 
 namespace StarLine.Infrastructure
@@ -19,6 +21,9 @@ namespace StarLine.Infrastructure
                 { typeof(ITeamRepository), typeof(TeamRepository) },
                 { typeof(IHolidayRepository), typeof(HolidayRepository) },
                 { typeof(ILeaveTypeRepository), typeof(LeaveTypeRepository) },
+                { typeof(IShiftGroupRepository), typeof(ShiftGroupRepository) },
+                { typeof(IShiftRepository), typeof(ShiftRepository) },
+                { typeof(IBranchRepository), typeof(BranchRepository) },
             };
             return repositoryDictionary;
         }

@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <link href="~/lib/datatables.net-bs5/datatables.bootstrap5.min.css" rel="stylesheet" />
     <link href="~/lib/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/StarLine.Web.styles.css" asp-append-version="true" />
     <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
     <link href="~/lib/jquery-confirm/jquery-confirm.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
     <div class="container-fluid starlite-theme">
@@ -23,15 +23,14 @@
                 </div>
                 <div id="main-menu">
                     <ul class="ps-0">
-                        <li><a asp-area="Admin" asp-controller="Home" asp-action="Index">Home</a></li>                       
-                        <li><a asp-area="Admin" asp-controller="Employee" asp-action="Index">Employee</a></li>
-                        <li><a asp-area="Admin" asp-controller="Role" asp-action="Index">User Roles</a></li>
-                        <li><a asp-area="Admin" asp-controller="Team" asp-action="Index">Teams</a></li>
+                        <li><a asp-area="Admin" asp-controller="Branch" asp-action="Index">Branches</a></li>
                         <li><a asp-area="Admin" asp-controller="Department" asp-action="Index">Department</a></li>
                         <li><a asp-area="Admin" asp-controller="Designation" asp-action="Index">Designation</a></li>
+                        <li><a asp-area="Admin" asp-controller="Employee" asp-action="Index">Employee</a></li>
                         <li><a asp-area="Admin" asp-controller="Holiday" asp-action="Index">Holidays</a></li>
                         <li><a asp-area="Admin" asp-controller="LeaveType" asp-action="Index">Leave Types</a></li>
-                        
+                        <li><a asp-area="Admin" asp-controller="Shift" asp-action="Index">Shifts</a></li>
+                        <li><a asp-area="Admin" asp-controller="Role" asp-action="Index">User Roles</a></li>
                     </ul>
                 </div>
             </nav>
@@ -92,7 +91,7 @@
             &copy; 2025 - StarLine.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer> *@
-    
+
     @* Off canvas *@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="starliteoffcanvas" aria-labelledby="starliteoffcanvasLabel" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="offcanvas-header">
@@ -107,7 +106,7 @@
     <script src="~/lib/datatables.net-bs5/datatables.bootstrap5.min.js"></script>
     <script src="~/lib/jquery-confirm/jquery-confirm.min.js"></script>
     <script src="~/lib/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uUs2o+8GAlo=",
+  "dgSpecHash": "3aXxKCOFOeM=",
   "success": true,
-  "projectFilePath": "D:\\Projects\\StarLine\\StarLite\\StarLine.Core\\StarLine.Core.csproj",
+  "projectFilePath": "D:\\SoftSourceTech\\Starlite_HRMS\\StarLine.Core\\StarLine.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sumit-SoftSource\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.3.0\\microsoft.aspnetcore.antiforgery.2.3.0.nupkg.sha512",
     "C:\\Users\\Sumit-SoftSource\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.3.0\\microsoft.aspnetcore.authentication.abstractions.2.3.0.nupkg.sha512",

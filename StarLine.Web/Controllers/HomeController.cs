@@ -6,7 +6,7 @@ using StarLine.Web.Models;
 namespace StarLine.Web.Controllers
 {
     [Authorize]
-    [Authorize(Roles = "Department-Head,Employee")]
+    [Authorize(Policy = "EmployeePolicy")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

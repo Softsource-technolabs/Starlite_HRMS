@@ -27,8 +27,16 @@ document.addEventListener('DOMContentLoaded', function () {
             { "data": "name", "name": "name", "autoWidth": true, orderable: true, },
             { "data": "description", "name": "description", "autoWidth": true },
             { "data": "departmentName", "name": "departmentName", "autoWidth": true },
-            { "data": "teamLeadName", "name": "teamLeadName", "autoWidth": true },
             { "data": "teamTypeName", "name": "teamTypeName", "autoWidth": true },
+            {
+                data: "", // Important: set data to null for custom HTML
+                orderable: false,
+                searchable: false,
+                className: 'text-center',
+                "render": function (data, type, row) {
+                    return `<a class="btn btn-sm btn-warning" href="/Team/ViewTeamMembers?teamId=${row.id}" />View Team</a>`;
+                }
+            },
             {
                 data: "isActive", // Important: set data to null for custom HTML
                 orderable: false,

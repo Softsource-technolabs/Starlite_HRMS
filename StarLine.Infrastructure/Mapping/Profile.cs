@@ -89,6 +89,49 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.IsActive, opt => opt.MapFrom(_ => _.IsActive))
                 .ForMember(_ => _.IsDeleted, opt => opt.MapFrom(_ => _.IsDeleted))
                 .ReverseMap();
+
+            CreateMap<ShiftGroup, ShiftGroupModel>()
+                .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
+                .ForMember(_ => _.GroupCode, opt => opt.MapFrom(_ => _.GroupCode))
+                .ForMember(_ => _.GroupName, opt => opt.MapFrom(_ => _.GroupName))
+                .ForMember(_ => _.RotationType, opt => opt.MapFrom(_ => _.RotationType))
+                .ForMember(_ => _.Description, opt => opt.MapFrom(_ => _.Description))
+                .ForMember(_ => _.EffectiveFrom, opt => opt.MapFrom(_ => _.EffectiveFrom))
+                .ForMember(_ => _.EffectiveTo, opt => opt.MapFrom(_ => _.EffectiveTo))
+                .ReverseMap();
+
+            CreateMap<Shift, ShiftModel>()
+                .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
+                .ForMember(_ => _.ShiftCode, opt => opt.MapFrom(_ => _.ShiftCode))
+                .ForMember(_ => _.ShiftName, opt => opt.MapFrom(_ => _.ShiftName))
+                .ForMember(_ => _.StartTime, opt => opt.MapFrom(_ => _.StartTime))
+                .ForMember(_ => _.EndTime, opt => opt.MapFrom(_ => _.EndTime))
+                .ForMember(_ => _.WorkingHours, opt => opt.MapFrom(_ => _.WorkingHours))
+                .ForMember(_ => _.IsNightShift, opt => opt.MapFrom(_ => _.IsNightShift))
+                .ForMember(_ => _.GracePeriodMins, opt => opt.MapFrom(_ => _.GracePeriodMins))
+                .ReverseMap();
+
+            CreateMap<ShiftGroupMapping, ShiftGroupMappingModel>()
+                .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
+                .ForMember(_ => _.ShiftGroupId, opt => opt.MapFrom(_ => _.ShiftGroupId))
+                .ForMember(_ => _.ShiftId, opt => opt.MapFrom(_ => _.ShiftId))
+                .ForMember(_ => _.SequenceNo, opt => opt.MapFrom(_ => _.SequenceNo))
+                .ForMember(_ => _.RotationDays, opt => opt.MapFrom(_ => _.RotationDays))
+                .ReverseMap();
+
+            CreateMap<Branch, BranchModel>()
+                .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
+                .ForMember(_ => _.BranchCode, opt => opt.MapFrom(_ => _.BranchCode))
+                .ForMember(_ => _.BranchName, opt => opt.MapFrom(_ => _.BranchName))
+                .ForMember(_ => _.Address, opt => opt.MapFrom(_ => _.Address))
+                .ForMember(_ => _.City, opt => opt.MapFrom(_ => _.City))
+                .ForMember(_ => _.State, opt => opt.MapFrom(_ => _.State))
+                .ForMember(_ => _.Country, opt => opt.MapFrom(_ => _.Country))
+                .ForMember(_ => _.ContactNumber, opt => opt.MapFrom(_ => _.ContactNumber))
+                .ForMember(_ => _.EmailAddress, opt => opt.MapFrom(_ => _.EmailAddress))
+                .ForMember(_ => _.ParentBranchId, opt => opt.MapFrom(_ => _.ParentBranchId))
+                .ReverseMap();
+
         }
     }
 }

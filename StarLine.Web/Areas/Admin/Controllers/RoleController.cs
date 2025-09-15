@@ -7,7 +7,7 @@ using StarLine.Core.Models;
 namespace StarLine.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Super-Admin,Admin,HR-Manager")]
+    [Authorize(Policy = "AdminPolicy")]
     public class RoleController : Controller
     {
         private readonly RoleManager<IdentityRole> _roleManager;

@@ -1,0 +1,277 @@
+﻿@{
+    ViewData["Title"] = "Manage Shift";
+}
+
+<style>
+    .nav-item button {
+        cursor: default !important;
+    }
+</style>
+<link href="~/lib/datatables.net-rowreorder-bs5/rowreorder.bootstrap5.min.css" rel="stylesheet" />
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <!-- Wizard Steps -->
+                <ul class="nav nav-pills mb-3" id="wizardTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="step1-tab" data-bs-toggle="pill" data-bs-target="#step1" type="button" role="tab">1. Shift Group</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="step2-tab" data-bs-toggle="pill" data-bs-target="#step2" type="button" role="tab">2. Shifts</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="step3-tab" data-bs-toggle="pill" data-bs-target="#step3" type="button" role="tab">3. Confirm</button>
+                    </li>
+                </ul>
+
+                <!-- Wizard Content -->
+                <div class="tab-content p-3 border-top" id="wizardTabsContent">
+
+                    <!-- Step 1: Shift Group -->
+                    <div class="tab-pane fade show active" id="step1" role="tabpanel">
+                        <form id="frmShiftgroup">
+                            <input type="hidden" id="ShiftGroupId" />
+                            <h5>Create / Select Shift Group</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="GroupCode" class="control-label required">Group Code</label>
+                                    <div class="form-group">
+                                        <input type="text" id="GroupCode" name="GroupCode" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="GroupName" class="control-label required">Group Name</label>
+                                    <div class="form-group">
+                                        <input type="text" id="GroupName" name="GroupName" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-4">
+                                    <label for="RotationType" class="control-label required">Rotation Type</label>
+                                    <div class="form-group">
+                                        <select id="RotationType" name="RotationType" class="form-select" asp-items="ViewBag.RotationTypes">
+                                            <option value="">Select Rotation Type</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="EffectiveFrom" class="control-label required">Effective From</label>
+                                    <div class="form-group">
+                                        <input type="date" id="EffectiveFrom" name="EffectiveFrom" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="EffectiveTo" class="control-label required">Effective To</label>
+                                    <div class="form-group">
+                                        <input type="date" id="EffectiveTo" name="EffectiveTo" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-12">
+                                    <label for="Description" class="control-label">Description</label>
+                                    <div class="form-group">
+                                        <textarea type="text" id="Description" name="Description" class="form-control" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-primary next-step">Next →</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Step 2: Shifts -->
+                    <div class="tab-pane fade" id="step2" role="tabpanel">
+                        <h5>Create / Select Shifts</h5>
+                        <form id="frmShifts">
+                            <input type="hidden" id="Id" name="Id" />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="ShiftCode" class="control-label required">Shift Code</label>
+                                    <div class="form-group">
+                                        <input type="text" id="ShiftCode" name="ShiftCode" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="ShiftName" class="control-label required">Shift Name</label>
+                                    <div class="form-group">
+                                        <input type="text" id="ShiftName" name="ShiftName" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="StartTime" class="control-label required">Start Time</label>
+                                            <div class="form-group">
+                                                <input type="time" id="StartTime" name="StartTime" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="EndTime" class="control-label required">End Time</label>
+                                            <div class="form-group">
+                                                <input type="time" id="EndTime" name="EndTime" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="WorkingHours" class="control-label required">Working Hours</label>
+                                            <div class="form-group">
+                                                <input type="text" id="WorkingHours" name="WorkingHours" class="form-control" readonly />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="IsNightShift" class="control-label required">Is Night Shift?</label>
+                                    <div class="form-group">
+                                        <select id="IsNightShift" name="IsNightShift" class="form-select">
+                                            <option value="" selected>Select ...</option>
+                                            <option value="true">Yes</option>
+                                            <option value="false">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="GracePeriodMins" class="control-label required">Grace Period (in mins)</label>
+                                    <div class="form-group">
+                                        <input type="number" id="GracePeriodMins" name="GracePeriodMins" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <button type="button" id="btnAdd" class="btn btn-info w-100">Add Shift</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="table-responsive">
+                                    <table id="tblShifts" class="table table-sm table-bordered datatable">
+                                        <thead>
+                                            <tr>
+                                                <th class="d-none">ShiftId</th>
+                                                <th>Shift Code</th>
+                                                <th>Shift Name</th>
+                                                <th>Start Time</th>
+                                                <th>End Time</th>
+                                                <th>Working Hours</th>
+                                                <th class="d-none">IsNightShift</th>
+                                                <th>Night Shift?</th>
+                                                <th>Grace Period</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-secondary prev-step mt-3">← Back</button>
+                                    <button type="button" class="btn btn-primary next-step mt-3">Next →</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 3: Mapping -->
+                    <div class="tab-pane fade" id="step3" role="tabpanel">
+                        <h5>Shift Group Details</h5>
+                        <div class="row">
+                            <input type="hidden" id="finalShiftGroupId" />
+                            <input type="hidden" id="RotateId" />
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6"><label>Group Code</label></div>
+                                    <div class="col-md-6"><label id="lblgroupCode"></label></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6"><label>Group Name</label></div>
+                                    <div class="col-md-6"><label id="lblgroupName"></label></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6"><label>Rotation Type</label></div>
+                                    <div class="col-md-6"><label id="lblRotationType"></label></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6"><label>Effective From</label></div>
+                                    <div class="col-md-6"><label id="lblEffectiveFrom"></label></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6"><label>Effective To</label></div>
+                                    <div class="col-md-6"><label id="lblEffectiveTo"></label></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-12"><label>Description</label></div>
+                                    <div class="col-md-12"><label id="lblDescription"></label></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Rotation Sequence</label>
+                                    <input type="number" id="SequenceNo" name="SequenceNo" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Rotation Days</label>
+                                    <input type="number" id="RotationDays" name="RotationDays" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="form-group">
+                                <div class="table-responsive">
+                                    <table id="tblfinalShift" class="table table-sm table-bordered datatable" data-home-url="@Url.Action("Index", "Shift")" data-insert-url="@Url.Action("ManageShift", "Shift")">
+                                        <thead>
+                                            <tr>
+                                                <th style="display:none">ShiftId</th>
+                                                <th>Shift Code</th>
+                                                <th>Shift Name</th>
+                                                <th>Start Time</th>
+                                                <th>End Time</th>
+                                                <th>Working Hours</th>
+                                                <th style="display:none">IsNightShift</th>
+                                                <th>Night Shift?</th>
+                                                <th>Grace Period</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-secondary prev-step">← Back</button>
+                                <button id="btnSaveAll" type="submit" class="btn btn-success">Finish & Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        <script src="~/js/pages/shifts.js"></script>
+        <script src="~/lib/datatables.net-rowreorder-bs5/rowreorder.bootstrap5.min.js"></script>
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

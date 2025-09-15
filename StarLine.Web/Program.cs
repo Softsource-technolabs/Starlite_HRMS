@@ -1,6 +1,7 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using NToastNotify;
 using StarLine.Core.Common;
 using StarLine.Infrastructure.Mapping;
@@ -28,13 +29,18 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     {
         _.LoginPath = "/Account/Login";
         _.LogoutPath = "/Account/Logout";
+        _.AccessDeniedPath = "/Account/AccessDenied"; // 👈 Add this
         _.Cookie.HttpOnly = true;
     });
 
 builder.Services.AddAuthorization(_ =>
 {
-    _.AddPolicy("RequireAdministratorRole", policy => policy.RequireRole("Administrator"));
-    _.AddPolicy("RequireUserRole", policy => policy.RequireRole("User"));
+    _.AddPolicy("AdminPolicy", policy =>
+        policy.RequireRole("Admin", "Super-Admin", "HR-Manager"));
+
+    // Employee panel access
+    _.AddPolicy("EmployeePolicy", policy =>
+        policy.RequireRole("Department-Head", "Employee"));
 });
 
 builder.Services.AddDistributedMemoryCache(); // Required for Session
@@ -87,6 +93,6 @@ app.MapControllerRoute(name: "areas", pattern: "{area:exists}/{controller=Home}/
 
 app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
-//app.MapRazorPages();
+app.UseMigrationsEndPoint();
 
 app.Run();
