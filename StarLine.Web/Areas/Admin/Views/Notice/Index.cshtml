@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title">Notice List</h5>
+                <a asp-controller="Notice" asp-action="ManageNotice" class="btn btn-sm btn-primary">Add New</a>
+            </div>
+            <div class="card-body">
+                <table id="tblNoticeList" class="table table-bordered dataTable" data-url="@Url.Action("Get", "Notice")" data-delete="@Url.Action("Delete", "Notice")" data-toggleStatus="@Url.Action("ToggleStatus", "Notice")" data-publish="@Url.Action("Publish", "Notice")">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Notice Type</th>
+                            <th>Delivery Mode</th>
+                            <th>Acknoledge Required</th>
+                            <th>Audience Type</th>
+                            <th>Publish Date</th>
+                            <th>Expire Date</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/pages/notice.js"></script>

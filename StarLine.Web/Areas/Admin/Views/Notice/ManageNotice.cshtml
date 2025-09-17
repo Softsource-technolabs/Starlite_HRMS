@@ -1,0 +1,149 @@
+﻿@model StarLine.Core.Models.NoticeModel
+
+@{
+    ViewData["Title"] = "ManageNotice";
+}
+<link href="~/lib/summernote/summernote-bs5.min.css" rel="stylesheet" />
+<style>
+    .note-toolbar {
+        background: #fff !important;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                @if (Model.Id > 0)
+                {
+                    <h5 class="card-title">Modify Notice</h5>
+                }
+                else
+                {
+                    <h5 class="card-title">Add New Notice</h5>
+                }
+            </div>
+            <form id="frmNotice" asp-action="ManageNotice" enctype="multipart/form-data">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <label asp-for="Title" class="control-label required"></label>
+                            <div class="form-group">
+                                <input asp-for="Title" class="form-control" />
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-4">
+                            <label asp-for="NoticeType" class="control-label required"></label>
+                            <div class="form-group">
+                                <select asp-for="NoticeType" class="form-select" asp-items="ViewBag.NoticeTypes"></select>
+                                <span asp-validation-for="NoticeType" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="DeliveryMode" class="control-label required"></label>
+                            <div class="form-group">
+                                <select asp-for="DeliveryMode" class="form-select" asp-items="ViewBag.DeliveryModes"></select>
+                                <span asp-validation-for="DeliveryMode" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="AcknoledgeRequired" class="control-label required"></label>
+                            <div class="form-group">
+                                <select class="form-select" asp-for="AcknoledgeRequired">
+                                    <option value="">Select Acknoledge required?</option>
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
+                                </select>
+                                <span asp-validation-for="AcknoledgeRequired" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-4">
+                            <label asp-for="ExpireDate" class="control-label required"></label>
+                            <div class="form-group">
+                                <input asp-for="ExpireDate" class="form-control" />
+                                <span asp-validation-for="ExpireDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="AudienceType" class="control-label required"></label>
+                            <div class="form-group">
+                                <select asp-for="AudienceType" class="form-select" asp-items="ViewBag.AudienceTypes"></select>
+                                <span asp-validation-for="AudienceType" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <input type="hidden" asp-for="AudienceTypeValue" />
+
+                        <div class="col-md-4" id="divaudience" style="display:none;">
+                            <label asp-for="AudienceTypeValue" class="control-label required"></label>
+                            <div class="form-group">
+                                <input type="text" id="txtaudienceValue" name="txtaudienceValue" class="form-control" />
+                                <span asp-validation-for="AudienceTypeValue" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <label asp-for="NoticeText" class="control-label required"></label>
+                            <div class="form-group">
+                                <textarea asp-for="NoticeText" class="form-control"></textarea>
+                                <span asp-validation-for="NoticeText" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-3">
+                            <label asp-for="HasAttachment" class="control-label required"></label>
+                            <div class="form-group">
+                                <select class="form-select" asp-for="HasAttachment">
+                                    <option value="">Has Attachment?</option>
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
+                                </select>
+                                <span asp-validation-for="HasAttachment" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="divfileUpload" class="row mt-2" style="display:none;">
+                        <div class="col-md-12">
+                            <label asp-for="FileName" class="control-label  required"></label>
+                            <div class="form-group">
+                                <input type="file" asp-for="File" class="form-control" accept=".jpg,.jpeg,.png,.gif,.bmp,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx" />
+                                <span asp-validation-for="File" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        @if (Model.Id > 0)
+                        {
+                            <input type="submit" value="Update" class="btn btn-sm btn-primary" />
+                        }
+                        else
+                        {
+                            <input type="submit" value="Add New" class="btn btn-sm btn-primary" />
+                        }
+                        <a asp-action="Index" asp-controller="Notice" class="btn btn-sm btn-outline-secondary">Back to List</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        <script src="~/lib/summernote/summernote-bs5.min.js"></script>
+        <script src="~/js/pages/managenotice.js"></script>
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

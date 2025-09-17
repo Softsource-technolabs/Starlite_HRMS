@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StarLine.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7204f7bfd80078467bb3a3a12913d79ae82cc29")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b1963458d266df3d83bcec39fcf93acb5b8d145")]
 [assembly: System.Reflection.AssemblyProductAttribute("StarLine.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StarLine.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

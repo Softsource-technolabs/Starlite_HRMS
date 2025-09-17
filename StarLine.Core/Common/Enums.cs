@@ -96,3 +96,41 @@ public enum ShiftRotationType
     [Display(Name = "Every Year")]
     yearly
 }
+
+public enum NoticeType
+{
+    [Display(Name = "Select Notice Type")]
+    None = 0,
+    [Display(Name = "Compliance")]
+    Compliance,
+    [Display(Name = "HR")]
+    HR,
+    [Display(Name = "Event")]
+    Event
+}
+
+public enum DeliveryMode
+{
+    [Display(Name = "Select Delivery Mode")]
+    None = 0,
+    [Display(Name = "Application")]
+    Application,
+    [Display(Name = "Email")]
+    Email,
+    [Display(Name = "Both")]
+    Both
+}
+
+public enum AudienceType
+{
+    [Display(Name = "Select Audience Type")]
+    None = 0,
+    [Display(Name = "Department")]
+    Department,
+    [Display(Name = "Role")]
+    Role,
+    [Display(Name = "User")]
+    User,
+    [Display(Name = "All")]
+    All
+}

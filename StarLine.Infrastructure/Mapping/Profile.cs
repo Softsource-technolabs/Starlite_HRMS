@@ -8,7 +8,7 @@ namespace StarLine.Infrastructure.Mapping
     {
         public DataProfile()
         {
-            CreateMap<Department, DepartmentModel>()
+            CreateMap<DepartmentModel, Department>()
                 .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
                 .ForMember(_ => _.DepartmentName, opt => opt.MapFrom(_ => _.DepartmentName))
                 .ForMember(_ => _.Description, opt => opt.MapFrom(_ => _.Description))
@@ -68,7 +68,7 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(dest => dest.Department, opt => opt.Ignore())
                 .ForMember(dest => dest.TeamMembers, opt => opt.Ignore());
 
-            CreateMap<Holiday, HolidayModel>()
+            CreateMap<HolidayModel, Holiday>()
                 .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
                 .ForMember(_ => _.Name, opt => opt.MapFrom(_ => _.Name))
                 .ForMember(_ => _.HolidayDate, opt => opt.MapFrom(_ => _.HolidayDate))
@@ -79,7 +79,7 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.IsDeleted, opt => opt.MapFrom(_ => _.IsDeleted))
                 .ReverseMap();
 
-            CreateMap<LeaveType, LeaveTypeModel>()
+            CreateMap<LeaveTypeModel, LeaveType>()
                 .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
                 .ForMember(_ => _.TypeName, opt => opt.MapFrom(_ => _.TypeName))
                 .ForMember(_ => _.Description, opt => opt.MapFrom(_ => _.Description))
@@ -90,7 +90,7 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.IsDeleted, opt => opt.MapFrom(_ => _.IsDeleted))
                 .ReverseMap();
 
-            CreateMap<ShiftGroup, ShiftGroupModel>()
+            CreateMap<ShiftGroupModel, ShiftGroup>()
                 .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
                 .ForMember(_ => _.GroupCode, opt => opt.MapFrom(_ => _.GroupCode))
                 .ForMember(_ => _.GroupName, opt => opt.MapFrom(_ => _.GroupName))
@@ -100,7 +100,7 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.EffectiveTo, opt => opt.MapFrom(_ => _.EffectiveTo))
                 .ReverseMap();
 
-            CreateMap<Shift, ShiftModel>()
+            CreateMap<ShiftModel, Shift>()
                 .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
                 .ForMember(_ => _.ShiftCode, opt => opt.MapFrom(_ => _.ShiftCode))
                 .ForMember(_ => _.ShiftName, opt => opt.MapFrom(_ => _.ShiftName))
@@ -111,7 +111,7 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.GracePeriodMins, opt => opt.MapFrom(_ => _.GracePeriodMins))
                 .ReverseMap();
 
-            CreateMap<ShiftGroupMapping, ShiftGroupMappingModel>()
+            CreateMap<ShiftGroupMappingModel, ShiftGroupMapping>()
                 .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
                 .ForMember(_ => _.ShiftGroupId, opt => opt.MapFrom(_ => _.ShiftGroupId))
                 .ForMember(_ => _.ShiftId, opt => opt.MapFrom(_ => _.ShiftId))
@@ -119,7 +119,7 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.RotationDays, opt => opt.MapFrom(_ => _.RotationDays))
                 .ReverseMap();
 
-            CreateMap<Branch, BranchModel>()
+            CreateMap<BranchModel, Branch>()
                 .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
                 .ForMember(_ => _.BranchCode, opt => opt.MapFrom(_ => _.BranchCode))
                 .ForMember(_ => _.BranchName, opt => opt.MapFrom(_ => _.BranchName))
@@ -132,6 +132,29 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.ParentBranchId, opt => opt.MapFrom(_ => _.ParentBranchId))
                 .ReverseMap();
 
+            CreateMap<NoticeModel,Notice>()
+                .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
+                .ForMember(_ => _.Title, opt => opt.MapFrom(_ => _.Title))
+                .ForMember(_ => _.NoticeText, opt => opt.MapFrom(_ => _.NoticeText))
+                .ForMember(_ => _.NoticeType, opt => opt.MapFrom(_ => (int)_.NoticeType))
+                .ForMember(_ => _.DeliveryMode, opt => opt.MapFrom(_ => (int)_.DeliveryMode))
+                .ForMember(_ => _.AcknoledgeRequired, opt => opt.MapFrom(_ => _.AcknoledgeRequired))
+                .ForMember(_ => _.HasAttachment, opt => opt.MapFrom(_ => _.HasAttachment))
+                .ForMember(_ => _.FileName, opt => opt.MapFrom(_ => _.FileName))
+                .ForMember(_ => _.AudienceType, opt => opt.MapFrom(_ => (int)_.AudienceType))
+                .ForMember(_ => _.AudienceTypeValue, opt => opt.MapFrom(_ => _.AudienceTypeValue))
+                .ForMember(_ => _.PublishDate, opt => opt.MapFrom(_ => _.PublishDate))
+                .ForMember(_ => _.ExpireDate, opt => opt.MapFrom(_ => _.ExpireDate))
+                .ReverseMap();
+
+            CreateMap<NoticeRecipientModel, NoticeRecipient>()
+                .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
+                .ForMember(_ => _.NoticeId, opt => opt.MapFrom(_ => _.NoticeId))
+                .ForMember(_ => _.UserId, opt => opt.MapFrom(_ => _.UserId))
+                .ForMember(_ => _.IsAcknoledged, opt => opt.MapFrom(_ => _.IsAcknoledged))
+                .ForMember(_ => _.ReadAt, opt => opt.MapFrom(_ => _.ReadAt))
+                .ForMember(_ => _.AcknowledgeDate, opt => opt.MapFrom(_ => _.AcknowledgeDate))
+                .ReverseMap();
         }
     }
 }

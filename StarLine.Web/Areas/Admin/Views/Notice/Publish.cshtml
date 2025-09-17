@@ -1,0 +1,70 @@
+﻿@model StarLine.Core.Models.NoticeModel
+
+@{
+    ViewData["Title"] = "Publish";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Publish Notice</h5>
+            </div>
+            <div class="card-body">
+                <div class="row p-3">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-1 fw-medium">Title</div>
+                            <div class="col-md-11">@Model.Title</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Notice Type</div>
+                            <div class="col-md-2">@Model.NoticeTypeName</div>
+                            <div class="col-md-2 fw-medium">Delivery Mode</div>
+                            <div class="col-md-2">@Model.DeliveryModeName</div>
+                            <div class="col-md-2 fw-medium">Expire Date</div>
+                            @{
+                                string expDate = Convert.ToDateTime(Model.ExpireDate).ToString("MM-dd-yyyy hh:mm tt");
+                            }
+                            <div class="col-md-2">@expDate</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Acknoledge Required</div>
+                            <div class="col-md-1">@Model.AcknoledgeRequired</div>
+                            <div class="col-md-2 fw-medium">Has Attachment?</div>
+                            <div class="col-md-1">@Model.HasAttachment</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Audience Type</div>
+                            <div class="col-md-1">@Model.AudienceTypeName</div>
+                            <div class="col-md-2 fw-medium">@Model.AudienceTypeName Name</div>
+                            <div class="col-md-4">@Model.AudienceTypeValue</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-1 fw-medium">Attachment:</div>
+                            <div class="col-md-11">
+                                @if (Model.HasAttachment == false)
+                                {
+                                    <p class="text-danger fw-medium">No Attachment</p>
+                                }
+                                else
+                                {
+                                    <a href="@Model.FileName" target="_blank">@Model.ActualFileName</a>
+                                }
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-12 fw-medium">Notice Message</div>
+                            <div class="col-md-12 mt-3 border p-3">@Html.Raw(Model.NoticeText)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="@Url.Action("ManageNotice","Notice",new{id = Model.Id})" class="btn btn-secondary">Edit Notice</a>
+                <a href="@Url.Action("PublishNotice","Notice",new{id = Model.Id})" class="btn btn-warning">Publish Notice</a>
+                <a href="@Url.Action("Index","Notice")" class="btn btn-default">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>

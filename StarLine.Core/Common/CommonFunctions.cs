@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using System.Text;
@@ -22,7 +23,6 @@ namespace StarLine.Core.Common
                              .Name ?? e.ToString()
                 });
         }
-
         public static string GetDisplayName<TEnum>(int value) where TEnum : Enum
         {
             var enumValue = (TEnum)(object)value;

@@ -80,6 +80,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTGVhdmVUeXBlXE1hbmFnZUxlYXZlVHlwZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/SoftSourceTech/Starlite_HRMS/StarLine.Web/Areas/Admin/Views/Notice/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTm90aWNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SoftSourceTech/Starlite_HRMS/StarLine.Web/Areas/Admin/Views/Notice/ManageNotice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTm90aWNlXE1hbmFnZU5vdGljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/SoftSourceTech/Starlite_HRMS/StarLine.Web/Areas/Admin/Views/Notice/Publish.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTm90aWNlXFB1Ymxpc2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/SoftSourceTech/Starlite_HRMS/StarLine.Web/Areas/Admin/Views/Role/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -7,9 +7,9 @@
         public int PageSize { get; set; }
         public int TotalRecords { get; set; }
         public int FilteredRecord { get; set; }
-        public int TotalPages => (int)Math.Ceiling((double)TotalRecords / PageSize);
+        public int TotalPages => TotalRecords == 0 ? 0 : (int)Math.Ceiling((double)TotalRecords / PageSize);
 
-        public PagedResponse(T data, int pageNumber, int pageSize, int totalRecords,int filteredRecord)
+        public PagedResponse(T data, int pageNumber, int pageSize, int totalRecords, int filteredRecord)
         {
             Data = data;
             PageNumber = pageNumber;

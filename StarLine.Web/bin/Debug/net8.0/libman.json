@@ -49,6 +49,38 @@
     {
       "library": "datatables.net-rowreorder-bs5@1.5.0",
       "destination": "wwwroot/lib/datatables.net-rowreorder-bs5/"
+    },
+    {
+      "library": "summernote@0.9.1",
+      "destination": "wwwroot/lib/summernote/",
+      "files": [
+        "summernote.min.js",
+        "summernote-bs5.css",
+        "summernote-bs5.js",
+        "summernote-bs5.min.js",
+        "summernote.css",
+        "summernote.js",
+        "summernote-bs5.min.css",
+        "font/summernote.eot",
+        "font/summernote.ttf",
+        "font/summernote.woff",
+        "font/summernote.woff2",
+        "summernote-bs5.css.map",
+        "summernote-bs5.js.map",
+        "summernote-lite.css",
+        "summernote-lite.css.map",
+        "summernote-lite.js",
+        "summernote-lite.js.map",
+        "summernote-lite.min.css",
+        "summernote-lite.min.js",
+        "summernote.css.map",
+        "summernote.js.map",
+        "summernote.min.css"
+      ]
+    },
+    {
+      "library": "jqueryui@1.14.1",
+      "destination": "wwwroot/lib/jqueryui/"
     }
   ]
 }

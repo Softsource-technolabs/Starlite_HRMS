@@ -22,7 +22,7 @@ namespace StarLine.Core.Common
 
             var dependentValue = property.GetValue(validationContext.ObjectInstance, null)?.ToString();
 
-            if (dependentValue == _targetValue && string.IsNullOrWhiteSpace(Convert.ToString(value)))
+            if (dependentValue.ToLower() == _targetValue.ToLower() && string.IsNullOrWhiteSpace(Convert.ToString(value)))
             {
                 return new ValidationResult(ErrorMessage);
             }

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StarLine.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da83be03ff7fc3d14ee9903dc52ab486a7dfa487")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b1963458d266df3d83bcec39fcf93acb5b8d145")]
 [assembly: System.Reflection.AssemblyProductAttribute("StarLine.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StarLine.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

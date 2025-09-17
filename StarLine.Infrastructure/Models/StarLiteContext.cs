@@ -41,6 +41,10 @@ public partial class StarLiteContext : DbContext
 
     public virtual DbSet<LeaveType> LeaveTypes { get; set; }
 
+    public virtual DbSet<Notice> Notices { get; set; }
+
+    public virtual DbSet<NoticeRecipient> NoticeRecipients { get; set; }
+
     public virtual DbSet<Shift> Shifts { get; set; }
 
     public virtual DbSet<ShiftGroup> ShiftGroups { get; set; }
@@ -321,6 +325,36 @@ public partial class StarLiteContext : DbContext
                 .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+        });
+
+        modelBuilder.Entity<Notice>(entity =>
+        {
+            entity.Property(e => e.ActualFileName)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.AudienceTypeValue).HasMaxLength(450);
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.DeletedDate).HasColumnType("datetime");
+            entity.Property(e => e.ExpireDate).HasColumnType("datetime");
+            entity.Property(e => e.FileName)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.NoticeText).IsRequired();
+            entity.Property(e => e.PublishDate).HasColumnType("datetime");
+            entity.Property(e => e.Title)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+        });
+
+        modelBuilder.Entity<NoticeRecipient>(entity =>
+        {
+            entity.Property(e => e.AcknowledgeDate).HasColumnType("datetime");
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.DeletedDate).HasColumnType("datetime");
+            entity.Property(e => e.ReadAt).HasColumnType("datetime");
             entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
         });
 

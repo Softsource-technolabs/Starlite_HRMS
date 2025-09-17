@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.UI.Services;
 using StarLine.Core.Common;
 using StarLine.Core.Session;
+using StarLine.Core.StorageService;
 using StarLine.Infrastructure;
 using StarLine.Web.IdentityServices;
 
@@ -13,6 +14,7 @@ namespace StarLine.Web
         {
             Configure(services, RepositoryRegister.GetTypes());
             ConfigureScoped(services);
+            ConfigureTransient(services);
         }
 
         private static void Configure(IServiceCollection services, Dictionary<Type, Type> types)
@@ -25,10 +27,14 @@ namespace StarLine.Web
         {
             services.AddScoped<IUserClaimsPrincipalFactory<IdentityUser>, CustomClaimsPrincipalFactory>();
             services.AddScoped<IUserSession, UserSession>();
+        }
+        private static void ConfigureTransient(this IServiceCollection services)
+        {
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IEmailSender, EmailService>();
             services.AddTransient<EmailService>();
             services.AddTransient<StarliteEmailService>();
+            services.AddTransient<FileStorageService>();
         }
     }
 }

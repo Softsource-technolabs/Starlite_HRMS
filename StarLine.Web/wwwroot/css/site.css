@@ -69,6 +69,101 @@ label.required::after {
     box-shadow: 0 8px 10px #b7c0ce33;
 }
 
+/*Loader Css start*/
+/* --- Fullscreen loader overlay --- */
+.hrms-loader-overlay {
+    --overlay-bg: #00000061;
+    position: fixed;
+    inset: 0; /* top:0 right:0 bottom:0 left:0 */
+    display: none; /* shown via .active */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(6px); /* modern browsers: blurs content behind overlay */
+    -webkit-backdrop-filter: blur(6px); /* safari */
+    background: var(--overlay-bg); /* semi-transparent background */
+    pointer-events: auto;
+}
+
+    /* Fallback for browsers without backdrop-filter:
+       place a pseudo-layer that duplicates a blurred copy using filter on a wrapper.
+       (See JS below to add .no-backdrop for older browsers if desired) */
+    .hrms-loader-overlay.no-backdrop {
+        background: rgba(255,255,255,0.85);
+    }
+
+.hrms-loader {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 18px 26px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(16,24,40,0.15);
+    backdrop-filter: none; /* keep overlay-level blur only */
+    -webkit-backdrop-filter: none;
+}
+
+    /* GIF styling */
+    .hrms-loader img {
+        display: block;
+        width: 96px;
+        height: 96px;
+        object-fit: contain;
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+
+    /* Text */
+    .hrms-loader .label {
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        color: #222;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .hrms-loader .sub {
+        margin: 0;
+        font-size: 13px;
+        color: #fff;
+    }
+
+/* small spinner / centered layout on mobile */
+@media (max-width: 480px) {
+    .hrms-loader img {
+        width: 78px;
+        height: 78px;
+    }
+
+    .hrms-loader {
+        padding: 14px 18px;
+        border-radius: 10px;
+    }
+}
+
+/* -- Utility: show loader -- */
+.hrms-loader-overlay.active {
+    display: flex;
+}
+
+/* Prevent page scroll when loader active */
+body.hrms-loader-locked {
+    overflow: hidden;
+    touch-action: none;
+}
+
+/* reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .hrms-loader img {
+        animation: none !important;
+    }
+}
+/*Loader css end*/
+
 #main-menu ul {
     list-style: none;
 }
@@ -139,4 +234,8 @@ label.required::after {
 
 #dropdownMenuButton.btn:focus {
     box-shadow: 0 0 0 0.1rem white;
+}
+
+.readonly-bg {
+    background-color: var(--bs-secondary-bg);
 }
