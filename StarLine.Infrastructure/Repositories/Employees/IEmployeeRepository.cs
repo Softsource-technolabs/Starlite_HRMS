@@ -14,5 +14,6 @@ namespace StarLine.Infrastructure.Repositories.Employees
         Task<PagedResponse<List<EmployeeModel>>> GetAllEmployees(PaginationModel model);
         Task<ApiPostResponse<List<EmployeeModel>>> GetEmployeeList();
         Task<ApiPostResponse<List<EmployeeModel>>> GetManagersList();
+        Task<EmployeeDetailsModel> GetEmployeeDetailsById(long id);
     }
 }

@@ -27,7 +27,7 @@
                     accessor.HttpContext.Items["ErrorMessage"] = "An unexpected error occurred!";
                 }
 
-                context.Response.Redirect(context.Request.Path); // Reload same page
+                context.Response.Redirect("/Home/Error"); // Redirect to a generic error page
             }
         }
     }

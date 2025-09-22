@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AfternoonLaugh.Infrastructure.Helper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NToastNotify;
 using StarLine.Core.Common;
@@ -30,11 +31,7 @@ namespace StarLine.Web.Areas.Admin.Controllers
             var model = new BranchModel();
             if (id > 0)
             {
-                var result = await _branchRepository.GetBranchById(id);
-                if (result.Success)
-                {
-                    model = result.Data;
-                }
+                model = await _branchRepository.GetBranchById(id);
             }
             return View(model);
         }
@@ -44,20 +41,16 @@ namespace StarLine.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = new BaseApiResponse();
-                if (model.Id > 0)
-                    result = await _branchRepository.UpdateBranch(model);
-                else
-                    result = await _branchRepository.AddBranch(model);
 
-                if (result.Success)
+                var result = await _branchRepository.AddUpdateBranch(model);
+                if (result > 0)
                 {
-                    _toastNotification.AddSuccessToastMessage(result.Message);
+                    _toastNotification.AddSuccessToastMessage(ToastrMessages.GetMsg(ToastrModules.Branch, model.Id > 0 ? ToastrMessages.Update : ToastrMessages.Add));
                     return RedirectToAction(nameof(Index));
                 }
                 else
                 {
-                    _toastNotification.AddErrorToastMessage(result.Message);
+                    _toastNotification.AddErrorToastMessage(ToastrMessages.GetMsg(ToastrModules.Branch, ToastrMessages.Error));
                     return View(model);
                 }
             }

@@ -68,7 +68,7 @@ namespace StarLine.Core.Models
         public string RoleName { get; set; } = null!;
     }
 
-    public class EmployeeListModel : BaseEntity
+    public class EmployeeDetailsModel : BaseEntity
     {
 
         public string EmployeeCode { get; set; } = null!;
@@ -93,7 +93,8 @@ namespace StarLine.Core.Models
         public string Qualification { get; set; }
         public decimal ExperienceInYears { get; set; }
         public string LicenseNumber { get; set; }
-        public string BloodGroup { get; set; }
+        public int BloodGroup { get; set; }
+        public string BloodGroupName => CommonFunctions.GetDisplayName<BloodGroup>((int)BloodGroup);
         public string EmergencyContactName { get; set; }
         public string EmergencyContactNumber { get; set; }
         public string CurrentAddress { get; set; }

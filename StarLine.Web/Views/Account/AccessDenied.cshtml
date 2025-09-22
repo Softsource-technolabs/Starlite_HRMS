@@ -1,7 +1,8 @@
-﻿@{
+﻿@using System.Security.Claims
+@{
     ViewData["Title"] = "AccessDenied";
     Layout = null;
-    var roleName = User.Claims.FirstOrDefault(_ => _.Type == "RoleName").Value ?? "";
+    var roleName = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value ?? "";
 }
 
 
@@ -20,7 +21,7 @@
                         <h4><i class="fa fa-exclamation-triangle text-warning"></i> The page you were looking for is not found!</h4>
                         <p>You may have mistyped the address or the page may have moved.</p>
                         <div>
-                            @if (roleName == "Admin" || roleName == "Super Admin")
+                            @if (roleName == "Admin" || roleName == "Super-Admin")
                             {
                                 <a class="btn btn-primary" asp-area="Admin" asp-controller="Home" asp-action="Index">Back to Home</a>
                             }

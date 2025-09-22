@@ -5,7 +5,6 @@ using StarLine.Web.Models;
 
 namespace StarLine.Web.Controllers
 {
-    [Authorize]
     [Authorize(Policy = "EmployeePolicy")]
     public class HomeController : Controller
     {

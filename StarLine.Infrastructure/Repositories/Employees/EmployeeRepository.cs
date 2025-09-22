@@ -99,6 +99,39 @@ namespace StarLine.Infrastructure.Repositories.Employees
             return new ApiPostResponse<EmployeeModel> { Success = false, Message = "Employee not Found" };
         }
 
+        public async Task<EmployeeDetailsModel> GetEmployeeDetailsById(long id)
+        {
+            var employeeDetails = await _context.Employees.Include(_ => _.AspNetUser).ThenInclude(_ => _.Roles)
+                .Include(_ => _.Department).ThenInclude(_ => _.Designations).FirstOrDefaultAsync(_ => _.Id == id);
+            return new EmployeeDetailsModel
+            {
+                BloodGroup = Convert.ToInt32(employeeDetails.BloodGroup),
+                CurrentAddress = employeeDetails.CurrentAddress,
+                DateOfBirth = employeeDetails.DateOfBirth.ToString("dd MMM yyyy"),
+                Department = employeeDetails.Department.DepartmentName,
+                Designation = employeeDetails.Department.Designations.FirstOrDefault().DesignationName,
+                Email = employeeDetails.Email,
+                EmergencyContactName = employeeDetails.EmergencyContactName,
+                EmergencyContactNumber = employeeDetails.EmergencyContactNumber,
+                EmployeeCode = employeeDetails.EmployeeCode,
+                EmploymentType = employeeDetails.EmploymentType,
+                ExperienceInYears = (decimal)employeeDetails.ExperienceInYears,
+                FirstName = employeeDetails.FirstName,
+                Gender = employeeDetails.Gender,
+                Id = employeeDetails.Id,
+                IsActive = employeeDetails.IsActive,
+                JoiningDate = employeeDetails.JoiningDate.ToString("dd MMM yyyy"),
+                LastName = employeeDetails.LastName,
+                LicenseNumber = employeeDetails.LicenseNumber,
+                PermanentAddress = employeeDetails.PermanentAddress,
+                PhoneNumber = employeeDetails.PhoneNumber,
+                Qualification = employeeDetails.Qualification,
+                ReportingManagerId = employeeDetails.ReportingManagerId,
+                UserImages = employeeDetails.UserImages,
+                RoleName = employeeDetails.AspNetUser.Roles.FirstOrDefault().Name,
+            };
+        }
+
         public async Task<ApiPostResponse<List<EmployeeModel>>> GetEmployeeList()
         {
             var model = await _context.Employees.Include(_ => _.AspNetUser).ThenInclude(_ => _.Roles).Where(_ => _.IsActive == true && _.IsDeleted == false).ToListAsync();

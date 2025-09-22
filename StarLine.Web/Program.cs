@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using NToastNotify;
 using StarLine.Core.Common;
 using StarLine.Infrastructure.Mapping;
@@ -20,7 +21,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 builder.Services.AddScoped<AppSettings>();
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(_ => _.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(_ => _.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
@@ -32,7 +33,12 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         _.LoginPath = "/Account/Login";
         _.LogoutPath = "/Account/Logout";
         _.AccessDeniedPath = "/Account/AccessDenied"; // 👈 Add this
-        _.Cookie.HttpOnly = true;
+
+        _.Cookie.HttpOnly = true;                // No JS access
+        _.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Force HTTPS
+        _.Cookie.SameSite = SameSiteMode.Strict; // Prevent CSRF via cross-site cookies
+        _.SlidingExpiration = true;              // Refresh expiration if active
+        _.ExpireTimeSpan = TimeSpan.FromMinutes(30);
     });
 
 builder.Services.AddAuthorization(_ =>
@@ -68,6 +74,12 @@ builder.Services.AddControllersWithViews()
     });
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    await RoleSeeder.SeedRolesAsync(services);
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -87,14 +99,12 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseSession();
 app.UseAuthentication();
+app.UseMiddleware<UserSessionMiddleware>(); // Restore this line
 app.UseAuthorization();
-app.UseMiddleware(typeof(UserSessionMiddleWare));
-app.UseMiddleware(typeof(ErrorHandler));
+app.UseMiddleware<ErrorHandler>();
 
 app.MapControllerRoute(name: "areas", pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.UseMigrationsEndPoint();
 
 app.Run();

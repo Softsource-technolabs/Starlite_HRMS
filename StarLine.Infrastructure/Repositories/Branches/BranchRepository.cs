@@ -13,16 +13,19 @@ namespace StarLine.Infrastructure.Repositories.Branches
         private readonly StarLiteContext _context = context;
         private readonly IMapper _mapper = mapper;
         private readonly IUserSession _userSession = userSession;
-        public async Task<BaseApiResponse> AddBranch(BranchModel branch)
+
+        public async Task<long> AddUpdateBranch(BranchModel branch)
         {
-            var model = _mapper.Map<Branch>(branch);
-            await _context.Branches.AddAsync(model);
-            var result = await _context.SaveChangesAsync();
-            if (result > 0)
+            long result = 0;
+            if(branch.Id > 0)
             {
-                return new BaseApiResponse { Success = true, Message = "Branch Added successfully" };
+                result = await UpdateBranch(branch);
             }
-            return new BaseApiResponse { Success = false, Message = "Branch not added" };
+            else
+            {
+                result = await AddBranch(branch);
+            }
+            return result;
         }
 
         public async Task<BaseApiResponse> DeleteBranch(long id)
@@ -68,26 +71,26 @@ namespace StarLine.Infrastructure.Repositories.Branches
             return new PagedResponse<List<BranchModel>>(modelData, model.PageNumber, model.PageSize, totalRecord, count);
         }
 
-        public async Task<ApiPostResponse<BranchModel>> GetBranchById(long id)
+        public async Task<BranchModel> GetBranchById(long id)
         {
             var branch = await _context.Branches.Where(_ => _.Id == id && _.IsActive == true && _.IsDeleted == false).FirstOrDefaultAsync();
             if (branch != null)
             {
                 var model = _mapper.Map<BranchModel>(branch);
-                return new ApiPostResponse<BranchModel> { Data = model, Success = true, Message = "Branch Found" };
+                return model;
             }
-            return new ApiPostResponse<BranchModel> { Success = false, Message = "Branch not found" };
+            return null;
         }
 
-        public async Task<ApiPostResponse<List<BranchModel>>> GetBranchList()
+        public async Task<List<BranchModel>> GetBranchList()
         {
             var branch = await _context.Branches.Where(_ => _.IsActive == true && _.IsDeleted == false).ToListAsync();
             if (branch != null)
             {
                 var model = _mapper.Map<List<BranchModel>>(branch);
-                return new ApiPostResponse<List<BranchModel>> { Data = model, Success = true, Message = "Branch list found" };
+                return model;
             }
-            return new ApiPostResponse<List<BranchModel>> { Success = false, Message = "Branch list not found" };
+            return null;
         }
 
         public async Task<BaseApiResponse> ToggleStatusBranch(long id)
@@ -108,7 +111,15 @@ namespace StarLine.Infrastructure.Repositories.Branches
             return new BaseApiResponse { Success = false, Message = "Branch not found" };
         }
 
-        public async Task<BaseApiResponse> UpdateBranch(BranchModel branch)
+        private async Task<long> AddBranch(BranchModel branch)
+        {
+            var model = _mapper.Map<Branch>(branch);
+            await _context.Branches.AddAsync(model);
+            var result = await _context.SaveChangesAsync();
+            return model.Id;
+        }
+
+        private async Task<long> UpdateBranch(BranchModel branch)
         {
             var model = await _context.Branches.Where(_ => _.Id == branch.Id && _.IsActive == true && _.IsDeleted == false).FirstOrDefaultAsync();
             if (branch != null)
@@ -116,14 +127,9 @@ namespace StarLine.Infrastructure.Repositories.Branches
                 var objbranch = _mapper.Map(branch, model);
                 objbranch.UpdatedBy = _userSession.Current.UserId;
                 _context.Branches.Update(objbranch);
-                var result = await _context.SaveChangesAsync();
-                if (result > 0)
-                {
-                    return new BaseApiResponse { Success = true, Message = "Branch Updated successfully" };
-                }
-                return new BaseApiResponse { Success = false, Message = "Branch updation failed" };
+                return model.Id;
             }
-            return new BaseApiResponse { Success = false, Message = "Branch not found" };
+            return 0;
         }
     }
 }

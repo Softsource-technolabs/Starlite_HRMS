@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AfternoonLaugh.Infrastructure.Helper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -139,12 +140,12 @@ namespace StarLine.Web.Areas.Admin.Controllers
                     {
                         model.UserImages = string.IsNullOrEmpty(model.UserImages) ? AvtarService.GenerateAvatar(model.FirstName + " " + model.LastName, _userAvtarlocation, model.AspNetUserId) : model.UserImages;
                         result = await _employeeRepository.UpdateEmployee(model);
-                        _toastNotification.AddSuccessToastMessage("Employee Update successfully");
+                        _toastNotification.AddSuccessToastMessage(ToastrMessages.GetMsg(ToastrModules.Employee, ToastrMessages.Update));
                         return RedirectToAction(nameof(Index));
                     }
                     else
                     {
-                        _toastNotification.AddErrorToastMessage("Error while updating user please try again later");
+                        _toastNotification.AddSuccessToastMessage(ToastrMessages.GetMsg(ToastrModules.Employee, ToastrMessages.Save));
                     }
                 }
                 else

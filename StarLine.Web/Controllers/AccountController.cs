@@ -23,7 +23,7 @@ namespace StarLine.Web.Controllers
             _employeeRepository = employeeRepository;
             _toastNotification = toastNotification;
         }
-
+        [HttpGet]
         public IActionResult Login(string returnUrl = null!)
         {
             returnUrl ??= Url.Content("~/");
@@ -31,7 +31,7 @@ namespace StarLine.Web.Controllers
             ViewBag.ReturnURL = returnUrl;
             return View();
         }
-
+        [HttpGet]
         public IActionResult AccessDenied()
         {
             return View();
@@ -73,7 +73,7 @@ namespace StarLine.Web.Controllers
                 }
                 var password = await _userManager.CheckPasswordAsync(user, model.password);
 
-                var result = await _signInManager.PasswordSignInAsync(model.emailAddress, model.password, model.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(model.emailAddress, model.password, isPersistent: true, lockoutOnFailure: false); // Set isPersistent to true
                 if (result.Succeeded)
                 {
                     var employee = await _employeeRepository.GetEmployeeByEmail(model.emailAddress);
@@ -205,15 +205,12 @@ namespace StarLine.Web.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        [Authorize] // 👈 Only logged-in users can logout
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> LogOut(string returnUrl)
         {
             await _signInManager.SignOutAsync();
             HttpContext.Session.Clear();
-
-            Response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
-            Response.Headers["Pragma"] = "no-cache";
-            Response.Headers["Expires"] = "0";
 
             return RedirectToAction("Login", "Account", new { Area = "" });
         }

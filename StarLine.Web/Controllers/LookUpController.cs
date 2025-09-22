@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using StarLine.Infrastructure.Repositories.Lists;
 
 namespace StarLine.Web.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api")]
     public class LookUpController(ILookUpRepository lookUpRepository) : ControllerBase

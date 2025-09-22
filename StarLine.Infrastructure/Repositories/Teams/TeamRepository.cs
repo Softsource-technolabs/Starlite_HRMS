@@ -102,7 +102,7 @@ namespace StarLine.Infrastructure.Repositories.Teams
             return new ApiPostResponse<TeamModel> { Success = false, Message = "Team not found" };
         }
 
-        public async Task<ApiPostResponse<List<EmployeeListModel>>> GetTeamEmployees(long id)
+        public async Task<ApiPostResponse<List<EmployeeDetailsModel>>> GetTeamEmployees(long id)
         {
             var result = await _context.TeamMembers.Include(_ => _.Employee).ThenInclude(_ => _.AspNetUser).ThenInclude(_ => _.Roles)
                 .Include(_ => _.Employee).ThenInclude(_ => _.Department).ThenInclude(_ => _.Designations)
@@ -111,9 +111,9 @@ namespace StarLine.Infrastructure.Repositories.Teams
             if (result != null)
             {
                 var employees = result
-                .Select(tm => new EmployeeListModel
+                .Select(tm => new EmployeeDetailsModel
                 {
-                    BloodGroup = tm.Employee.BloodGroup,
+                    BloodGroup = Convert.ToInt32(tm.Employee.BloodGroup),
                     CurrentAddress = tm.Employee.CurrentAddress,
                     DateOfBirth = tm.Employee.DateOfBirth.ToString("dd MMM yyyy"),
                     Department = tm.Employee.Department.DepartmentName,
@@ -139,9 +139,9 @@ namespace StarLine.Infrastructure.Repositories.Teams
                     RoleName = tm.Employee.AspNetUser.Roles.FirstOrDefault().Name,
                 }).ToList();
 
-                return new ApiPostResponse<List<EmployeeListModel>> { Data = employees, Message = "Team employees found", Success = true };
+                return new ApiPostResponse<List<EmployeeDetailsModel>> { Data = employees, Message = "Team employees found", Success = true };
             }
-            return new ApiPostResponse<List<EmployeeListModel>> { Message = "Team employees not found", Success = false };
+            return new ApiPostResponse<List<EmployeeDetailsModel>> { Message = "Team employees not found", Success = false };
         }
 
         public async Task<BaseApiResponse> ToggleStatusTeam(long id)

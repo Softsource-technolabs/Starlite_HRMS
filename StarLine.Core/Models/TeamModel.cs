@@ -26,6 +26,6 @@ namespace StarLine.Core.Models
         public long Id { get; set; }
         public string TeamName { get; set; }
         public string TeamType { get; set; }
-        public List<EmployeeListModel> Employees { get; set; }
+        public List<EmployeeDetailsModel> Employees { get; set; }
     }
 }
