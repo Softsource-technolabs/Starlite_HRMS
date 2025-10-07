@@ -9,6 +9,13 @@
         public static string Delete = "Deleted successfully !"; // This is for Record Delete Notifications
         public static string Error = "Error while processing request !"; // This is for Error while CRUD operations
         public static string Save = "Saved successfully !";
+        public static string Status = "Status changed successfully !";
+
+        public static string NotAdded = "Not added !";
+        public static string NotUpdate = "Not updated !";
+        public static string StatusNotChanged = "Status not changed !";
+        public static string NotDelete = "Not deleted !";
+        public static string NotFound = "Not Found";
         public static string GetMsg(string ModuleName, string Msg)
         {
             //ModuleName = "Record ";
@@ -29,5 +36,7 @@
         public static string Notice = "Notice :";
         public static string Role = "Role :";
         public static string Shift = "Shift & Shift Group :";
+        public static string Leave = "Leave :";
+        public static string Hierarchy = "Hierarchy :";
     }
 }

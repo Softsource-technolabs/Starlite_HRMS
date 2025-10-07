@@ -82,6 +82,7 @@ namespace StarLine.Web.IdentityServices
                 identity.AddClaim(new Claim("LastName", employee.Data.LastName));
                 identity.AddClaim(new Claim("Email", employee.Data.Email));
                 identity.AddClaim(new Claim("AspNetUser", user.Id));
+                identity.AddClaim(new Claim("ReportingManager", employee.Data.ReportingManagerId.ToString()));
                 identity.AddClaim(new Claim("Avtar", imagefilePath));
             }
             catch (Exception ex)

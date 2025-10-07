@@ -1,7 +1,6 @@
 ﻿using StarLine.Core.Common;
 using StarLine.Core.Session;
 using System.Security.Claims;
-using System.IO; // Add this for file operations
 
 namespace StarLine.Web.Middleware
 {
@@ -16,9 +15,6 @@ namespace StarLine.Web.Middleware
 
         public async Task InvokeAsync(HttpContext context, IUserSession userSession, ILogger<UserSessionMiddleware> logger)
         {
-            logger.LogInformation("Path: {Path}", context.Request.Path.Value);
-            System.IO.File.AppendAllText("UserSessionMiddleware.log", $"[{DateTime.Now}] Path: {context.Request.Path.Value}\n");
-
             // Only populate session if user is authenticated
             if (context.User.Identity != null && context.User.Identity.IsAuthenticated)
             {
@@ -32,30 +28,18 @@ namespace StarLine.Web.Middleware
                     LastName = claims.FirstOrDefault(c => c.Type == "LastName")?.Value ?? "",
                     EmailAddress = claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value ?? "",
                     RoleName = claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value ?? "",
+                    ReportingManager = Convert.ToInt64(claims.FirstOrDefault(c => c.Type == "ReportingManager").Value),
                     UserId = int.TryParse(claims.FirstOrDefault(c => c.Type == "UserId")?.Value, out var userId) ? userId : 0,
-                    UserImage = claims.FirstOrDefault(c => c.Type == "Avtar")?.Value ?? "/UserAvtars/default.png"
+                    UserImage = claims.FirstOrDefault(c => c.Type == "Avtar")?.Value ?? "/UserAvtars/default.png",
                 };
-
-                logger.LogInformation("Authenticated user {Email} with roles: {Roles}", userSession.Current.EmailAddress, string.Join(", ", claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value)));
-                System.IO.File.AppendAllText("UserSessionMiddleware.log", $"[{DateTime.Now}] Authenticated user {userSession.Current.EmailAddress} with roles: {string.Join(", ", claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value))}\n");
 
                 // Only redirect on root or Home/Index to avoid loops
                 var path = context.Request.Path.Value;
-                if (path == "/" || path.Equals("/Home/Index", StringComparison.OrdinalIgnoreCase))
+                if (path == "/")
                 {
-                    if (context.User.IsInRole("Admin") || context.User.IsInRole("Super-Admin") || context.User.IsInRole("HR-Manager"))
+                    if ((context.User.IsInRole("Admin") || context.User.IsInRole("Super-Admin") || context.User.IsInRole("HR-Manager")) && !path.Equals("/Admin/Home/Index", StringComparison.OrdinalIgnoreCase))
                     {
                         context.Response.Redirect("/Admin/Home/Index");
-                        return;
-                    }
-                    else if (context.User.IsInRole("Employee") || context.User.IsInRole("Department-Head"))
-                    {
-                        context.Response.Redirect("/Home/Index");
-                        return;
-                    }
-                    else // 👈 Add this else block for debugging
-                    {
-                        context.Response.Redirect("/Account/Login"); // Force redirect to login for unhandled authenticated users
                         return;
                     }
                 }

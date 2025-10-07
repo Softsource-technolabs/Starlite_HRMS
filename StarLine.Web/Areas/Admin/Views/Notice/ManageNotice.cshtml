@@ -125,11 +125,11 @@
                     <div class="form-group">
                         @if (Model.Id > 0)
                         {
-                            <input type="submit" value="Update" class="btn btn-sm btn-primary" />
+                            <input id="btnSubmit" type="submit" value="Update" class="btn btn-sm btn-primary" />
                         }
                         else
                         {
-                            <input type="submit" value="Add New" class="btn btn-sm btn-primary" />
+                            <input id="btnSubmit" type="submit" value="Add New" class="btn btn-sm btn-primary" />
                         }
                         <a asp-action="Index" asp-controller="Notice" class="btn btn-sm btn-outline-secondary">Back to List</a>
                     </div>

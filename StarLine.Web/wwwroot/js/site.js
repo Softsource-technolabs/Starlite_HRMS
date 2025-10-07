@@ -60,3 +60,21 @@ function formatDateTime(dateInput) {
 
     return month + '-' + day + '-' + year + ' ' + hours + ':' + minutes + ' ' + ampm;
 }
+
+function formatTimeString(timeStr) {
+    if (!timeStr) return "-";
+
+    // Split by ":" (take only first 3 parts -> HH, MM, SS)
+    let parts = timeStr.split(":");
+    if (parts.length < 2) return timeStr; // fallback
+
+    let hours = parseInt(parts[0], 10);
+    let minutes = parseInt(parts[1], 10);
+    let ampm = hours >= 12 ? "PM" : "AM";
+
+    hours = hours % 12;
+    hours = hours ? hours : 12; // 0 = 12 AM
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+
+    return `${hours}:${minutes} ${ampm}`;
+}

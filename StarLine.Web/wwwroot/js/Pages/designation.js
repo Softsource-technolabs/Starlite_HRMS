@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     draw: d.draw,
                     PageNumber: d.start / d.length + 1,  // Calculate page number
                     PageSize: d.length,           // Rows per page
-                    SearchTerm: d.search.value,       // Search term (if any)
+                    StrSearch: d.search.value,       // Search term (if any)
                     SortColumn: d.order[0] ? d.columns[d.order[0].column].data : "",  // Sorting column name
                     SortOrder: d.order[0] ? d.order[0].dir : ""  // Sorting direction
                 };

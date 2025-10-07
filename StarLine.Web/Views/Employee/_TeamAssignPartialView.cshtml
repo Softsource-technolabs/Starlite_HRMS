@@ -1,0 +1,84 @@
+﻿@model StarLine.Core.Models.EmployeeModel
+@{
+    Layout = null;
+}
+
+
+<form id="frmTeamAssign">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="Id" type="hidden" />
+    <input id="hfgetShiftURL" type="hidden" value="@Url.Action("GetShifts","Employee")" />
+    <input id="hfGetTeamsUrl" type="hidden" value="@Url.Action("GetDepartmentTeam","Employee")" />
+    <div class="row">
+        <div class="form-group">
+            <h5>Team Assignment</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="text" class="form-control readonly-bg" asp-for="FullName" disabled />
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <label asp-for="DepartmentId" class="control-label"></label>
+            <div class="form-group">
+                <select asp-for="DepartmentId" class="form-select" asp-items="ViewBag.Departmets" disabled></select>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <label asp-for="DesignationId" class="control-label"></label>
+            <div class="form-group">
+                <select asp-for="DesignationId" class="form-select" asp-items="ViewBag.Designation"></select>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <label asp-for="ReportingManagerId" class="control-label"></label>
+            <div class="form-group">
+                <select asp-for="ReportingManagerId" class="form-select" asp-items="ViewBag.ReportingManager"></select>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <label for="TeamId" class="control-label">Team</label>
+            <div class="form-group">
+                <select class="form-select" id="TeamId" name="TeamId">
+                    <option value="">Select Team</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <label for="shiftGroupId" class="control-label">Shift Group</label>
+            <div class="form-group">
+                <select class="form-select" id="shiftGroupId" name="shiftGroupId" asp-items="ViewBag.ShiftGroups"></select>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <label asp-for="shiftId" class="control-label">Shift</label>
+            <div class="form-group">
+                <select asp-for="shiftId" class="form-select">
+                    <option value="">Select Shift</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <div class="form-group">
+                <input id="btnTeamSubmit" name="btnTeamSubmit" type="button" value="Assign Team" class="btn btn-primary w-100" />
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,89 @@
+﻿@model StarLine.Core.Models.LeaveModel
+
+<h4>LeaveModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="_LeaveApprovalPartialView">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmployeeId" class="control-label"></label>
+                <input asp-for="EmployeeId" class="form-control" />
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeaveTypeId" class="control-label"></label>
+                <input asp-for="LeaveTypeId" class="form-control" />
+                <span asp-validation-for="LeaveTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeaveDuration" class="control-label"></label>
+                <input asp-for="LeaveDuration" class="form-control" />
+                <span asp-validation-for="LeaveDuration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalDays" class="control-label"></label>
+                <input asp-for="TotalDays" class="form-control" />
+                <span asp-validation-for="TotalDays" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShortDescription" class="control-label"></label>
+                <input asp-for="ShortDescription" class="form-control" />
+                <span asp-validation-for="ShortDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RejectReason" class="control-label"></label>
+                <input asp-for="RejectReason" class="form-control" />
+                <span asp-validation-for="RejectReason" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeaveTypeName" class="control-label"></label>
+                <input asp-for="LeaveTypeName" class="form-control" />
+                <span asp-validation-for="LeaveTypeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeName" class="control-label"></label>
+                <input asp-for="EmployeeName" class="form-control" />
+                <span asp-validation-for="EmployeeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="statusName" class="control-label"></label>
+                <input asp-for="statusName" class="form-control" />
+                <span asp-validation-for="statusName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="durationName" class="control-label"></label>
+                <input asp-for="durationName" class="form-control" />
+                <span asp-validation-for="durationName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsDeleted" /> @Html.DisplayNameFor(model => model.IsDeleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

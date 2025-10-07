@@ -53,6 +53,8 @@ public partial class Employee
 
     public bool? LoginFirst { get; set; }
 
+    public long ShiftId { get; set; }
+
     public bool IsActive { get; set; }
 
     public long CreatedBy { get; set; }
@@ -71,9 +73,15 @@ public partial class Employee
 
     public virtual AspNetUser AspNetUser { get; set; }
 
+    public virtual ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
+
     public virtual Department Department { get; set; }
 
+    public virtual Designation Designation { get; set; }
+
     public virtual ICollection<Leaf> Leaves { get; set; } = new List<Leaf>();
+
+    public virtual Shift Shift { get; set; }
 
     public virtual ICollection<TeamMember> TeamMembers { get; set; } = new List<TeamMember>();
 }

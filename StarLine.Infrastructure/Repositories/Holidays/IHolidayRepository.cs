@@ -11,5 +11,6 @@ namespace StarLine.Infrastructure.Repositories.Holidays
         Task<BaseApiResponse> DeleteHoliday(long id);
         Task<ApiPostResponse<HolidayModel>> GetHolidayById(long id);
         Task<PagedResponse<List<HolidayModel>>> GetAllHolidays(PaginationModel model);
+        Task<PagedResponse<List<HolidayModel>>> GetHolidaysforCurrentYear(PaginationModel model);
     }
 }

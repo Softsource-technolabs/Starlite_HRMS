@@ -2,14 +2,16 @@
 using Microsoft.AspNetCore.Mvc;
 using StarLine.Core.Session;
 using StarLine.Infrastructure.Repositories.Employees;
+using StarLine.Infrastructure.Repositories.Lists;
 
 namespace StarLine.Web.Controllers
 {
     [Authorize(Policy = "EmployeePolicy")]
-    public class EmployeeController(IEmployeeRepository employeeRepository, IUserSession userSession, IHttpContextAccessor httpContextAccessor) : Controller
+    public class EmployeeController(IEmployeeRepository employeeRepository, ILookUpRepository lookUpRepository, IUserSession userSession, IHttpContextAccessor httpContextAccessor) : Controller
     {
         private readonly IEmployeeRepository _employeeRepository = employeeRepository;
         private readonly IUserSession _userSession = userSession;
+        private readonly ILookUpRepository _lookUpRepository = lookUpRepository;
         private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
         public async Task<IActionResult> ViewProfile()
         {
@@ -23,6 +25,45 @@ namespace StarLine.Web.Controllers
             string imagefilePath = $"{request.Scheme}://{request.Host}" + imageUrl;
             response.UserImages = imagefilePath;
             return View(response);
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var employees = await _employeeRepository.GetEmployeeListForAssignTeam();
+            foreach (var emp in employees)
+            {
+                string imageUrl = "/UserAvtars/default.png";
+                if (!string.IsNullOrEmpty(emp.UserImages))
+                {
+                    imageUrl = "/UserAvtars/" + emp.UserImages;
+                }
+                var request = _httpContextAccessor.HttpContext?.Request;
+                string imagefilePath = $"{request.Scheme}://{request.Host}" + imageUrl;
+                emp.UserImages = imagefilePath;
+            }
+            return View(employees);
+        }
+
+        public async Task<IActionResult> AssignTeam(long id)
+        {
+            ViewBag.Departmets = await _lookUpRepository.GetAllDepartment("");
+            ViewBag.Designation = await _lookUpRepository.GetAllDesignation("");
+            ViewBag.ReportingManager = await _lookUpRepository.GetReportingManagers("");
+            ViewBag.ShiftGroups = await _lookUpRepository.GetShiftGroups("");
+            var employee = await _employeeRepository.GetEmployeeById(id);
+            return PartialView("_TeamAssignPartialView", employee.Data);
+        }
+
+        public async Task<IActionResult> GetShifts(long id)
+        {
+            var model = await _lookUpRepository.GetShift("", id);
+            return Json(model);
+        }
+
+        public async Task<IActionResult> GetDepartmentTeam(long id)
+        {
+            var model = await _lookUpRepository.GetTeambyDepartmentId(id);
+            return Json(model);
         }
     }
 }

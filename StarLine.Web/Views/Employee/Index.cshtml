@@ -1,0 +1,66 @@
+﻿@model IEnumerable<StarLine.Core.Models.EmployeeModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Employees's not assigned team</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="tblemployee" class="table table-borderless dataTable" data-url="@Url.Action("AssignTeam", "Employee")">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Employee Name</th>
+                                <th>Department</th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="@item.UserImages" class="img-fluid" style="height:40px;" />
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FullName)
+                                    </td>
+                                    <td>@Html.DisplayFor(modelItem => item.DepartmentName)</td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                    </td>
+                                    <td>
+                                        <a href="#" class="btn btn-outline-warning" onclick="assignTeam(@item.Id)">Assign Team</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        <script src="~/js/pages/employee/assignteam.js"></script>
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

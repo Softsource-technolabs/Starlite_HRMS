@@ -13,6 +13,8 @@ public partial class Designation
 
     public string Description { get; set; }
 
+    public int? HierarchyLevel { get; set; }
+
     public bool IsActive { get; set; }
 
     public long CreatedBy { get; set; }
@@ -30,4 +32,6 @@ public partial class Designation
     public DateTime? DeletedDate { get; set; }
 
     public virtual Department Department { get; set; }
+
+    public virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
 }

@@ -16,106 +16,154 @@ namespace StarLine.Infrastructure.Repositories.Shifts
 
         public async Task<ApiPostResponse<long>> AddorUpdateShift(ShiftWizardModel model)
         {
-            using (var transaction = await _context.Database.BeginTransactionAsync())
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
             {
-                try
+                ShiftGroup shiftGroup;
+
+                // 🔹 Check if group exists (update) or new (insert)
+                if (model.ShiftGroup.Id > 0)
                 {
-                    ShiftGroup shiftGroup;
+                    shiftGroup = await _context.ShiftGroups.FirstOrDefaultAsync(s => s.Id == model.ShiftGroup.Id);
 
-                    // 🔹 Check if group exists (update) or new (insert)
-                    if (model.ShiftGroup.Id > 0)
+                    if (shiftGroup == null)
                     {
-                        shiftGroup = await _context.ShiftGroups.FirstOrDefaultAsync(s => s.Id == model.ShiftGroup.Id);
+                        return new ApiPostResponse<long> { Success = false, Message = "Shift group not found" };
+                    }
+                    var groupModel = _mapper.Map<ShiftGroup>(model.ShiftGroup);
+                    shiftGroup = _mapper.Map(shiftGroup, groupModel);
+                    shiftGroup.UpdatedBy = _userSession.Current.UserId;
+                    _context.ShiftGroups.Update(shiftGroup);
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    // Insert new group
+                    shiftGroup = _mapper.Map<ShiftGroup>(model.ShiftGroup);
+                    shiftGroup.CreatedBy = _userSession.Current.UserId;
+                    _context.ShiftGroups.Add(shiftGroup);
+                    await _context.SaveChangesAsync(); // Save first so we get GroupId
+                }
 
-                        if (shiftGroup == null)
-                        {
-                            return new ApiPostResponse<long> { Success = false, Message = "Shift group not found" };
-                        }
-                        var groupModel = _mapper.Map<ShiftGroup>(model.ShiftGroup);
-                        shiftGroup = _mapper.Map(shiftGroup, groupModel);
-                        shiftGroup.UpdatedBy = _userSession.Current.UserId;
-                        _context.ShiftGroups.Update(shiftGroup);
+                // 🔹 Handle Shift mappings
+                foreach (var shiftModel in model.Shifts)
+                {
+
+                    // Inserting Update Shift
+                    var shift = new Shift();
+                    var existingShift = await _context.Shifts.FirstOrDefaultAsync(_ => _.Id == shiftModel.Id);
+
+                    if (existingShift != null)
+                    {
+                        var shiftMappedModel = _mapper.Map<Shift>(shiftModel);
+                        shift = _mapper.Map(existingShift, shiftMappedModel);
+                        shift.UpdatedBy = _userSession.Current.UserId;
+                        _context.Shifts.Update(shift);
                         await _context.SaveChangesAsync();
                     }
                     else
                     {
-                        // Insert new group
-                        shiftGroup = _mapper.Map<ShiftGroup>(model.ShiftGroup);
-                        shiftGroup.CreatedBy = _userSession.Current.UserId;
-                        _context.ShiftGroups.Add(shiftGroup);
-                        await _context.SaveChangesAsync(); // Save first so we get GroupId
+                        // Insert new mapping
+                        shift = _mapper.Map<Shift>(shiftModel);
+                        shift.CreatedBy = _userSession.Current.UserId;
+                        await _context.Shifts.AddAsync(shift);
+                        await _context.SaveChangesAsync();
                     }
 
-                    // 🔹 Handle Shift mappings
-                    foreach (var shiftModel in model.Shifts)
+
+                    //Insert update shiftGroup and Shift Mapping
+
+                    var existingMapping = await _context.ShiftGroupMappings.FirstOrDefaultAsync(_ => _.ShiftGroupId == shiftGroup.Id && _.ShiftId == shift.Id);
+
+                    if (existingMapping != null)
                     {
-
-                        // Inserting Update Shift
-                        var shift = new Shift();
-                        var existingShift = await _context.Shifts.FirstOrDefaultAsync(_ => _.Id == shiftModel.Id);
-
-                        if (existingShift != null)
-                        {
-                            var shiftMappedModel = _mapper.Map<Shift>(shiftModel);
-                            shift = _mapper.Map(existingShift, shiftMappedModel);
-                            shift.UpdatedBy = _userSession.Current.UserId;
-                            _context.Shifts.Update(shift);
-                            await _context.SaveChangesAsync();
-                        }
-                        else
-                        {
-                            // Insert new mapping
-                            shift = _mapper.Map<Shift>(shiftModel);
-                            shift.CreatedBy = _userSession.Current.UserId;
-                            await _context.Shifts.AddAsync(shift);
-                            await _context.SaveChangesAsync();
-                        }
-
-
-                        //Insert update shiftGroup and Shift Mapping
-
-                        var existingMapping = await _context.ShiftGroupMappings.FirstOrDefaultAsync(_ => _.ShiftGroupId == shiftGroup.Id && _.ShiftId == shift.Id);
-
-                        if (existingMapping != null)
-                        {
-                            existingMapping.SequenceNo = model.SequenceNo;
-                            existingMapping.RotationDays = model.RotationDays;
-                            existingMapping.UpdatedBy = _userSession.Current.UserId;
-                            _context.ShiftGroupMappings.Update(existingMapping);
-                            await _context.SaveChangesAsync();
-                        }
-                        else
-                        {
-                            var mapping = new ShiftGroupMapping
-                            {
-                                ShiftGroupId = shiftGroup.Id,
-                                ShiftId = shift.Id,
-                                RotationDays = model.RotationDays,
-                                SequenceNo = model.SequenceNo,
-                                CreatedBy = _userSession.Current.UserId
-                            };
-
-                            await _context.ShiftGroupMappings.AddAsync(mapping);
-                            await _context.SaveChangesAsync();
-                        }
+                        existingMapping.SequenceNo = model.SequenceNo;
+                        existingMapping.RotationDays = model.RotationDays;
+                        existingMapping.UpdatedBy = _userSession.Current.UserId;
+                        _context.ShiftGroupMappings.Update(existingMapping);
+                        await _context.SaveChangesAsync();
                     }
+                    else
+                    {
+                        var mapping = new ShiftGroupMapping
+                        {
+                            ShiftGroupId = shiftGroup.Id,
+                            ShiftId = shift.Id,
+                            RotationDays = model.RotationDays,
+                            SequenceNo = model.SequenceNo,
+                            CreatedBy = _userSession.Current.UserId
+                        };
 
-                    await transaction.CommitAsync();
-
-                    return new ApiPostResponse<long> { Success = true, Message = "shift and shift group details are saved", Data = shiftGroup.Id };
+                        await _context.ShiftGroupMappings.AddAsync(mapping);
+                        await _context.SaveChangesAsync();
+                    }
                 }
-                catch (Exception ex)
-                {
 
-                    await transaction.RollbackAsync();
-                    return new ApiPostResponse<long> { Success = false, Message = "Error while saving shift and shift group" };
-                }
+                await transaction.CommitAsync();
+
+                return new ApiPostResponse<long> { Success = true, Message = "shift and shift group details are saved", Data = shiftGroup.Id };
+            }
+            catch (Exception)
+            {
+
+                await transaction.RollbackAsync();
+                return new ApiPostResponse<long> { Success = false, Message = "Error while saving shift and shift group" };
             }
         }
 
         public Task<PagedResponse<List<ShiftGroupModel>>> GetAllShiftGroups(PaginationModel model)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<ShiftWizardModel> GetFullShiftDetails(long shiftId)
+        {
+            var shift = await _context.Shifts.FindAsync(shiftId);
+            if (shift != null)
+            {
+                var mapping = await _context.ShiftGroupMappings.FirstOrDefaultAsync(_ => _.ShiftId == shiftId);
+                var group = await _context.ShiftGroups.FindAsync(mapping.ShiftGroupId);
+                var lstShift = await _context.Shifts.Where(_ => _.ShiftGroupId == mapping.ShiftGroupId).ToListAsync();
+
+                return new ShiftWizardModel
+                {
+                    ShiftGroup = _mapper.Map<ShiftGroupModel>(group),
+                    Shifts = _mapper.Map<List<ShiftModel>>(lstShift),
+                    RotationDays = mapping.RotationDays,
+                    SequenceNo = mapping.SequenceNo
+                };
+            }
+            return null;
+        }
+
+        public async Task<ShiftModel> GetShiftById(long id)
+        {
+            var shift = await _context.Shifts.FirstOrDefaultAsync(_ => _.Id == id);
+            if (shift != null)
+            {
+                return _mapper.Map<ShiftModel>(shift);
+            }
+            return null;
+        }
+
+        public async Task<ShiftModel> GetShiftByName(string name)
+        {
+            var shift = await _context.Shifts.FirstOrDefaultAsync(_ => _.ShiftName == name.Trim());
+            if(shift != null)
+            {
+                return _mapper.Map<ShiftModel>(shift);
+            }
+            return null;
+        }
+
+        public async Task<ShiftModel> GetShiftGeneralShift()
+        {
+            var shift = await _context.Shifts.FirstOrDefaultAsync(_ => _.ShiftName == "General Shift");
+            if (shift != null)
+            {
+                return _mapper.Map<ShiftModel>(shift);
+            }
+            return null;
         }
     }
 }

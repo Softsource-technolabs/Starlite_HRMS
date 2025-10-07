@@ -1,0 +1,115 @@
+﻿@model StarLine.Core.Models.EmployeeDetailsModel
+
+@{
+    ViewData["Title"] = "ViewProfile";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2 mx-auto">
+                        <img src="@Model.UserImages" class="img-fluid" />
+                    </div>
+                </div>
+
+                <div class="row p-3">
+                    <div class="col-md-12">
+                        <div class="row mt-5">
+                            <div class="col-md-12 border-bottom">
+                                <h5 class="fw-bold">Personal Information:</h5>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Full Name</div>
+                            <div class="col-md-10">@Model.FirstName @Model.LastName</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Employee Code</div>
+                            <div class="col-md-10">@Model.EmployeeCode</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Date of Birth</div>
+                            <div class="col-md-10">@Model.DateOfBirth</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Employee Role</div>
+                            <div class="col-md-10">@Model.RoleName</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Date of Joining</div>
+                            <div class="col-md-10">@Model.JoiningDate</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Phone Number</div>
+                            <div class="col-md-10">@Model.PhoneNumber</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Email Address</div>
+                            <div class="col-md-10">@Model.Email</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Current Address</div>
+                            <div class="col-md-10">@Model.CurrentAddress</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Permanent Address</div>
+                            <div class="col-md-10">@Model.PermanentAddress</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Gender</div>
+                            <div class="col-md-10">@Model.GenderName</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Qualification</div>
+                            <div class="col-md-10">@Model.Qualification</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Blood Group</div>
+                            <div class="col-md-10">@Model.BloodGroupName</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Department Name</div>
+                            <div class="col-md-10">@Model.Department</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Designation Name</div>
+                            <div class="col-md-10">@Model.Designation</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Reporting Manager</div>
+                            <div class="col-md-10">@Model.ReportingManagerId</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Employeement Type</div>
+                            <div class="col-md-10">@Model.EmploymentTypeName</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Total experience (years)</div>
+                            <div class="col-md-10">@Model.ExperienceInYears</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">License Number</div>
+                            <div class="col-md-10">@Model.LicenseNumber</div>
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col-md-12 border-bottom">
+                                <h5 class="fw-bold">Emergency Contact Information:</h5>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Person Name</div>
+                            <div class="col-md-10">@Model.EmergencyContactName</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2 fw-medium">Contact Number</div>
+                            <div class="col-md-10">@Model.EmergencyContactNumber</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

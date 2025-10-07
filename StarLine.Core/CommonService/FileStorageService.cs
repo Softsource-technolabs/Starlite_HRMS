@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using StarLine.Core.Common;
 
-namespace StarLine.Core.StorageService
+namespace StarLine.Core.CommonService
 {
     public class FileStorageService
     {

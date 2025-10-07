@@ -79,7 +79,7 @@ namespace StarLine.Infrastructure.Repositories.LeaveTypes
             var count = await query.CountAsync();
             var data = await query.Skip((model.PageNumber - 1) * model.PageSize).Take(model.PageSize).ToListAsync();
             var modelData = _mapper.Map<List<LeaveTypeModel>>(data);
-            return new PagedResponse<List<LeaveTypeModel>>(modelData, model.PageNumber, model.PageSize, totalRecord, count);
+            return new PagedResponse<List<LeaveTypeModel>>(modelData, totalRecord, count);
         }
 
         public async Task<ApiPostResponse<LeaveTypeModel>> GetLeaveTypeById(long id)

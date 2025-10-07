@@ -7,5 +7,9 @@ namespace StarLine.Infrastructure.Repositories.Shifts
     {
         Task<PagedResponse<List<ShiftGroupModel>>> GetAllShiftGroups(PaginationModel model);
         Task<ApiPostResponse<long>> AddorUpdateShift(ShiftWizardModel model);
+        Task<ShiftModel> GetShiftByName(string name);
+        Task<ShiftModel> GetShiftById(long id);
+        Task<ShiftModel> GetShiftGeneralShift();
+        Task<ShiftWizardModel> GetFullShiftDetails(long shiftId);
     }
 }

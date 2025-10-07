@@ -1,0 +1,16 @@
+﻿@model StarLine.Core.Models.NoticeModel
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-md-12 border-bottom">
+        <h5>@Model.Title</h5>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col-md-12">
+        @Html.Raw(Model.NoticeText)
+    </div>
+</div>

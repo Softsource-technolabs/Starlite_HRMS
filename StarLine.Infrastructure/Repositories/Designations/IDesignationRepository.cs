@@ -5,8 +5,7 @@ namespace StarLine.Infrastructure.Repositories.Designations
 {
     public interface IDesignationRepository
     {
-        Task<BaseApiResponse> AddDesignation(DesignationModel designation);
-        Task<BaseApiResponse> UpdateDesignation(DesignationModel designation);
+        Task<long> AddUpdateDesignation(DesignationModel designation);
         Task<BaseApiResponse> ToggleStatusDesignation(long id);
         Task<BaseApiResponse> DeleteDesignation(long id);
         Task<ApiPostResponse<DesignationModel>> GetDesignationById(long id);

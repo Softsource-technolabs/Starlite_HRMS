@@ -107,9 +107,24 @@ namespace StarLine.Web.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult PublishNotice(long id)
+        public async Task<IActionResult> PublishNotice(long id)
         {
-            return RedirectToAction(nameof(Index));
+            var data = await _repository.GetNoticeById(id);
+            if(data.Success)
+            {
+                var notice = data.Data;
+                notice.PublishDate = DateTime.Now;
+                var result = await _repository.AddUpdateNotice(notice);
+                if (result.Success)
+                {
+                    _toastNotification.AddSuccessToastMessage("Notice published Successfully");
+                    return RedirectToAction(nameof(Index));
+                }
+                _toastNotification.AddErrorToastMessage("Notice not published Successfully");
+                return RedirectToAction(nameof(Publish), new { id = id });
+            }
+            _toastNotification.AddErrorToastMessage("Notice not found");
+            return RedirectToAction(nameof(Publish), new { id = id });
         }
 
         private string GetAppBaseUrl()

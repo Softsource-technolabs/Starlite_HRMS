@@ -22,6 +22,7 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.DesignationName, opt => opt.MapFrom(_ => _.DesignationName))
                 .ForMember(_ => _.Description, opt => opt.MapFrom(_ => _.Description))
                 .ForMember(_ => _.DepartmentName, opt => opt.MapFrom(_ => _.Department.DepartmentName))
+                .ForMember(_ => _.HierarchyLevel, opt => opt.MapFrom(_ => _.HierarchyLevel))
                 .ForMember(_ => _.IsActive, opt => opt.MapFrom(_ => _.IsActive))
                 .ForMember(_ => _.IsDeleted, opt => opt.MapFrom(_ => _.IsDeleted))
                 .ReverseMap()
@@ -52,10 +53,13 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.PermanentAddress, opt => opt.MapFrom(_ => _.PermanentAddress))
                 .ForMember(_ => _.RoleId, opt => opt.MapFrom(_ => _.AspNetUser.Roles.FirstOrDefault().Id))
                 .ForMember(_ => _.RoleName, opt => opt.MapFrom(_ => _.AspNetUser.Roles.FirstOrDefault().Name))
+                .ForMember(_ => _.shiftId, opt => opt.MapFrom(_ => _.ShiftId))
                 .ForMember(_ => _.IsActive, opt => opt.MapFrom(_ => _.IsActive))
                 .ForMember(_ => _.IsDeleted, opt => opt.MapFrom(_ => _.IsDeleted))
+                .ForMember(_ => _.DepartmentName, opt => opt.MapFrom(_ => _.Department.DepartmentName))
                 .ReverseMap()
-                .ForMember(dest => dest.AspNetUser, opt => opt.Ignore());
+                .ForMember(dest => dest.AspNetUser, opt => opt.Ignore())
+                .ForMember(dest => dest.Department, opt => opt.Ignore());
 
             CreateMap<Team, TeamModel>()
                 .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
@@ -89,6 +93,24 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.IsActive, opt => opt.MapFrom(_ => _.IsActive))
                 .ForMember(_ => _.IsDeleted, opt => opt.MapFrom(_ => _.IsDeleted))
                 .ReverseMap();
+
+            CreateMap<Leaf, LeaveModel>()
+                .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
+                .ForMember(_ => _.EmployeeId, opt => opt.MapFrom(_ => _.EmployeeId))
+                .ForMember(_ => _.LeaveTypeId, opt => opt.MapFrom(_ => _.LeaveTypeId))
+                .ForMember(_ => _.FromDate, opt => opt.MapFrom(_ => _.FromDate))
+                .ForMember(_ => _.ToDate, opt => opt.MapFrom(_ => _.ToDate))
+                .ForMember(_ => _.TotalDays, opt => opt.MapFrom(_ => _.TotalDays))
+                .ForMember(_ => _.Status, opt => opt.MapFrom(_ => _.Status))
+                .ForMember(_ => _.RejectReason, opt => opt.MapFrom(_ => _.RejectReason))
+                .ForMember(_ => _.ShortDescription, opt => opt.MapFrom(_ => _.ShortDescription))
+                .ForMember(_ => _.LeaveTypeName, opt => opt.MapFrom(_ => _.LeaveType.TypeName))
+                .ForMember(_ => _.EmployeeName, opt => opt.MapFrom(_ => _.Employee.FirstName + " " + _.Employee.LastName))
+                .ForMember(_ => _.IsActive, opt => opt.MapFrom(_ => _.IsActive))
+                .ForMember(_ => _.IsDeleted, opt => opt.MapFrom(_ => _.IsDeleted))
+                .ReverseMap()
+                .ForMember(dest => dest.Employee, opt => opt.Ignore())
+                .ForMember(dest => dest.LeaveType, opt => opt.Ignore());
 
             CreateMap<ShiftGroupModel, ShiftGroup>()
                 .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
@@ -132,7 +154,7 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.ParentBranchId, opt => opt.MapFrom(_ => _.ParentBranchId))
                 .ReverseMap();
 
-            CreateMap<NoticeModel,Notice>()
+            CreateMap<NoticeModel, Notice>()
                 .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
                 .ForMember(_ => _.Title, opt => opt.MapFrom(_ => _.Title))
                 .ForMember(_ => _.NoticeText, opt => opt.MapFrom(_ => _.NoticeText))
@@ -154,6 +176,17 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.IsAcknoledged, opt => opt.MapFrom(_ => _.IsAcknoledged))
                 .ForMember(_ => _.ReadAt, opt => opt.MapFrom(_ => _.ReadAt))
                 .ForMember(_ => _.AcknowledgeDate, opt => opt.MapFrom(_ => _.AcknowledgeDate))
+                .ReverseMap();
+
+            CreateMap<AttendanceModel, Attendance>()
+                .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
+                .ForMember(_ => _.EmployeeId, opt => opt.MapFrom(_ => _.EmployeeId))
+                .ForMember(_ => _.Attendacedate, opt => opt.MapFrom(_ => _.Attendacedate))
+                .ForMember(_ => _.InTime, opt => opt.MapFrom(_ => _.InTime))
+                .ForMember(_ => _.OutTime, opt => opt.MapFrom(_ => _.OutTime))
+                .ForMember(_ => _.Status, opt => opt.MapFrom(_ => _.Status))
+                .ForMember(_ => _.LateComing, opt => opt.MapFrom(_ => _.LateComing))
+                .ForMember(_ => _.Remarks, opt => opt.MapFrom(_ => _.Remarks))
                 .ReverseMap();
         }
     }

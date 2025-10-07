@@ -27,6 +27,8 @@ public partial class StarLiteContext : DbContext
 
     public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; }
 
+    public virtual DbSet<Attendance> Attendances { get; set; }
+
     public virtual DbSet<Branch> Branches { get; set; }
 
     public virtual DbSet<Department> Departments { get; set; }
@@ -134,6 +136,21 @@ public partial class StarLiteContext : DbContext
             entity.Property(e => e.Name).HasMaxLength(128);
 
             entity.HasOne(d => d.User).WithMany(p => p.AspNetUserTokens).HasForeignKey(d => d.UserId);
+        });
+
+        modelBuilder.Entity<Attendance>(entity =>
+        {
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.DeletedDate).HasColumnType("datetime");
+            entity.Property(e => e.Remarks)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+
+            entity.HasOne(d => d.Employee).WithMany(p => p.Attendances)
+                .HasForeignKey(d => d.EmployeeId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Attendances_Employee");
         });
 
         modelBuilder.Entity<Branch>(entity =>
@@ -280,6 +297,15 @@ public partial class StarLiteContext : DbContext
                 .HasForeignKey(d => d.DepartmentId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Employee_Department");
+
+            entity.HasOne(d => d.Designation).WithMany(p => p.Employees)
+                .HasForeignKey(d => d.DesignationId)
+                .HasConstraintName("FK_Employee_Designation");
+
+            entity.HasOne(d => d.Shift).WithMany(p => p.Employees)
+                .HasForeignKey(d => d.ShiftId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Employee_Shifts");
         });
 
         modelBuilder.Entity<Holiday>(entity =>
@@ -302,15 +328,23 @@ public partial class StarLiteContext : DbContext
             entity.Property(e => e.CreatedDate).HasColumnType("datetime");
             entity.Property(e => e.DeletedDate).HasColumnType("datetime");
             entity.Property(e => e.RejectReason)
-                .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            entity.Property(e => e.ShortDescription)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.TotalDays).HasColumnType("decimal(4, 2)");
             entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
 
             entity.HasOne(d => d.Employee).WithMany(p => p.Leaves)
                 .HasForeignKey(d => d.EmployeeId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Leaves_Employee");
+
+            entity.HasOne(d => d.LeaveType).WithMany(p => p.Leaves)
+                .HasForeignKey(d => d.LeaveTypeId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Leaves_LeaveTypes");
         });
 
         modelBuilder.Entity<LeaveType>(entity =>

@@ -31,7 +31,7 @@ namespace StarLine.Web.Controllers
         {
             model.SortColumn = "Id";
             var result = await _teamRepository.GetAllTeams(model);
-            var jsonData = new { draw = model.draw, recordsFiltered = result.FilteredRecord, recordsTotal = result.TotalRecords, data = result.Data };
+            var jsonData = new { draw = model.draw, recordsFiltered = result.recordsFiltered, recordsTotal = result.recordsTotal, data = result.Data };
             return Json(jsonData);
         }
 

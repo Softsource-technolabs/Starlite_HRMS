@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using StarLine.Core.Common;
+using StarLine.Core.CommonService;
 using StarLine.Core.Models;
 using StarLine.Core.Session;
-using StarLine.Core.StorageService;
 using StarLine.Infrastructure.Models;
 using System.Reflection;
 
@@ -87,7 +86,7 @@ namespace StarLine.Infrastructure.Repositories.Notices
             var count = await query.CountAsync();
             var data = await query.Skip((model.PageNumber - 1) * model.PageSize).Take(model.PageSize).ToListAsync();
             var modelData = _mapper.Map<List<NoticeModel>>(data);
-            return new PagedResponse<List<NoticeModel>>(modelData, model.PageNumber, model.PageSize, totalRecord, count);
+            return new PagedResponse<List<NoticeModel>>(modelData, totalRecord, count);
         }
 
         public async Task<ApiPostResponse<NoticeModel>> GetNoticeById(long id)
@@ -145,6 +144,16 @@ namespace StarLine.Infrastructure.Repositories.Notices
                     return new ApiPostResponse<NoticeModel> { Message = "Notice not found", Success = false };
             }
             return new ApiPostResponse<NoticeModel> { Success = false, Message = "Notice not found" };
+        }
+
+        public async Task<List<NoticeModel>> GetAllAnnouncement()
+        {
+            var model = await _context.Notices.Where(_ => _.IsActive == true && _.IsDeleted == false && _.NoticeType == (int)NoticeType.Annoucement).ToListAsync();
+            if(model.Count > 0)
+            {
+                return _mapper.Map<List<NoticeModel>>(model);
+            }
+            return null;
         }
     }
 }

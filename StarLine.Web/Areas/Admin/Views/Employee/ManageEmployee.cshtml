@@ -20,7 +20,7 @@
                     }
                 </div>
                 <div class="card-body">
-                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input asp-for="Id" class="form-control" type="hidden" />
                     <input asp-for="AspNetUserId" class="form-control" type="hidden" />
                     <div class="row">
@@ -110,18 +110,14 @@
                         <div class="col-md-4">
                             <label asp-for="DesignationId" class="control-label required"></label>
                             <div class="form-group">
-                                <select asp-for="DesignationId" class="form-control form-select">
-                                    <option value="">Select Designation</option>
-                                </select>
+                                <select asp-for="DesignationId" class="form-control form-select"></select>
                                 <span asp-validation-for="DesignationId" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <label asp-for="ReportingManagerId" class="control-label required"></label>
                             <div class="form-group">
-                                <select asp-for="ReportingManagerId" class="form-control" asp-items="ViewBag.managerList">
-                                    <option value="">Select Manager</option>
-                                </select>
+                                <select asp-for="ReportingManagerId" class="form-select"></select>
                                 <span asp-validation-for="ReportingManagerId" class="text-danger"></span>
                             </div>
                         </div>
@@ -225,28 +221,47 @@
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
-
         <script type="text/javascript">
 
+            var getDesignationList = "@Url.Action("GetDesignation", "Employee")";
+            var getReportingManagers = "@Url.Action("GetReportingManager", "Employee")";
             document.addEventListener('DOMContentLoaded', function () {
                     $('#DepartmentId').change();
             });
 
             $('#DepartmentId').on("change",function () {
                 var deptId = $(this).val();
-                $('#DesignationId').empty().append('<option value="">Select Designation</option>');
+                $('#DesignationId').empty().append('<option value="0">Select Designation</option>');
 
                 if (deptId) {
-                    $.get('/Admin/Employee/GetDesignation', { id: deptId }, function (data) {
+                    $.get(getDesignationList, { id: deptId }, function (data) {
                         $.each(data, function (i, desig) {
                             $('#DesignationId').append(
                                 $('<option>', { value: desig.id, text: desig.designationName })
                             );
                         });
-                        $('#DesignationId').val("@Model.DesignationId").change();
+                        $('#DesignationId').val("@Model.DesignationId").trigger('change');
                     });
                 }
             });
+
+            $('#DesignationId').on("change",function () {
+                var designationId = $(this).val();
+                if(designationId != 0) GetReportingManagers(designationId);
+            });
+
+            function GetReportingManagers(designationId){
+                var url = getReportingManagers+"?designationId="+designationId;
+                $.get(url,function(response){
+
+                    $('#ReportingManagerId').empty().append('<option value="0">Select Reporting Manager</option>');
+
+                    $.each(response, function (i, rm) {
+                            $('#ReportingManagerId').append($('<option>', { value: rm.id, text: rm.fullName }));
+                        });
+                        $('#ReportingManagerId').val("@Model.ReportingManagerId").trigger('change');
+                    });
+                }
         </script>
     }
 }

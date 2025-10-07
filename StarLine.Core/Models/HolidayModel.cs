@@ -16,9 +16,9 @@ namespace StarLine.Core.Models
         public HolidayTypes HolidayType { get; set; }
         [Display(Name = "Other Type name")]
         [RequiredIf("HolidayType", "5", ErrorMessage = "Other Type Name is required when Holiday Type is 'Other'.")]
-        public string? HolidayTypename { get; set; }
+        public string HolidayTypename { get; set; }
         [Display(Name = "Is public Holiday")]
         public bool? Ismandatory { get; set; }
-        public string? typeName => HolidayType == HolidayTypes.Other ? HolidayTypename : Enum.GetName(typeof(HolidayTypes), HolidayType);
+        public string TypeName => HolidayType == HolidayTypes.Other ? HolidayTypename : Enum.GetName(typeof(HolidayTypes), HolidayType);
     }
 }

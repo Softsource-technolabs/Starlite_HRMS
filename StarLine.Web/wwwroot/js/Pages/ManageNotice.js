@@ -152,3 +152,16 @@ function GetUserName(userId) {
         }
     })
 }
+
+$(document).on('change', '#NoticeType', function () {
+    var noticeTypeName = $("#NoticeType option:selected").text();
+
+    if (noticeTypeName === "Announcement") {
+        $("#DeliveryMode").val(1);
+        $("#DeliveryMode").prop("disabled", true);
+    }
+});
+
+$("#btnSubmit").on("click", function () {
+    $("#DeliveryMode").prop("disabled", false);
+})

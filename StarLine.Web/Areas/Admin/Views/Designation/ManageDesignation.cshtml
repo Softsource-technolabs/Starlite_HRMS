@@ -17,6 +17,8 @@
                     <h5 class="card-title">Add New Designation</h5>
                 }
             </div>
+            <input type="hidden" id="hfaddhierarchy" value="@Url.Action("GetHierarchyView","Designation")" />
+            <input type="hidden" id="hfgethierarchy" value="@Url.Action("GetHierarchy","Designation")" />
             <form asp-action="ManageDesignation">
                 <div class="card-body">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -28,11 +30,14 @@
                                 <select asp-for="DepartmentId" class="form-control form-select" asp-items="@ViewBag.departmentList">
                                     <option value="">Select Department</option>
                                 </select>
+                                <span asp-validation-for="DepartmentId" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group mt-4">
-                                <span asp-validation-for="DepartmentId" class="text-danger"></span>
+                            <label asp-for="HierarchyLevel" class="control-label required"></label>
+                            <div class="form-group">
+                                <select asp-for="HierarchyLevel" class="form-control form-select" asp-items="@ViewBag.hierarchyList"></select>
+                                <span asp-validation-for="HierarchyLevel" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
@@ -75,6 +80,7 @@
 
 @section Scripts {
     @{
+        <script src="~/js/pages/hierarchy.js"></script>
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }

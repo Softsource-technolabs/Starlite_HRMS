@@ -10,5 +10,6 @@ namespace StarLine.Infrastructure.Repositories.Notices
         Task<BaseApiResponse> DeleteNotice(long id);
         Task<ApiPostResponse<NoticeModel>> GetNoticeById(long id);
         Task<PagedResponse<List<NoticeModel>>> GetAllNotices(PaginationModel model);
+        Task<List<NoticeModel>> GetAllAnnouncement();
     }
 }

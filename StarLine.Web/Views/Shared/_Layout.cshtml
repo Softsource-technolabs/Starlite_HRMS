@@ -31,6 +31,12 @@
                         <li>
                             <a asp-area="" asp-controller="Team" asp-action="Index">Teams</a>
                         </li>
+                        <li>
+                            <a asp-area="" asp-controller="Leave" asp-action="Index">Leaves</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Employee" asp-action="Index">Employee</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -65,6 +71,18 @@
         </div>
         <div class="offcanvas-body">
             
+        </div>
+    </div>
+
+    <div class="modal fade" id="hrmsSmallModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div id="hrmsModalBody" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

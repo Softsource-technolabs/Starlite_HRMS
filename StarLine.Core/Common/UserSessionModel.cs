@@ -8,6 +8,7 @@
         public string LastName { get; set; } = null!;
         public string EmailAddress { get; set; } = null!;
         public string RoleId { get; set; } = null!;
+        public long ReportingManager { get; set; }
         public string RoleName { get; set; } = null!;
         public string UserImage { get; set; } = null!;
         public string FullName => $"{FirstName} {LastName}";

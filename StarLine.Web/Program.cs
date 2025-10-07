@@ -32,11 +32,11 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     {
         _.LoginPath = "/Account/Login";
         _.LogoutPath = "/Account/Logout";
-        _.AccessDeniedPath = "/Account/AccessDenied"; // 👈 Add this
+        _.AccessDeniedPath = "/Account/AccessDenied";
 
         _.Cookie.HttpOnly = true;                // No JS access
-        _.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Force HTTPS
-        _.Cookie.SameSite = SameSiteMode.Strict; // Prevent CSRF via cross-site cookies
+        _.Cookie.SecurePolicy = CookieSecurePolicy.None; // Force HTTPS
+        _.Cookie.SameSite = SameSiteMode.Lax; // Prevent CSRF via cross-site cookies
         _.SlidingExpiration = true;              // Refresh expiration if active
         _.ExpireTimeSpan = TimeSpan.FromMinutes(30);
     });
@@ -53,12 +53,7 @@ builder.Services.AddAuthorization(_ =>
 
 builder.Services.AddDistributedMemoryCache(); // Required for Session
 
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(30); // session timeout
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-});
+builder.Services.AddSession();
 
 RegisterServices.RegisterService(builder.Services);
 builder.Services.AddAutoMapper(_ =>
@@ -108,3 +103,4 @@ app.MapControllerRoute(name: "areas", pattern: "{area:exists}/{controller=Home}/
 app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+

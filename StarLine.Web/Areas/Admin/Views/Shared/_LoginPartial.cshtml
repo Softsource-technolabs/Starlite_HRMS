@@ -14,7 +14,7 @@
             <span class="fw-semibold">Hello</span> <span class="fw-semibold">@User.Identity?.Name!</span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" asp-action="ViewProfile" asp-controller="Employee" asp-area="Admin" >Profile</a></li>
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li>
                 <form class="dropdown-item" asp-action="Logout" asp-controller="Account" asp-area="">

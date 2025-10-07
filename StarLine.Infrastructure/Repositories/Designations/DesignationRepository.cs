@@ -14,16 +14,12 @@ namespace StarLine.Infrastructure.Repositories.Designations
         private readonly IMapper _mapper = mapper;
         private readonly IUserSession _userSession = userSession;
 
-        public async Task<BaseApiResponse> AddDesignation(DesignationModel designation)
+        public async Task<long> AddUpdateDesignation(DesignationModel designation)
         {
-            var model = _mapper.Map<Designation>(designation);
-            model.CreatedBy = _userSession.Current.UserId;
-            await _context.Designations.AddAsync(model);
-            var result = await _context.SaveChangesAsync();
-            if (result > 0)
-                return new BaseApiResponse { Message = "Designation added", Success = true };
+            if (designation.Id > 0)
+                return await UpdateDesignation(designation); 
             else
-                return new BaseApiResponse { Message = "Designation not added", Success = false };
+                return await AddDesignation(designation);
         }
 
         public async Task<BaseApiResponse> DeleteDesignation(long id)
@@ -63,13 +59,13 @@ namespace StarLine.Infrastructure.Repositories.Designations
             var count = await query.CountAsync();
             var data = await query.Skip((model.PageNumber - 1) * model.PageSize).Take(model.PageSize).ToListAsync();
             var modelData = _mapper.Map<List<DesignationModel>>(data);
-            return new PagedResponse<List<DesignationModel>>(modelData, model.PageNumber, model.PageSize, totalRecord, count);
+            return new PagedResponse<List<DesignationModel>>(modelData, totalRecord, count);
         }
 
         public async Task<List<DesignationModel>> GetDesignationByDepartment(long departmentId)
         {
             var model = await _context.Designations.Where(_ => _.DepartmentId == departmentId && _.IsActive == true && _.IsDeleted == false).ToListAsync();
-            if(model != null)
+            if (model != null)
             {
                 return _mapper.Map<List<DesignationModel>>(model);
             }
@@ -115,20 +111,23 @@ namespace StarLine.Infrastructure.Repositories.Designations
             return new BaseApiResponse { Message = "Designation not deleted", Success = false };
         }
 
-        public async Task<BaseApiResponse> UpdateDesignation(DesignationModel designation)
+        private async Task<long> AddDesignation(DesignationModel designation)
         {
-            var model = await _context.Designations.Where(_ => _.Id == designation.Id && _.IsActive == true && _.IsDeleted == false).FirstOrDefaultAsync();
-            if (model != null)
+            var model = _mapper.Map<Designation>(designation);
+            model.CreatedBy = _userSession.Current.UserId;
+            await _context.Designations.AddAsync(model);
+            return await _context.SaveChangesAsync();
+        }
+        private async Task<long> UpdateDesignation(DesignationModel designation)
+        {
+            var existdesignation = await _context.Designations.Where(_ => _.Id == designation.Id && _.IsActive == true && _.IsDeleted == false).FirstOrDefaultAsync();
+            if (existdesignation != null)
             {
-                _context.Entry(model).CurrentValues.SetValues(designation);
-                var result = await _context.SaveChangesAsync();
-                if (result > 0)
-                {
-                    return new BaseApiResponse { Success = true, Message = "Designation updated" };
-                }
-                return new BaseApiResponse { Success = false, Message = "Designation not updated" };
+                var model = _mapper.Map(designation, existdesignation);
+                _context.Designations.Update(model);
+                return await _context.SaveChangesAsync();
             }
-            return new BaseApiResponse { Success = false, Message = "Designation not found" };
+            return 0;
         }
     }
 }

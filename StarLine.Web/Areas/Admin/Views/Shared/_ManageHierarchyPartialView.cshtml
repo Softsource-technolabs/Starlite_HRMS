@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="modal-header">
+    <h1 class="modal-title fs-5" id="modelTitle">Modal title</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<form id="frmHierarchy">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="levelnumber">level Number</label>
+                <div class="form-group">
+                    <input type="number" id="levelnumber" name="levelnumber" class="form-control" placeholder="Enter level number" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <label for="levelname">level Name</label>
+                <div class="form-group">
+                    <input type="text" id="levelname" name="levelname" class="form-control" placeholder="Enter level name" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button id="btnModelSubmit" type="button" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    </div>
+    <input type="hidden" id="hierarchyURL" value="@Url.Action("AddnewHierarchy","Designation")" />
+</form>

@@ -69,7 +69,7 @@ namespace StarLine.Infrastructure.Repositories.Holidays
             var count = await query.CountAsync();
             var data = await query.Skip((model.PageNumber - 1) * model.PageSize).Take(model.PageSize).ToListAsync();
             var modelData = _mapper.Map<List<HolidayModel>>(data);
-            return new PagedResponse<List<HolidayModel>>(modelData, model.PageNumber, model.PageSize, totalRecord, count);
+            return new PagedResponse<List<HolidayModel>>(modelData, totalRecord, count);
         }
 
         public async Task<ApiPostResponse<HolidayModel>> GetHolidayById(long id)
@@ -81,6 +81,39 @@ namespace StarLine.Infrastructure.Repositories.Holidays
                 return new ApiPostResponse<HolidayModel> { Data = holiday, Message = "Holiday found", Success = true };
             }
             return new ApiPostResponse<HolidayModel> { Message = "Holiday not found", Success = true };
+        }
+
+        public async Task<PagedResponse<List<HolidayModel>>> GetHolidaysforCurrentYear(PaginationModel model)
+        {
+            var currentYear = DateTime.Now.Year;
+            var startDate = new DateOnly(currentYear, 1, 1);
+            var endDate = new DateOnly(currentYear, 12, 31);
+            var today = DateOnly.FromDateTime(DateTime.Now);
+
+            var query = _context.Holidays
+                .Where(h => h.IsActive && !h.IsDeleted &&
+                            h.HolidayDate >= startDate &&
+                            h.HolidayDate <= endDate &&
+                            h.HolidayDate >= today); // Only future/current dates
+
+            var totalRecord = query.Count();
+            if (!string.IsNullOrEmpty(model.StrSearch))
+            {
+                query = query.Where(_ => _.Name.Contains(model.StrSearch));
+            }
+
+            if (!string.IsNullOrWhiteSpace(model.SortOrder))
+            {
+                var property = typeof(Holiday).GetProperty(model.SortColumn ?? "Id", BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+                string columnName = property != null ? property.Name : "Id";
+                bool isDescending = model.SortOrder.ToLower() == "desc";
+                query = isDescending ? query.OrderByDescending(e => EF.Property<object>(e, columnName))
+                    : query.OrderBy(e => EF.Property<object>(e, columnName));
+            }
+            var count = await query.CountAsync();
+            var data = await query.Skip((model.PageNumber - 1) * model.PageSize).Take(model.PageSize).ToListAsync();
+            var modelData = _mapper.Map<List<HolidayModel>>(data);
+            return new PagedResponse<List<HolidayModel>>(modelData, totalRecord, count);
         }
 
         public async Task<BaseApiResponse> ToggleStatusHoliday(long id)

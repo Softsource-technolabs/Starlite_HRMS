@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using NToastNotify;
 using StarLine.Core.Common;
 using StarLine.Core.Models;
+using StarLine.Core.Session;
 using StarLine.Infrastructure.Repositories.Departments;
 using StarLine.Infrastructure.Repositories.Designations;
 using StarLine.Infrastructure.Repositories.Employees;
@@ -24,14 +25,18 @@ namespace StarLine.Web.Areas.Admin.Controllers
         private readonly IDesignationRepository _designationRepository;
         private readonly IUserRepository _userRepository;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IHttpContextAccessor _contextAccessor;
+        private readonly IUserSession _userSession;
         private readonly string _userAvtarlocation;
-        public EmployeeController(IEmployeeRepository employeeRepository, IToastNotification toastNotification, IDepartmentRepository departmentRepository, IDesignationRepository designationRepository, IUserRepository userRepository, RoleManager<IdentityRole> roleManager,IWebHostEnvironment env)
+        public EmployeeController(IEmployeeRepository employeeRepository, IToastNotification toastNotification, IDepartmentRepository departmentRepository, IDesignationRepository designationRepository, IUserRepository userRepository, RoleManager<IdentityRole> roleManager,IWebHostEnvironment env, IUserSession userSession, IHttpContextAccessor contextAccessor)
         {
             _employeeRepository = employeeRepository;
             _toastNotification = toastNotification;
             _departmentRepository = departmentRepository;
             _designationRepository = designationRepository;
+            _contextAccessor = contextAccessor;
             _userRepository = userRepository;
+            _userSession = userSession;
             _roleManager = roleManager;
 
             _userAvtarlocation = Path.Combine(env.WebRootPath, "UserAvtars");
@@ -51,7 +56,7 @@ namespace StarLine.Web.Areas.Admin.Controllers
             if (string.IsNullOrEmpty(model.SortColumn))
                 model.SortColumn = "Id";
             var result = await _employeeRepository.GetAllEmployees(model);
-            var jsonData = new { draw = model.draw, recordsFiltered = result.FilteredRecord, recordsTotal = result.TotalRecords, data = result.Data };
+            var jsonData = new { draw = model.draw, recordsFiltered = result.recordsFiltered, recordsTotal = result.recordsTotal, data = result.Data };
             return Json(jsonData);
         }
 
@@ -132,14 +137,13 @@ namespace StarLine.Web.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                var result = new BaseApiResponse();
                 if (model.Id > 0)
                 {
                     var checkUserRole = await _userRepository.CheckUserRole(model.AspNetUserId, model.RoleId);
                     if (checkUserRole)
                     {
                         model.UserImages = string.IsNullOrEmpty(model.UserImages) ? AvtarService.GenerateAvatar(model.FirstName + " " + model.LastName, _userAvtarlocation, model.AspNetUserId) : model.UserImages;
-                        result = await _employeeRepository.UpdateEmployee(model);
+                        var result = await _employeeRepository.AddUpdateEmployee(model);
                         _toastNotification.AddSuccessToastMessage(ToastrMessages.GetMsg(ToastrModules.Employee, ToastrMessages.Update));
                         return RedirectToAction(nameof(Index));
                     }
@@ -156,7 +160,7 @@ namespace StarLine.Web.Areas.Admin.Controllers
                         model.AspNetUserId = appUser.Data.Id;
                         //Create User Image if user not upload Image
                         model.UserImages = string.IsNullOrEmpty(model.UserImages) ? AvtarService.GenerateAvatar(model.FirstName + " " + model.LastName, _userAvtarlocation, model.AspNetUserId) : model.UserImages;
-                        result = await _employeeRepository.AddEmployee(model);
+                        var result = await _employeeRepository.AddUpdateEmployee(model);
                         _toastNotification.AddSuccessToastMessage("Employee added successfully");
                         return RedirectToAction(nameof(Index));
                     }
@@ -206,6 +210,67 @@ namespace StarLine.Web.Areas.Admin.Controllers
                 _toastNotification.AddErrorToastMessage("Employee not Deleted");
                 return Json(false);
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetReportingManager(long designationId)
+        {
+            var managers = await _employeeRepository.GetReportingManagers(designationId);
+            return Json(managers);
+        }
+
+        public async Task<IActionResult> ViewProfile()
+        {
+            var response = await _employeeRepository.GetEmployeeDetailsById(_userSession.Current.UserId);
+            string imageUrl = "/UserAvtars/default.png";
+            if (!string.IsNullOrEmpty(response.UserImages))
+            {
+                imageUrl = "/UserAvtars/" + response.UserImages;
+            }
+            var request = _contextAccessor.HttpContext?.Request;
+            string imagefilePath = $"{request.Scheme}://{request.Host}" + imageUrl;
+            response.UserImages = imagefilePath;
+            return View(response);
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> CheckEmployeeCode(string EmployeeCode,long Id)
+        {
+            if (Id > 0) return Json(true);
+            var result = await _employeeRepository.checkforDuplicateBycode(EmployeeCode);
+            if (result)
+                return Json($"Employee Code {EmployeeCode} is already assigned");
+            return Json(true);
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> CheckEmployeeEmail(string Email, long Id)
+        {
+            if (Id > 0) return Json(true);
+            var result = await _employeeRepository.checkforDuplicateByEmail(Email);
+            if (result)
+                return Json($"{Email} is already registered");
+            return Json(true);
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> CheckEmployeeMobile(string PhoneNumber, long Id)
+        {
+            if (Id > 0) return Json(true);
+            var result = await _employeeRepository.checkforDuplicateByMobile(PhoneNumber);
+            if (result)
+                return Json($"{PhoneNumber} is already registered");
+            return Json(true);
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> CheckEmployeeLicense(string LicenseNumber, long Id)
+        {
+            if (Id > 0) return Json(true);
+            var result = await _employeeRepository.checkforDuplicateByLicense(LicenseNumber);
+            if (result)
+                return Json($"License No {LicenseNumber} is already registered");
+            return Json(true);
         }
     }
 }

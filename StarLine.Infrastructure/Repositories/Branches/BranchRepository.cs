@@ -17,7 +17,7 @@ namespace StarLine.Infrastructure.Repositories.Branches
         public async Task<long> AddUpdateBranch(BranchModel branch)
         {
             long result = 0;
-            if(branch.Id > 0)
+            if (branch.Id > 0)
             {
                 result = await UpdateBranch(branch);
             }
@@ -68,7 +68,7 @@ namespace StarLine.Infrastructure.Repositories.Branches
             var count = await query.CountAsync();
             var data = await query.Skip((model.PageNumber - 1) * model.PageSize).Take(model.PageSize).ToListAsync();
             var modelData = _mapper.Map<List<BranchModel>>(data);
-            return new PagedResponse<List<BranchModel>>(modelData, model.PageNumber, model.PageSize, totalRecord, count);
+            return new PagedResponse<List<BranchModel>>(modelData, totalRecord, count);
         }
 
         public async Task<BranchModel> GetBranchById(long id)

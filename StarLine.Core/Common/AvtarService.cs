@@ -6,7 +6,7 @@ namespace StarLine.Core.Common
 {
     public static class AvtarService
     {
-        private static readonly Random _random = new Random();
+        private static readonly Random _random = new();
         public static string GenerateAvatar(string name,string filePath,string userid, int size = 128)
         {
             string initials = GetInitials(name);

@@ -39,5 +39,7 @@ public partial class Shift
 
     public DateTime? DeletedDate { get; set; }
 
+    public virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
+
     public virtual ICollection<ShiftGroupMapping> ShiftGroupMappings { get; set; } = new List<ShiftGroupMapping>();
 }

@@ -20,6 +20,8 @@ public enum HolidayTypes
 
 public enum LeaveStatus
 {
+    [Display(Name = "Select Leave Status")]
+    None = 0,
     [Display(Name = "Pending")]
     Pending = 1,
     [Display(Name = "Approve")]
@@ -28,6 +30,17 @@ public enum LeaveStatus
     Rejected
 }
 
+public enum LeaveDuration
+{
+    [Display(Name = "Select Leave Duration")]
+    None = 0,
+    [Display(Name = "Full Day")]
+    Fullday = 1,
+    [Display(Name = "First Half")]
+    FirstHalf,
+    [Display(Name = "Second Half")]
+    SecondHalf
+}
 public enum EmploymentType
 {
     [Display(Name = "Full Time")]
@@ -106,7 +119,9 @@ public enum NoticeType
     [Display(Name = "HR")]
     HR,
     [Display(Name = "Event")]
-    Event
+    Event,
+    [Display(Name ="Announcement")]
+    Annoucement
 }
 
 public enum DeliveryMode
@@ -133,4 +148,16 @@ public enum AudienceType
     User,
     [Display(Name = "All")]
     All
+}
+
+public enum AttendaceStatus
+{
+    [Display(Name = "None")]
+    None = 0,
+    [Display(Name = "Present")]
+    Present,
+    [Display(Name = "Absent")]
+    Absent,
+    [Display(Name ="Away")]
+    Away
 }

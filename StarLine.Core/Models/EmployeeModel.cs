@@ -1,4 +1,5 @@
-﻿using StarLine.Core.Common;
+﻿using Microsoft.AspNetCore.Mvc;
+using StarLine.Core.Common;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
@@ -10,6 +11,7 @@ namespace StarLine.Core.Models
         public string AspNetUserId { get; set; } = null!;
         [Display(Name = "Employee Code")]
         [Required(ErrorMessage = "Employee code required")]
+        [Remote("CheckEmployeeCode", "Employee", "Admin", AdditionalFields = "Id", ErrorMessage = "Employee Code already assigned")]
         public string EmployeeCode { get; set; } = null!;
         [Display(Name = "First Name")]
         [Required(ErrorMessage = "First name required")]
@@ -25,8 +27,10 @@ namespace StarLine.Core.Models
         public DateOnly DateOfBirth { get; set; } = DateOnly.FromDateTime(DateTime.Now);
         [Display(Name = "Email Address")]
         [Required(ErrorMessage = "Email address required")]
+        [Remote("CheckEmployeeEmail", "Employee", "Admin", AdditionalFields = "Id", ErrorMessage = "Email already Registered")]
         public string Email { get; set; } = null!;
         [Display(Name = "Phone Number")]
+        [Remote("CheckEmployeeMobile", "Employee", "Admin", AdditionalFields = "Id", ErrorMessage = "Phone Number already registered")]
         public string PhoneNumber { get; set; }
         [Display(Name = "Department")]
         [Required(ErrorMessage = "Please select department")]
@@ -49,6 +53,7 @@ namespace StarLine.Core.Models
         [Display(Name = "Experience (in year)")]
         public decimal ExperienceInYears { get; set; }
         [Display(Name = "License Number")]
+        [Remote("CheckEmployeeLicense", "Employee", "Admin", AdditionalFields = "Id", ErrorMessage = "License already registered")]
         public string LicenseNumber { get; set; }
         [Display(Name = "Blood Group")]
         public string BloodGroup { get; set; }
@@ -66,6 +71,10 @@ namespace StarLine.Core.Models
         public string UserImages { get; set; }
         public bool LoginFirst { get; set; } = false;
         public string RoleName { get; set; } = null!;
+        public long shiftId { get; set; }
+        public string ShiftNameandTiming { get; set; } = null!;
+        public string FullName => $"{FirstName} {LastName}";
+        public string DepartmentName { get; set; }
     }
 
     public class EmployeeDetailsModel : BaseEntity
@@ -101,5 +110,6 @@ namespace StarLine.Core.Models
         public string PermanentAddress { get; set; }
         public string UserImages { get; set; }
         public string RoleName { get; set; } = null!;
+        public string ShiftNameandTiming { get; set; } = null!;
     }
 }

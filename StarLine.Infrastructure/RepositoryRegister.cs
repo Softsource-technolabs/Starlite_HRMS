@@ -1,8 +1,10 @@
-﻿using StarLine.Infrastructure.Repositories.Branches;
+﻿using StarLine.Infrastructure.Repositories.Attendace;
+using StarLine.Infrastructure.Repositories.Branches;
 using StarLine.Infrastructure.Repositories.Departments;
 using StarLine.Infrastructure.Repositories.Designations;
 using StarLine.Infrastructure.Repositories.Employees;
 using StarLine.Infrastructure.Repositories.Holidays;
+using StarLine.Infrastructure.Repositories.Leaves;
 using StarLine.Infrastructure.Repositories.LeaveTypes;
 using StarLine.Infrastructure.Repositories.Lists;
 using StarLine.Infrastructure.Repositories.Notices;
@@ -28,6 +30,8 @@ namespace StarLine.Infrastructure
                 { typeof(IBranchRepository), typeof(BranchRepository) },
                 { typeof(INoticeRepository), typeof(NoticeRepository) },
                 { typeof(ILookUpRepository), typeof(LookUpRepository) },
+                { typeof(ILeaveRepository), typeof(LeaveRepository) },
+                { typeof(IAttendanceRepository), typeof(AttendanceRepository) },
             };
             return repositoryDictionary;
         }

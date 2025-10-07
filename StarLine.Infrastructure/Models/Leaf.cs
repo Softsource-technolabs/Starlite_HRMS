@@ -11,15 +11,21 @@ public partial class Leaf
 
     public long LeaveTypeId { get; set; }
 
+    public int LeaveDuration { get; set; }
+
     public DateOnly FromDate { get; set; }
 
     public DateOnly ToDate { get; set; }
 
-    public int TotalDays { get; set; }
+    public decimal TotalDays { get; set; }
 
     public int Status { get; set; }
 
+    public string ShortDescription { get; set; }
+
     public string RejectReason { get; set; }
+
+    public long ApproverId { get; set; }
 
     public bool IsActive { get; set; }
 
@@ -31,11 +37,13 @@ public partial class Leaf
 
     public DateTime? UpdatedDate { get; set; }
 
-    public long IsDeleted { get; set; }
+    public bool IsDeleted { get; set; }
 
     public long? DeletedBy { get; set; }
 
     public DateTime? DeletedDate { get; set; }
 
     public virtual Employee Employee { get; set; }
+
+    public virtual LeaveType LeaveType { get; set; }
 }

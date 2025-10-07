@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using StarLine.Core.Common;
+using StarLine.Core.CommonService;
 using StarLine.Core.Session;
-using StarLine.Core.StorageService;
 using StarLine.Infrastructure;
 using StarLine.Web.IdentityServices;
 
@@ -35,6 +35,7 @@ namespace StarLine.Web
             services.AddTransient<EmailService>();
             services.AddTransient<StarliteEmailService>();
             services.AddTransient<FileStorageService>();
+            services.AddTransient<HierarchyService>();
         }
     }
 }

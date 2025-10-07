@@ -21,7 +21,7 @@ namespace StarLine.Web.Areas.Admin.Controllers
         {
             model.SortColumn = "Id";
             var result = await _branchRepository.GetAllBranchs(model);
-            var jsonData = new { draw = model.draw, recordsFiltered = result.FilteredRecord, recordsTotal = result.TotalRecords, data = result.Data };
+            var jsonData = new { draw = model.draw, recordsFiltered = result.recordsFiltered, recordsTotal = result.recordsTotal, data = result.Data };
             return Json(jsonData);
         }
 

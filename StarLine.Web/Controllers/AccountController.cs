@@ -38,6 +38,7 @@ namespace StarLine.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel model)
         {
             if (ModelState.IsValid)
@@ -186,7 +187,7 @@ namespace StarLine.Web.Controllers
                         if (employee.LoginFirst == true)
                         {
                             employee.LoginFirst = false;
-                            await _employeeRepository.UpdateEmployee(employee);
+                            await _employeeRepository.AddUpdateEmployee(employee);
                         }
                         _toastNotification.AddSuccessToastMessage("Password Change Successfully");
                         return RedirectToAction("Login", "Account");

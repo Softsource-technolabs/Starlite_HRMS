@@ -88,7 +88,7 @@ namespace StarLine.Infrastructure.Repositories.Teams
                 TeamType = _.TeamType,
                 DepartmentName = _.Department.DepartmentName
             }).ToListAsync();
-            return new PagedResponse<List<TeamModel>>(data, model.PageNumber, model.PageSize, totalRecord, count);
+            return new PagedResponse<List<TeamModel>>(data, totalRecord, count);
         }
 
         public async Task<ApiPostResponse<TeamModel>> GetTeamById(long id)
