@@ -59,6 +59,10 @@ function addValidation() {
                 required: true,
                 min: 1
             },
+            TeamId: {
+                required: true,
+                min: 1
+            },
             shiftGroupId: {
                 required: true,
                 min: 1
@@ -80,6 +84,10 @@ function addValidation() {
             ReportingManagerId: {
                 required: "Select Reporting Manager",
                 min: "Select Reporting Manager"
+            },
+            TeamId: {
+                required: "Select Team",
+                min: "Select Team"
             },
             shiftGroupId: {
                 required: "Select Shift Group",
@@ -103,6 +111,30 @@ function addValidation() {
 $(document).on("click", "#btnTeamSubmit", function () {
     var isvalid = $("#frmTeamAssign").valid();
     if (isvalid) {
-        toastr.success("Team Assigned Successfully");
+        var formData = new FormData();
+        formData.append("EmployeeId", $("#Id").val());
+        formData.append("DepartmentId", $("#DepartmentId").val());
+        formData.append("DesignationId", $("#DesignationId").val());
+        formData.append("ReportingManagerId", $("#ReportingManagerId").val());
+        formData.append("TeamId", $("#TeamId").val());
+        formData.append("ShiftGroupId", $("#shiftGroupId").val());
+        formData.append("ShiftId", $("#shiftId").val());
+
+        fetch('/Employee/EmployeeTeamAssign', {  // Change URL to your controller action
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            debugger;
+            if (data.isSuccess) {
+                $("#hrmsSmallModel").modal("hide");
+                window.location.href = "/Employee/Index";
+                toastr.success(data.message);
+            }
+            else
+                toastr.error(data.message);
+        })
+        .catch(error => console.error('Error:', error));
     }
 })

@@ -75,6 +75,7 @@ namespace StarLine.Core.Models
         public string ShiftNameandTiming { get; set; } = null!;
         public string FullName => $"{FirstName} {LastName}";
         public string DepartmentName { get; set; }
+        public string TeamName { get; set; }
     }
 
     public class EmployeeDetailsModel : BaseEntity

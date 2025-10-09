@@ -32,4 +32,8 @@ public partial class Department
     public virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
 
     public virtual ICollection<Team> Teams { get; set; } = new List<Team>();
+
+    public virtual ICollection<TransferRequest> TransferRequestFromDepartments { get; set; } = new List<TransferRequest>();
+
+    public virtual ICollection<TransferRequest> TransferRequestToDepartments { get; set; } = new List<TransferRequest>();
 }

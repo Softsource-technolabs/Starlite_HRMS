@@ -6,19 +6,23 @@ using StarLine.Core.Session;
 using StarLine.Infrastructure.Repositories.Attendace;
 using StarLine.Infrastructure.Repositories.Employees;
 using StarLine.Infrastructure.Repositories.Holidays;
+using StarLine.Infrastructure.Repositories.Notices;
 using StarLine.Infrastructure.Repositories.Shifts;
 
 namespace StarLine.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Policy = "AdminPolicy")]
-    public class HomeController(IHolidayRepository holidayRepository, IEmployeeRepository employeeRepository, IShiftRepository shiftRepository, IUserSession userSession, IAttendanceRepository attendanceRepository) : Controller
+    public class HomeController(IHolidayRepository holidayRepository, IEmployeeRepository employeeRepository, 
+        IShiftRepository shiftRepository, IUserSession userSession, IAttendanceRepository attendanceRepository,
+        INoticeRepository noticeRepository) : Controller
     {
         private readonly IHolidayRepository _holidayRepository = holidayRepository;
         private readonly IEmployeeRepository _employeeRepository = employeeRepository;
         private readonly IShiftRepository _shiftRepository = shiftRepository;
         private readonly IUserSession _userSession = userSession;
         private readonly IAttendanceRepository _attendanceRepository = attendanceRepository;
+        private readonly INoticeRepository _noticeRepository = noticeRepository;
         public IActionResult Index()
         {
             return View();
@@ -40,39 +44,28 @@ namespace StarLine.Web.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAttendace()
+        public async Task<IActionResult> GetShiftDetails()
         {
             var currentUser = _userSession.Current.UserId;
             var employeeDetails = await _employeeRepository.GetEmployeeById(currentUser);
             if (employeeDetails != null)
             {
+                var shiftDetails = await _shiftRepository.GetFullShiftDetails(employeeDetails.Data.shiftId);
                 var attendances = await _attendanceRepository.GetAttendanceByEmpId(currentUser);
-                if (attendances != null)
+                var employeeattendace = new
                 {
-                    var employeeattendace = new
+                    success = true,
+                    data = new
                     {
-                        success = true,
-                        shift = new
-                        {
-                            shiftName = employeeDetails.Data.ShiftNameandTiming,
-                            isClockedIn = attendances.InTime != null ? true : false,
-                            isclockedOut = attendances.OutTime != null ? true : false,
-                            Status = attendances.StatusName
-                        }
-                    };
-                    return Json(employeeattendace);
-                }
-                else
-                {
-                    var data = new
-                    {
-                        success = false,
-                        shift = ""
-                    };
-                    return Json(data);
-                }
+                        shift = shiftDetails,
+                        isClockedIn = attendances != null ? attendances.InTime != null ? true : false : false,
+                        isclockedOut = attendances != null ? attendances.OutTime != null ? true : false : false,
+                        Status = attendances != null ? attendances.StatusName : CommonFunctions.GetDisplayName<AttendaceStatus>(0)
+                    }
+                };
+                return Json(employeeattendace);
             }
-            return Json(new { success = false, shift = "" });
+            return Json(new { success = false, data = "" });
         }
 
         [HttpGet]
@@ -111,6 +104,20 @@ namespace StarLine.Web.Areas.Admin.Controllers
                     return Json(true);
                 else
                     return Json(false);
+            }
+            return Json(false);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllAnnouncement() => Json(await _noticeRepository.GetAllAnnouncement());
+
+        [HttpGet]
+        public async Task<IActionResult> ViewAnnounceMent(long Id)
+        {
+            var model = await _noticeRepository.GetNoticeById(Id);
+            if (model != null)
+            {
+                return PartialView("_announcementViewPartialView", model.Data);
             }
             return Json(false);
         }

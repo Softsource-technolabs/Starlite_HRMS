@@ -310,12 +310,82 @@ namespace StarLine.Infrastructure.Repositories.Employees
         {
             var currentUser = _userSession.Current.UserId;
 
-            var employee = await _context.Employees.Include(d => d.Department).Where(_ => _.ReportingManagerId == currentUser).ToListAsync();
+            return await _context.Employees.Include(d => d.Department).Include(_ => _.TeamMembers).ThenInclude(_ => _.Team).Where(_ => _.ReportingManagerId == currentUser).Select(_ => new EmployeeModel
+            {
+                BloodGroup = CommonFunctions.GetDisplayName<BloodGroup>(Convert.ToInt32(_.BloodGroup)),
+                AspNetUserId = _.AspNetUserId,
+                CurrentAddress = _.CurrentAddress,
+                DateOfBirth = _.DateOfBirth,
+                DepartmentId = _.DepartmentId,
+                DesignationId = (Int64)_.DesignationId,
+                Email = _.Email,
+                EmergencyContactName = _.EmergencyContactName,
+                EmergencyContactNumber = _.EmergencyContactNumber,
+                EmployeeCode = _.EmployeeCode,
+                EmploymentType = _.EmploymentType,
+                ExperienceInYears = (decimal)_.ExperienceInYears,
+                FirstName = _.FirstName,
+                Gender = _.Gender,
+                Id = _.Id,
+                JoiningDate = _.JoiningDate,
+                LastName = _.LastName,
+                LicenseNumber = _.LicenseNumber,
+                PermanentAddress = _.PermanentAddress,
+                PhoneNumber = _.PhoneNumber,
+                Qualification = _.Qualification,
+                ReportingManagerId = _.ReportingManagerId,
+                RoleId = _.AspNetUser.Roles.FirstOrDefault().Id,
+                shiftId = _.ShiftId,
+                UserImages = _.UserImages,
+                TeamName = _.TeamMembers.FirstOrDefault().Team.Name,
+            }).ToListAsync();
+        }
+
+        public async Task<bool> UpdateEmployeeTeamAssign(EmployeeTeamAssignModel model)
+        {
+            var employee = await _context.Employees.FindAsync(model.EmployeeId);
+            var teamMember = await _context.TeamMembers.FirstOrDefaultAsync(_ => _.EmployeeId == model.EmployeeId);
             if (employee != null)
             {
-                return _mapper.Map<List<EmployeeModel>>(employee);
+                employee.DepartmentId = model.DepartmentId;
+                employee.DesignationId = model.DesignationId;
+                employee.ShiftId = model.ShiftId;
+
+                _context.Employees.Update(employee);
+                var result = await _context.SaveChangesAsync();
+                if (result > 0)
+                {
+                    if (teamMember == null)
+                    {
+                        var member = new TeamMember
+                        {
+                            EmployeeId = model.EmployeeId,
+                            TeamId = model.TeamId,
+                            CreatedBy = _userSession.Current.UserId,
+                            IsDeleted = false
+                        };
+                        await _context.TeamMembers.AddAsync(member);
+                        var res = await _context.SaveChangesAsync();
+                        if (res > 0)
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        teamMember.EmployeeId = model.EmployeeId;
+                        teamMember.TeamId = model.TeamId;
+                        teamMember.UpdatedBy = _userSession.Current.UserId;
+                        _context.TeamMembers.Update(teamMember);
+                        var res = await _context.SaveChangesAsync();
+                        if (res > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
             }
-            return null;
+            return false;
         }
     }
 }

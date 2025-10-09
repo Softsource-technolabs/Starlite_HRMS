@@ -27,16 +27,7 @@ namespace StarLine.Infrastructure.Repositories.Teams
             var result = await _context.SaveChangesAsync();
             if (result > 0)
             {
-                var teamMember = new TeamMember
-                {
-                    TeamId = model.Id,
-                    CreatedBy = _userSession.Current.UserId,
-                    IsDeleted = false
-                };
-                await _context.TeamMembers.AddAsync(teamMember);
-                var memberResult = await _context.SaveChangesAsync();
-                if (result > 0 && memberResult > 0)
-                    return new BaseApiResponse { Success = true, Message = "Team added successfully" };
+                return new BaseApiResponse { Success = true, Message = "Team added successfully" };
             }
             return new BaseApiResponse { Success = true, Message = "Team not added" };
         }

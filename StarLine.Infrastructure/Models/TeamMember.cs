@@ -11,6 +11,8 @@ public partial class TeamMember
 
     public long TeamId { get; set; }
 
+    public bool IsActive { get; set; }
+
     public long CreatedBy { get; set; }
 
     public DateTime CreatedDate { get; set; }

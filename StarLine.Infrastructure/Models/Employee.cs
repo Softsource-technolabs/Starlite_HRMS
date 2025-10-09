@@ -84,4 +84,6 @@ public partial class Employee
     public virtual Shift Shift { get; set; }
 
     public virtual ICollection<TeamMember> TeamMembers { get; set; } = new List<TeamMember>();
+
+    public virtual ICollection<TransferRequest> TransferRequests { get; set; } = new List<TransferRequest>();
 }

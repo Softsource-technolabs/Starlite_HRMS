@@ -3,23 +3,27 @@ using System.Collections.Generic;
 
 namespace StarLine.Infrastructure.Models;
 
-public partial class Attendance
+public partial class TransferRequest
 {
     public long Id { get; set; }
 
     public long EmployeeId { get; set; }
 
-    public DateOnly Attendacedate { get; set; }
+    public long FromDepartmentId { get; set; }
 
-    public TimeOnly InTime { get; set; }
-
-    public TimeOnly? OutTime { get; set; }
+    public long ToDepartmentId { get; set; }
 
     public int Status { get; set; }
 
-    public bool? LateComing { get; set; }
+    public bool CurrentManagerApproval { get; set; }
 
-    public string Remarks { get; set; }
+    public bool ReceivingManagerApproval { get; set; }
+
+    public bool Hrapproval { get; set; }
+
+    public string Reason { get; set; }
+
+    public DateOnly EffectiveDate { get; set; }
 
     public bool IsActive { get; set; }
 
@@ -38,4 +42,8 @@ public partial class Attendance
     public DateTime? DeletedDate { get; set; }
 
     public virtual Employee Employee { get; set; }
+
+    public virtual Department FromDepartment { get; set; }
+
+    public virtual Department ToDepartment { get; set; }
 }

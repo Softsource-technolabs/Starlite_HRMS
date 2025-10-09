@@ -161,3 +161,15 @@ public enum AttendaceStatus
     [Display(Name ="Away")]
     Away
 }
+
+public enum TransferStatus
+{
+    [Display(Name = "Select Transfer Status")]
+    None = 0,
+    [Display(Name = "Pending")]
+    Pending = 1,
+    [Display(Name = "Approve")]
+    Approved,
+    [Display(Name = "Reject")]
+    Rejected
+}

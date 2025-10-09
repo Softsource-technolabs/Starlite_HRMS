@@ -188,6 +188,19 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.LateComing, opt => opt.MapFrom(_ => _.LateComing))
                 .ForMember(_ => _.Remarks, opt => opt.MapFrom(_ => _.Remarks))
                 .ReverseMap();
+
+            CreateMap<TransferRequestModel, TransferRequest>()
+                .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
+                .ForMember(_ => _.EmployeeId, opt => opt.MapFrom(_ => _.EmployeeId))
+                .ForMember(_ => _.FromDepartmentId, opt => opt.MapFrom(_ => _.FromDepartmentId))
+                .ForMember(_ => _.ToDepartmentId, opt => opt.MapFrom(_ => _.ToDepartmentId))
+                .ForMember(_ => _.Reason, opt => opt.MapFrom(_ => _.Reason))
+                .ForMember(_ => _.Status, opt => opt.MapFrom(_ => _.Status))
+                .ForMember(_ => _.CurrentManagerApproval, opt => opt.MapFrom(_ => _.CurrentManagerApproval))
+                .ForMember(_ => _.ReceivingManagerApproval, opt => opt.MapFrom(_ => _.ReceivingManagerApproval))
+                .ForMember(_ => _.Hrapproval, opt => opt.MapFrom(_ => _.Hrapproval))
+                .ForMember(_ => _.EffectiveDate, opt => opt.MapFrom(_ => _.EffectiveDate))
+                .ReverseMap();
         }
     }
 }

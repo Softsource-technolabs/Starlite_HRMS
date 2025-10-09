@@ -1,18 +1,21 @@
-﻿const attendaceEndPoint = "/Admin/Home/GetAttendace";
+﻿const attendaceEndPoint = "/Admin/Home/GetShiftDetails";
 const markclockIn = "/Admin/Home/MarkclockIn";
 const markclockOut = "/Admin/Home/MarkclockOut";
+const viewAnnouncement = "/Admin/Home/ViewAnnounceMent"
 
 $(async function () {
-    await GetLeaves();
-    await getAttendance();
+    await GetShiftDetails();
+    await GetHolidays();
     await GetAllAttendance();
+    await GetAllAnnouncement();
 })
 
-async function GetLeaves() {
+async function GetHolidays() {
     $("#tblHolidays").dataTable({
         "processing": true,
         "serverSide": true,
         "sorting": true,
+        pageLength: 5,
         drawCallback: function () {
             $('.toggle-status').bootstrapToggle();
         },
@@ -52,7 +55,9 @@ async function GetAllAttendance() {
     var url = $('#tblAttendance').data('get');
 
     $.get(url, function (response) {
-        let table = $('#tblAttendance').DataTable();
+        let table = $('#tblAttendance').DataTable({
+            pageLength: 5
+        });
         table.clear().draw();
 
         // Append rows
@@ -67,24 +72,54 @@ async function GetAllAttendance() {
     })
 }
 
-async function getAttendance() {
+async function GetShiftDetails() {
     $.get(attendaceEndPoint, function (response) {
         if (response.success == true) {
-            var shift = response.shift;
-            $("#spnOfficeTime").text(shift.shiftName);
-            if (shift.isClockedIn && !shift.isclockedOut) {
+            var data = response.data;
+            if (data.isClockedIn && !data.isclockedOut) {
                 $("#spnStatus").removeClass("text-warning");
-                $("#spnStatus").text(shift.status).addClass("text-success");
+                $("#spnStatus").text(data.status).addClass("text-success");
                 $("#btnclockIn").prop("disabled", true);
                 $("#btnclockOut").prop("disabled", false);
             }
-            if (shift.isclockedOut) {
+            if (data.isclockedOut) {
                 $("#spnStatus").removeClass("text-success");
-                $("#spnStatus").text(shift.status).addClass("text-warning");
+                $("#spnStatus").text(data.status).addClass("text-warning");
                 $("#btnclockOut").prop("disabled", true);
                 $("#btnclockIn").prop("disabled", false);
             }
+
+            var shift = response.data.shift;
+            if (shift != null) {
+                var container = $("#divShiftDetails");
+                container.html("");
+                const div = document.createElement("div");
+                div.className = 'row mt-2';
+                div.innerHTML = `<div class="col-md-4"><div class="row"><div class="col-md-12"><strong>Shift Group Name:</strong> ${shift.shiftGroup.groupName}</div><div class="col-md-12 mt-2"><strong>Shift Name:</strong> ${shift.shifts[0].shiftName}</div></div></div>
+                                 <div class="col-md-4"><div class="row"><div class="col-md-12"><strong>Shift Time:</strong> ${formatTimeString(shift.shifts[0].startTime)} to ${formatTimeString(shift.shifts[0].endTime)}</div><div class="col-md-12 mt-2"><strong>Grace Period: </strong> ${shift.shifts[0].gracePeriodMins}</div></div></div>
+                                 <div class="col-md-4"><div class="row"><div class="col-md-12"><strong>Shift Rotation Type:</strong> ${shift.shiftGroup.rotationTypeName}</div></div></div>`;
+                container.append(div);
+            }
         }
+    })
+}
+
+async function GetAllAnnouncement() {
+
+    var url = $('#tblAnnoncement').data('get');
+
+    $.get(url, function (response) {
+        if (response.length > 0) { $("#tblAnnoncement tbody").html(''); }
+        var table = $('#tblAnnoncement').DataTable();
+        table.page.len(5).draw();
+        // Append rows
+        $.each(response, function (index, row) {
+            table.row.add([
+                row.title,
+                formatUTC(row.publishDate),
+                `<a href=# class="btn btn-sm btn-outline-secondary w-100" onclick="OpenAnnouncement(${row.id})">View</a>`
+            ]).draw(false);
+        });
     })
 }
 
@@ -94,7 +129,7 @@ $("#btnclockIn").on("click", async function () {
             $("#btnclockIn").prop("disabled", true);
             $("#btnclockOut").prop("disabled", false);
             toastr.success("Attendance Mark as clock in");
-            await getAttendance();
+            await GetShiftDetails();
             await GetAllAttendance();
         }
         else {
@@ -109,7 +144,7 @@ $("#btnclockOut").on("click", async function () {
             $("#btnclockOut").prop("disabled", true);
             $("#btnclockIn").prop("disabled", false);
             toastr.success("Attendance Mark as clock out");
-            await getAttendance();
+            await GetShiftDetails();
             await GetAllAttendance();
         }
         else {
@@ -117,3 +152,17 @@ $("#btnclockOut").on("click", async function () {
         }
     })
 })
+
+function OpenAnnouncement(id) {
+    var url = viewAnnouncement + "?Id=" + id;
+    $.get(url, function (response) {
+        if (response != false) {
+            $("#hrmsModalBody").html(response);
+            $("#hrmsSmallModel .modal-dialog").addClass("modal-xl");
+            $("#hrmsSmallModel").modal("show");
+        }
+        else {
+            toastr.error("error while opening announcement.");
+        }
+    })
+}

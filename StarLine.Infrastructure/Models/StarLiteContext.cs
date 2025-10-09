@@ -57,6 +57,8 @@ public partial class StarLiteContext : DbContext
 
     public virtual DbSet<TeamMember> TeamMembers { get; set; }
 
+    public virtual DbSet<TransferRequest> TransferRequests { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -478,6 +480,34 @@ public partial class StarLiteContext : DbContext
                 .HasForeignKey(d => d.TeamId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_TeamMembers_Teams");
+        });
+
+        modelBuilder.Entity<TransferRequest>(entity =>
+        {
+            entity.ToTable("TransferRequest");
+
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.DeletedDate).HasColumnType("datetime");
+            entity.Property(e => e.Hrapproval).HasColumnName("HRApproval");
+            entity.Property(e => e.Reason)
+                .HasMaxLength(500)
+                .IsUnicode(false);
+            entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+
+            entity.HasOne(d => d.Employee).WithMany(p => p.TransferRequests)
+                .HasForeignKey(d => d.EmployeeId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_TransferRequest_Employee");
+
+            entity.HasOne(d => d.FromDepartment).WithMany(p => p.TransferRequestFromDepartments)
+                .HasForeignKey(d => d.FromDepartmentId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_TransferRequest_Department");
+
+            entity.HasOne(d => d.ToDepartment).WithMany(p => p.TransferRequestToDepartments)
+                .HasForeignKey(d => d.ToDepartmentId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_TransferRequest_Department1");
         });
 
         OnModelCreatingPartial(modelBuilder);
