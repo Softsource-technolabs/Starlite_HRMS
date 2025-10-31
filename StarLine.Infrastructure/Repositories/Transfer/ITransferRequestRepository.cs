@@ -8,6 +8,6 @@ namespace StarLine.Infrastructure.Repositories.Transfer
         Task<long> AddUpdateTransferRequest(TransferRequestModel model);
         Task<bool> DeleteTransferRequest(long transferId);
         Task<TransferRequestModel> GetTransferRequest(long transferId);
-        Task<PagedResponse<List<TransferRequestModel>>> GetAllTransferRequests(PaginationModel model);
+        Task<List<TransferRequestModel>> GetAllTransferRequests();
     }
 }

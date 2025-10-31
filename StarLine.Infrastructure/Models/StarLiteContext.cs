@@ -57,9 +57,19 @@ public partial class StarLiteContext : DbContext
 
     public virtual DbSet<TeamMember> TeamMembers { get; set; }
 
+    public virtual DbSet<Training> Trainings { get; set; }
+
+    public virtual DbSet<TrainingAssignment> TrainingAssignments { get; set; }
+
+    public virtual DbSet<TrainingCertificate> TrainingCertificates { get; set; }
+
+    public virtual DbSet<TrainingSession> TrainingSessions { get; set; }
+
     public virtual DbSet<TransferRequest> TransferRequests { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=SOFTSOURCE001;Database=StarLite;User Id=sa; Password=sa@123;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -480,6 +490,96 @@ public partial class StarLiteContext : DbContext
                 .HasForeignKey(d => d.TeamId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_TeamMembers_Teams");
+        });
+
+        modelBuilder.Entity<Training>(entity =>
+        {
+            entity.Property(e => e.Category)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.DeletedDate).HasColumnType("datetime");
+            entity.Property(e => e.Description)
+                .IsRequired()
+                .HasMaxLength(500)
+                .IsUnicode(false);
+            entity.Property(e => e.Name)
+                .IsRequired()
+                .HasMaxLength(200)
+                .IsUnicode(false);
+            entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+        });
+
+        modelBuilder.Entity<TrainingAssignment>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Training__3214EC0775D2701D");
+
+            entity.Property(e => e.AssignedDate).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.CreatedDate).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.IsActive).HasDefaultValue(true);
+            entity.Property(e => e.Remarks).HasMaxLength(250);
+            entity.Property(e => e.Status).HasDefaultValueSql("('1')");
+
+            entity.HasOne(d => d.Employee).WithMany(p => p.TrainingAssignments)
+                .HasForeignKey(d => d.EmployeeId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_TrainingAssignments_Employee");
+
+            entity.HasOne(d => d.TrainingSession).WithMany(p => p.TrainingAssignments)
+                .HasForeignKey(d => d.TrainingSessionId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_TrainingAssignments_Session");
+        });
+
+        modelBuilder.Entity<TrainingCertificate>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Training__3214EC0715BEC36D");
+
+            entity.Property(e => e.CertificateNo)
+                .HasMaxLength(19)
+                .IsUnicode(false)
+                .HasComputedColumnSql("((((('CERT-'+CONVERT([char](4),datepart(year,[IssuedDate])))+right('0'+CONVERT([varchar](2),datepart(month,[IssuedDate])),(2)))+right('0'+CONVERT([varchar](2),datepart(day,[IssuedDate])),(2)))+'-')+right('00000'+CONVERT([varchar](5),[Id]),(5)))", true);
+            entity.Property(e => e.CertificatePath).HasMaxLength(500);
+            entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+            entity.Property(e => e.IssuedDate).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.Remarks).HasMaxLength(250);
+            entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+
+            entity.HasOne(d => d.Employee).WithMany(p => p.TrainingCertificates)
+                .HasForeignKey(d => d.EmployeeId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Certificates_Employee");
+
+            entity.HasOne(d => d.TrainingAssigned).WithMany(p => p.TrainingCertificates)
+                .HasForeignKey(d => d.TrainingAssignedId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_TrainingCertificates_TrainingAssignments");
+        });
+
+        modelBuilder.Entity<TrainingSession>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Training__3214EC074F7A08E9");
+
+            entity.Property(e => e.Category).HasMaxLength(100);
+            entity.Property(e => e.CreatedDate).HasDefaultValueSql("(getutcdate())");
+            entity.Property(e => e.DurationHours).HasColumnType("decimal(5, 2)");
+            entity.Property(e => e.IsActive).HasDefaultValue(true);
+            entity.Property(e => e.Location).HasMaxLength(200);
+            entity.Property(e => e.TrainingCode)
+                .HasMaxLength(18)
+                .IsUnicode(false)
+                .HasComputedColumnSql("((('TRN-'+CONVERT([char](8),[StartDate],(112)))+'-')+right('00000'+CONVERT([varchar](5),[Id]),(5)))", true);
+
+            entity.HasOne(d => d.Trainer).WithMany(p => p.TrainingSessions)
+                .HasForeignKey(d => d.TrainerId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_TrainingSessions_Employee");
+
+            entity.HasOne(d => d.Training).WithMany(p => p.TrainingSessions)
+                .HasForeignKey(d => d.TrainingId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_TrainingSessions_Trainings");
         });
 
         modelBuilder.Entity<TransferRequest>(entity =>

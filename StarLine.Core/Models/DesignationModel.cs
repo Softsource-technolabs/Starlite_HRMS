@@ -14,6 +14,9 @@ namespace StarLine.Core.Models
         [Display(Name = "Designation description")]
         [StringLength(500, MinimumLength = 10, ErrorMessage = "Designation Description can be null but must be between 10 to 500 characters")]
         public string Description { get; set; }
+        [Display(Name = "Is Trainer")]
+        [Required(ErrorMessage ="Please select is trainer")]
+        public bool? IsTrainer { get; set; }
         public string DepartmentName { get; set; }
         [Display(Name = "Level")]
         [Required(ErrorMessage ="Please select Level")]

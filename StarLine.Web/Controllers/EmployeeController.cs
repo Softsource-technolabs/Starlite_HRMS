@@ -1,20 +1,24 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using StarLine.Core.Common;
 using StarLine.Core.Models;
 using StarLine.Core.Session;
 using StarLine.Infrastructure.Repositories.Employees;
 using StarLine.Infrastructure.Repositories.Lists;
+using StarLine.Infrastructure.Repositories.Transfer;
 
 namespace StarLine.Web.Controllers
 {
     [Authorize(Policy = "EmployeePolicy")]
     public class EmployeeController(IEmployeeRepository employeeRepository, ILookUpRepository lookUpRepository, IUserSession userSession,
-        IHttpContextAccessor httpContextAccessor) : Controller
+        IHttpContextAccessor httpContextAccessor, ITransferRequestRepository transferRepository) : Controller
     {
         private readonly IEmployeeRepository _employeeRepository = employeeRepository;
         private readonly IUserSession _userSession = userSession;
         private readonly ILookUpRepository _lookUpRepository = lookUpRepository;
         private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
+        private readonly ITransferRequestRepository _transferRepository = transferRepository;
+
         public async Task<IActionResult> ViewProfile()
         {
             var response = await _employeeRepository.GetEmployeeDetailsById(_userSession.Current.UserId);
@@ -28,12 +32,12 @@ namespace StarLine.Web.Controllers
             response.UserImages = imagefilePath;
             return View(response);
         }
-
         public async Task<IActionResult> Index()
         {
-            var employees = await _employeeRepository.GetEmployeeListForAssignTeam();
+            var employees = await _employeeRepository.GetTeamEmployee();
             foreach (var emp in employees)
             {
+                //if (emp.Id == _userSession.Current.ReportingManager) { emp.TeamName = "Department Head"; }
                 string imageUrl = "/UserAvtars/default.png";
                 if (!string.IsNullOrEmpty(emp.UserImages))
                 {
@@ -45,7 +49,6 @@ namespace StarLine.Web.Controllers
             }
             return View(employees);
         }
-
         public async Task<IActionResult> AssignTeam(long id)
         {
             ViewBag.Departmets = await _lookUpRepository.GetAllDepartment("");
@@ -55,13 +58,11 @@ namespace StarLine.Web.Controllers
             var employee = await _employeeRepository.GetEmployeeById(id);
             return PartialView("_TeamAssignPartialView", employee.Data);
         }
-
         public async Task<IActionResult> GetShifts(long id)
         {
             var model = await _lookUpRepository.GetShift("", id);
             return Json(model);
         }
-
         public async Task<IActionResult> GetDepartmentTeam(long id)
         {
             var model = await _lookUpRepository.GetTeambyDepartmentId(id);

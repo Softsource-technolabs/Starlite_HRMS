@@ -38,5 +38,7 @@
         public static string Shift = "Shift & Shift Group :";
         public static string Leave = "Leave :";
         public static string Hierarchy = "Hierarchy :";
+        public static string Training = "Training :";
+        public static string TrainingSession = "Training Session :";
     }
 }

@@ -44,21 +44,6 @@ namespace StarLine.Core.CommonService
 
             return new ApiPostResponse<string> { Data = fileName, Message = "File saved successfully", Success = true };
         }
-
-        public ApiPostResponse<string> GetFilePath(string fileName, string path)
-        {
-            if (string.IsNullOrEmpty(fileName))
-                return new ApiPostResponse<string> { Message = "File name not provided.", Success = false };
-
-            string uploadsFolder = Path.Combine(_environment.WebRootPath, path.TrimStart('/', '\\'));
-            string filePath = Path.Combine(uploadsFolder, fileName);
-
-            if (!System.IO.File.Exists(filePath))
-                return new ApiPostResponse<string> { Message = "File not found.", Success = false };
-            else
-                return new ApiPostResponse<string> { Data = filePath, Message = "File Found", Success = true };
-        }
-
         public async Task<ApiPostResponse<string>> StoreFile(IFormFile file, string existingFile, string path)
         {
             if (file == null || file.Length == 0)
@@ -87,6 +72,22 @@ namespace StarLine.Core.CommonService
             }
 
             return new ApiPostResponse<string> { Data = fileName, Message = "File update successfully", Success = true };
+        }
+        public async Task<ApiPostResponse<string>> StoreFile(byte[] file, string path)
+        {
+            if (file == null || file.Length == 0)
+                return new ApiPostResponse<string> { Success=false,Message ="Certificate not found" };
+            path = path.Replace('/', '\\');
+            // create path to wwwroot/uploads
+            string uploadsFolder = Path.Combine(_environment.WebRootPath, path.TrimStart('/', '\\'));
+            
+            string directoryPath = Path.GetDirectoryName(uploadsFolder);
+
+            if (!Directory.Exists(directoryPath))
+                Directory.CreateDirectory(directoryPath);
+            // Save the file
+            await File.WriteAllBytesAsync(uploadsFolder, file);
+            return new ApiPostResponse<string> {Data = uploadsFolder,Success = true, Message = "Certificate stored provided location" };
         }
     }
 }

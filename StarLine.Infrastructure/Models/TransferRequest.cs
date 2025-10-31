@@ -13,13 +13,11 @@ public partial class TransferRequest
 
     public long ToDepartmentId { get; set; }
 
-    public int Status { get; set; }
+    public int CurrentManagerApproval { get; set; }
 
-    public bool CurrentManagerApproval { get; set; }
+    public int ReceivingManagerApproval { get; set; }
 
-    public bool ReceivingManagerApproval { get; set; }
-
-    public bool Hrapproval { get; set; }
+    public int Hrapproval { get; set; }
 
     public string Reason { get; set; }
 

@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 "data": "gender", "autoWidth": true, className: 'text-center',
                 "render": function (data, type, row) {
-                    return row.gender = 1 ? "Male" : "Female";
+                    return row.gender == 1 ? "Male" : "Female";
                 }
             },
             { "data": "email", "name": "email", "autoWidth": true,},

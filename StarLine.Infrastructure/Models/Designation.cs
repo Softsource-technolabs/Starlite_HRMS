@@ -13,6 +13,8 @@ public partial class Designation
 
     public string Description { get; set; }
 
+    public bool IsTrainer { get; set; }
+
     public int? HierarchyLevel { get; set; }
 
     public bool IsActive { get; set; }

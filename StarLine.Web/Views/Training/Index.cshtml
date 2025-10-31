@@ -1,0 +1,82 @@
+﻿@model IEnumerable<StarLine.Core.Models.TrainerSessionListModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Session List</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered datatable">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Id)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TrainingName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TrainingCode)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.StartDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EndDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TotalParticipants)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Status)
+                                </th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TrainingName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TrainingCode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StartDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EndDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TotalParticipants)
+                                    </td>
+                                    <td>
+                                        <span class="badge @(item.Status == TrainingAssignStatus.Completed ? "bg-success" : "bg-warning text-dark")">@item.Status </span>
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("TrainingCompletion", "Training", new { sessionId = item.Id })"
+                                           class="btn btn-outline-primary btn-sm">
+                                            View Employees
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

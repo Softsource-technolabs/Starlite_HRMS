@@ -10,6 +10,10 @@ using StarLine.Infrastructure.Repositories.Lists;
 using StarLine.Infrastructure.Repositories.Notices;
 using StarLine.Infrastructure.Repositories.Shifts;
 using StarLine.Infrastructure.Repositories.Teams;
+using StarLine.Infrastructure.Repositories.TrainingAssignments;
+using StarLine.Infrastructure.Repositories.Trainings;
+using StarLine.Infrastructure.Repositories.TrainingSessions;
+using StarLine.Infrastructure.Repositories.Transfer;
 
 namespace StarLine.Infrastructure
 {
@@ -32,6 +36,10 @@ namespace StarLine.Infrastructure
                 { typeof(ILookUpRepository), typeof(LookUpRepository) },
                 { typeof(ILeaveRepository), typeof(LeaveRepository) },
                 { typeof(IAttendanceRepository), typeof(AttendanceRepository) },
+                { typeof(ITransferRequestRepository), typeof(TransferRequestRepository) },
+                { typeof(ITrainingRepository), typeof(TrainingRepository) },
+                { typeof(ITrainingSessionRepository), typeof(TrainingSessionRepository) },
+                { typeof(ITrainingAssignRepository), typeof(TrainingAssignRepository) },
             };
             return repositoryDictionary;
         }

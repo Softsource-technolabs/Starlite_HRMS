@@ -71,11 +71,12 @@ namespace StarLine.Core.Models
         public string UserImages { get; set; }
         public bool LoginFirst { get; set; } = false;
         public string RoleName { get; set; } = null!;
-        public long shiftId { get; set; }
+        public long ShiftId { get; set; }
         public string ShiftNameandTiming { get; set; } = null!;
         public string FullName => $"{FirstName} {LastName}";
         public string DepartmentName { get; set; }
         public string TeamName { get; set; }
+        public string TransferStatus { get; set; }
     }
 
     public class EmployeeDetailsModel : BaseEntity

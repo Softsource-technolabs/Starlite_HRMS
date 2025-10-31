@@ -1,0 +1,164 @@
+﻿@model StarLine.Core.Models.TrainingSessionModel
+
+@{
+    ViewData["Title"] = "ManageSession";
+}
+
+<style>
+    /* Counter styling at bottom-right corner */
+    .char-counter {
+        font-size: 0.875rem;
+        color: #6c757d; /* Bootstrap's secondary text color */
+        pointer-events: none; /* Makes it non-clickable */
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                @if (Model.Id > 0)
+                {
+                    <h5 class="card-title">Modify Department</h5>
+                }
+                else
+                {
+                    <h5 class="card-title">Add New Department</h5>
+                }
+            </div>
+            <form asp-action="ManageSession">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" class="form-control" />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="TrainingId" class="control-label"></label>
+                            <div class="form-group">
+                                <Select asp-for="TrainingId" class="form-select" asp-items="@ViewBag.Trainings"></Select>
+                                <span asp-validation-for="TrainingId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Category" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="Category" class="form-control" />
+                                <span asp-validation-for="Category" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <label asp-for="TrainerId" class="control-label"></label>
+                            <div class="form-group">
+                                <Select asp-for="TrainerId" class="form-select" asp-items="@ViewBag.Trainers"></Select>
+                                <span asp-validation-for="TrainerId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Mode" class="control-label"></label>
+                            <div class="form-group">
+                                <select asp-for="Mode" class="form-select" asp-items="@ViewBag.Modes"></select>
+                                <span asp-validation-for="Mode" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <label asp-for="StartDate" class="control-label"></label>
+                            <div class="form-group">
+                                <input type="date" asp-for="StartDate" class="form-control" />
+                                <span asp-validation-for="StartDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="EndDate" class="control-label"></label>
+                            <div class="form-group">
+                                <input type="date" asp-for="EndDate" class="form-control" value="@(Model.EndDate.HasValue ? Model.EndDate.Value.ToString("yyyy-MM-dd") : "")" />
+                                <span asp-validation-for="EndDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-4">
+                            <label asp-for="DurationHours" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="DurationHours" class="form-control" />
+                                <span asp-validation-for="DurationHours" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Location" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="Location" class="form-control" />
+                                <span asp-validation-for="Location" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="MaxParticipants" class="control-label"></label>
+                            <div class="form-group">
+                                <input asp-for="MaxParticipants" class="form-control" />
+                                <span asp-validation-for="MaxParticipants" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <div class="d-flex justify-content-between">
+                                <label asp-for="Description" class="control-label"></label>
+                                <div id="remarksCounter" class="char-counter">0 / 200</div>
+                            </div>
+                            <div class="form-group">
+                                <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        @if (Model.Id > 0)
+                        {
+                            <input type="submit" value="Update" class="btn btn-sm btn-primary" />
+                        }
+                        else
+                        {
+                            <input type="submit" value="Add New" class="btn btn-sm btn-primary" />
+                        }
+                        <a asp-action="Index" asp-controller="TrainingSession" class="btn btn-sm btn-outline-secondary">Back to List</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        <script type="text/javascript">
+              const $textarea = $('#Description');
+            const $counter = $('#remarksCounter');
+            const maxLength = parseInt($textarea.attr('maxlength'));
+
+            // Update on load and whenever input changes
+            function updateCounter() {
+              const currentLength = $textarea.val().length;
+              $counter.text(`${currentLength} / ${maxLength}`);
+
+              // Optional: change color when near limit
+              if (currentLength >= maxLength - 10) {
+                $counter.css('color', 'red');
+              } else {
+                $counter.css('color', '#6c757d');
+              }
+            }
+
+            $textarea.on('input', updateCounter);
+            updateCounter(); // Initial load
+        </script>
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

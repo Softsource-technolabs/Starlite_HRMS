@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using NToastNotify;
+using QuestPDF.Infrastructure;
 using StarLine.Core.Common;
 using StarLine.Infrastructure.Mapping;
 using StarLine.Infrastructure.Models;
@@ -66,6 +67,8 @@ builder.Services.AddControllersWithViews()
         PositionClass = ToastPositions.TopRight,
         PreventDuplicates = true
     });
+
+QuestPDF.Settings.License = LicenseType.Community;
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())

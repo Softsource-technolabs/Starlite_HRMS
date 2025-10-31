@@ -49,7 +49,7 @@ namespace StarLine.Web.Controllers
             var employeeDetails = await _employeeRepository.GetEmployeeById(currentUser);
             if (employeeDetails != null)
             {
-                var shiftDetails = await _shiftRepository.GetFullShiftDetails(employeeDetails.Data.shiftId);
+                var shiftDetails = await _shiftRepository.GetFullShiftDetails(employeeDetails.Data.ShiftId);
                 var attendances = await _attendanceRepository.GetAttendanceByEmpId(currentUser);
                 var employeeattendace = new
                 {
@@ -72,7 +72,7 @@ namespace StarLine.Web.Controllers
         {
             long empId = _userSession.Current.UserId;
             var employeeDetails = await _employeeRepository.GetEmployeeById(empId);
-            var shift = await _shiftRepository.GetShiftById(employeeDetails.Data.shiftId);
+            var shift = await _shiftRepository.GetShiftById(employeeDetails.Data.ShiftId);
 
             var model = new AttendanceModel
             {

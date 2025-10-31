@@ -8,5 +8,6 @@
     public class Storage
     {
         public string NoticeDocsLocation { get; set; }
+        public string CertificateLocation { get; set; }
     }
 }

@@ -29,6 +29,15 @@ document.addEventListener('DOMContentLoaded', function () {
             { "data": "designationName", "name": "designationName", "autoWidth": true, orderable: false, },
             { "data": "description", "name": "description", "autoWidth": true },
             {
+                data: null, // Important: set data to null for custom HTML
+                orderable: false,
+                searchable: false,
+                className: 'text-center',
+                "render": function (data, type, row) {
+                    return row.isTrainer == true ? "Yes" : "No";
+                }
+            },
+            {
                 data: "isActive", // Important: set data to null for custom HTML
                 orderable: false,
                 searchable: false,
@@ -38,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         data-toggle="toggle" data-on="Active" data-off="Inactive" data-onstyle="success" data-offstyle="danger">`;
                 }
             },
+            
             {
                 data: null, // Important: set data to null for custom HTML
                 orderable: false,

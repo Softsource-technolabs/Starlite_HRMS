@@ -1,0 +1,24 @@
+﻿@model IEnumerable<StarLine.Core.Models.EmployeeModel>
+@{
+    Layout = null;
+}
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning">No eligible employees found for this session.</div>
+}
+else
+{
+    <div class="fw-medium">Select Employee from bellow list</div>
+    <div class="border p-3 rounded" style="max-height: 350px; overflow-y: auto;">
+        @foreach (var emp in Model)
+        {
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="employeeIds" value="@emp.Id" id="emp_@emp.Id" />
+                <label class="form-check-label" for="emp_@emp.Id">
+                    @emp.FullName (@emp.DepartmentName)
+                </label>
+            </div>
+        }
+    </div>
+}

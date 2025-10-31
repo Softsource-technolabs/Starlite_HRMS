@@ -85,5 +85,11 @@ public partial class Employee
 
     public virtual ICollection<TeamMember> TeamMembers { get; set; } = new List<TeamMember>();
 
+    public virtual ICollection<TrainingAssignment> TrainingAssignments { get; set; } = new List<TrainingAssignment>();
+
+    public virtual ICollection<TrainingCertificate> TrainingCertificates { get; set; } = new List<TrainingCertificate>();
+
+    public virtual ICollection<TrainingSession> TrainingSessions { get; set; } = new List<TrainingSession>();
+
     public virtual ICollection<TransferRequest> TransferRequests { get; set; } = new List<TransferRequest>();
 }

@@ -12,14 +12,18 @@ namespace StarLine.Core.Models
         public long EmployeeId { get; set; }
         public long FromDepartmentId { get; set; }
         public long ToDepartmentId { get; set; }
-        public int Status { get; set; }
-        public bool CurrentManagerApproval { get; set; }
-        public bool ReceivingManagerApproval { get; set; }
-        public bool Hrapproval { get; set; }
+        public TransferStatus CurrentManagerApproval { get; set; }
+        public TransferStatus ReceivingManagerApproval { get; set; }
+        public TransferStatus Hrapproval { get; set; }
         public string Reason { get; set; }
         public DateOnly EffectiveDate { get; set; }
         public string EmployeeName { get; set; }
         public string FromDepartmentName { get; set; }
         public string ToDepartmentName { get; set; }
+        public string HrManagerName => "Hr Manager"; // This can be fetched from user service based on HR approval
+        public string FromDepartmentManager { get; set; }
+        public string ToDepartmentManager { get; set; }
+        public long fromDepartmentManagerId { get; set; }
+        public long toDepartmentManagerId { get; set; }
     }
 }

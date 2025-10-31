@@ -1,0 +1,58 @@
+﻿@model IEnumerable<StarLine.Core.Models.TrainingAssignmentListModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table id="tblTrainingAssignmentSession" class="table table-bordered datatable">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TrainingName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SessionCode)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TrainerName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AssignedDate)
+                        </th>
+                        <th>Employees</th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CompletionStatus)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TrainingName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SessionCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TrainerName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AssignedDate)
+                            </td>
+                            <td><a href="#" class="btn btn-sm btn-outline-warning" data-sessionId="@item.Id" id="btnViewEmployee">View Employee</a></td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CompletionStatus)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="~/js/pages/admin/assigntraining.js"></script>

@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5 class="card-title">Training Session List</h5>
+                <a asp-controller="TrainingSession" asp-action="ManageSession" class="btn btn-sm btn-primary">Add New</a>
+            </div>
+            <div class="card-body">
+                <table id="tblTrainingSession" class="table table-bordered dataTable" data-url="@Url.Action("GetData", "TrainingSession")" data-toggleStatus="@Url.Action("ChangeStatus", "TrainingSession")">
+                    <thead>
+                        <tr>
+                            <th>Training Code</th>
+                            <th>Training Name</th>
+                            <th>Category</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Location</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/pages/admin/trainingsession.js"></script>

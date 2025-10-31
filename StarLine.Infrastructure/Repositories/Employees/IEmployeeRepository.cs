@@ -19,7 +19,7 @@ namespace StarLine.Infrastructure.Repositories.Employees
         Task<bool> checkforDuplicateByEmail(string emailAddress);
         Task<bool> checkforDuplicateByMobile(string mobileNo);
         Task<bool> checkforDuplicateByLicense(string licenseNo);
-        Task<List<EmployeeModel>> GetEmployeeListForAssignTeam();
+        Task<List<EmployeeModel>> GetTeamEmployee();
         Task<bool> UpdateEmployeeTeamAssign(EmployeeTeamAssignModel model);
     }
 }

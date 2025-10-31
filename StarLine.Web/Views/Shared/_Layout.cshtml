@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -37,6 +38,14 @@
                         <li>
                             <a asp-area="" asp-controller="Employee" asp-action="Index">Employee</a>
                         </li>
+                        @{
+                            var roleName = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value ?? "";
+
+                            if (roleName == "Department-Head")
+                            {
+                                <li><a asp-area="" asp-controller="Transfer" asp-action="Index">Transfer</a></li>
+                            }
+                        }
                     </ul>
                 </div>
             </nav>

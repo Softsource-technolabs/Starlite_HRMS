@@ -1,0 +1,102 @@
+﻿@model IEnumerable<StarLine.Core.Models.TrainingAssignmentListModel>
+
+@{
+    ViewData["Title"] = "TrainingCompletion";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5>Session Employee List</h5>
+                <input type="button" id="btnSubmit" name="btnSubmit" value="Submit" class="btn btn-primary btn-sm" style="width:15%" />
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EmployeeName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Department)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CompletionStatus)
+                                </th>
+                                <th>Remakrs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmployeeName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Department)
+                                    </td>
+                                    <td>
+                                        <select name="CompletionStatus" class="form-select" data-id="@item.Id" >
+                                            <option value="1">Pending</option>
+                                            <option value="3">Completed</option>
+                                            <option value="4">Failed</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="remarks" data-id="@item.Id" class="form-control form-control-sm" />
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <input type="button" id="btnSubmit" name="btnSubmit" value="Submit" class="btn btn-primary w-100" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).on("click","#btnSubmit",function(){
+        let data = [];
+        debugger;
+        $("select[name='CompletionStatus']").each(function () {
+            let assignmentId = $(this).data("id");
+            let status = $(this).val();
+            let remark = $("input[name='remarks'][data-id='" + assignmentId + "']").val();
+
+            data.push({
+                Id: assignmentId,
+                Status: parseInt(status),
+                Remarks: remark
+            });
+        });
+
+         $.ajax({
+            url: '@Url.Action("SaveCompletion", "Training")',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function (res) {
+                alert('Training completion saved successfully!');
+                location.reload();
+            }
+        });
+    })
+</script>

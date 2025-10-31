@@ -120,21 +120,137 @@ $(document).on("click", "#btnTeamSubmit", function () {
         formData.append("ShiftGroupId", $("#shiftGroupId").val());
         formData.append("ShiftId", $("#shiftId").val());
 
-        fetch('/Employee/EmployeeTeamAssign', {  // Change URL to your controller action
+        var url = $("#tblemployee").data("assignteam")
+        fetch(url, {  // Change URL to your controller action
             method: 'POST',
             body: formData
         })
-        .then(response => response.json())
-        .then(data => {
-            debugger;
-            if (data.isSuccess) {
-                $("#hrmsSmallModel").modal("hide");
-                window.location.href = "/Employee/Index";
-                toastr.success(data.message);
+            .then(response => response.json())
+            .then(data => {
+                debugger;
+                if (data.isSuccess) {
+                    $("#hrmsSmallModel").modal("hide");
+                    window.location.href = "/Employee/Index";
+                    toastr.success(data.message);
+                }
+                else
+                    toastr.error(data.message);
+            })
+            .catch(error => console.error('Error:', error));
+    }
+})
+
+function generateTransfer(employeeId) {
+    var url = $("#tblemployee").data("transfer") + "?id=" + employeeId;
+    $.get(url, function (response) {
+        if (response.isSuccess != false) {
+            $("#hrmsModalBody").html(response);
+            $("#hrmsSmallModel").modal("show");
+            $("#EmployeeId").val(employeeId).trigger("change");
+            $("#EmployeeId").prop("disabled", "disabled");
+            $("#FromDepartmentId").prop("disabled", "disabled");
+            $("#Status").trigger("change");
+            AddTransferFormValidation();
+        }
+        else {
+            toastr.error("error while opening announcement.");
+        }
+    });
+}
+
+function AddTransferFormValidation() {
+    $("#frmTransferForm").validate({
+        rules: {
+            EmployeeId: {
+                required: true,
+                min: 1
+            },
+            FromDepartmentId: {
+                required: true,
+                min: 1
+            },
+            ToDepartmentId: {
+                required: true,
+                min: 1
+            },
+            Status: {
+                required: true,
+                min: 1
+            },
+            EffectiveDate: {
+                required: true,
+            },
+            Reason: {
+                required: true,
+                minlength: 2,
+                maxlength: 100
             }
-            else
-                toastr.error(data.message);
-        })
-        .catch(error => console.error('Error:', error));
+        },
+        messages: {
+            EmployeeId: {
+                required: "Please select employee",
+                min: "Please select employee"
+            },
+            FromDepartmentId: {
+                required: "Please from department",
+                min: "Please from department"
+            },
+            ToDepartmentId: {
+                required: "Please to department",
+                min: "Please to department",
+            },
+            Status: {
+                required: "Please status",
+                min: "Please status"
+            },
+            EffectiveDate: {
+                required: "Please select effective date",
+            },
+            Reason: {
+                required: "Reason required",
+                minlength: "minimum 2 characters required",
+                maxlength: "Maximum 100 characters allowed"
+            }
+        },
+        errorClass: "is-invalid",
+        validClass: "is-valid",
+        errorElement: "div",
+        errorPlacement: function (error, element) {
+            error.addClass("invalid-feedback");
+            error.insertAfter(element);
+        }
+    })
+}
+
+$(document).on("click", "#submitTransfer", function () {
+    var isvalid = $("#frmTransferForm").valid();
+    if (isvalid) {
+        $("#EmployeeId").removeProp("disabled");
+        $("#FromDepartmentId").removeProp("disabled");
+        var formData = new FormData();
+        formData.append("EmployeeId", $("#EmployeeId").val());
+        formData.append("FromDepartmentId", $("#FromDepartmentId").val());
+        formData.append("ToDepartmentId", $("#ToDepartmentId").val());
+        formData.append("Status", 1);
+        formData.append("CurrentManagerApproval", true);
+        formData.append("ReceivingManagerApproval", false);
+        formData.append("EffectiveDate", $("#EffectiveDate").val());
+        formData.append("Hrapproval", false);
+        formData.append("Reason", $("#Reason").val());
+
+        var url = $("#tblemployee").data("submittransfer")
+        fetch(url, { method: 'POST', body: formData })
+       .then(response => response.json())
+       .then(data => {
+           debugger;
+           if (data.isSuccess) {
+               $("#hrmsSmallModel").modal("hide");
+               window.location.href = "/Employee/Index";
+               toastr.success(data.message);
+           }
+           else
+               toastr.error(data.message);
+       })
+       .catch(error => console.error('Error:', error));
     }
 })

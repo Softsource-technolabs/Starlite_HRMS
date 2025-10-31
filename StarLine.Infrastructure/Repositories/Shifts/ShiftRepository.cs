@@ -118,6 +118,7 @@ namespace StarLine.Infrastructure.Repositories.Shifts
 
         public async Task<ShiftWizardModel> GetFullShiftDetails(long shiftId)
         {
+            if (shiftId < 0) { return null; }
             var shift = await _context.Shifts.FindAsync(shiftId);
             if (shift != null)
             {
@@ -149,7 +150,7 @@ namespace StarLine.Infrastructure.Repositories.Shifts
         public async Task<ShiftModel> GetShiftByName(string name)
         {
             var shift = await _context.Shifts.FirstOrDefaultAsync(_ => _.ShiftName == name.Trim());
-            if(shift != null)
+            if (shift != null)
             {
                 return _mapper.Map<ShiftModel>(shift);
             }

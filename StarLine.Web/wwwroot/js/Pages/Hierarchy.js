@@ -24,7 +24,6 @@ function AddValidation() {
 
 async function initHierarchy() {
     await getHierarchy();
-
     // Handle "Add New Hierarchy" selection
     $(document).on("change", "#HierarchyLevel", async function () {
         const level = $(this).val();
@@ -75,7 +74,6 @@ async function getHierarchy(selectValue = null) {
     try {
         const url = $("#hfgethierarchy").val();
         const response = await $.get(url);
-
         const dropdown = $('#HierarchyLevel');
         dropdown.empty();
        
@@ -87,6 +85,8 @@ async function getHierarchy(selectValue = null) {
         if (selectValue) {
             dropdown.val(selectValue).trigger('change');
         }
+        if (hierarcyId != "" || hirerchyId != null)
+            dropdown.val(hierarcyId).trigger('change');
     } catch (error) {
         console.error("Error loading hierarchy:", error);
     }

@@ -20,8 +20,6 @@ public enum HolidayTypes
 
 public enum LeaveStatus
 {
-    [Display(Name = "Select Leave Status")]
-    None = 0,
     [Display(Name = "Pending")]
     Pending = 1,
     [Display(Name = "Approve")]
@@ -168,8 +166,32 @@ public enum TransferStatus
     None = 0,
     [Display(Name = "Pending")]
     Pending = 1,
-    [Display(Name = "Approve")]
+    [Display(Name = "Approved")]
     Approved,
-    [Display(Name = "Reject")]
+    [Display(Name = "Rejected")]
     Rejected
+}
+
+public enum TrainingMode
+{
+    [Display(Name = "Select Mode")]
+    None = 0,
+    [Display(Name = "Online")]
+    Online = 1,
+    [Display(Name = "Offline")]
+    Offline,
+    [Display(Name = "Hybrid")]
+    Hybrid
+}
+
+public enum TrainingAssignStatus
+{
+    [Display(Name = "Assigned")]
+    Assigned = 1,
+    [Display(Name = "In Progress")]
+    InProgress,
+    [Display(Name = "Completed")]
+    Completed,
+    [Display(Name = "Cancelled")]
+    Cancelled
 }

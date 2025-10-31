@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -39,6 +40,17 @@
                         <li><a asp-area="Admin" asp-controller="LeaveType" asp-action="Index">Leave Types</a></li>
                         <li><a asp-area="Admin" asp-controller="Notice" asp-action="Index">Notices</a></li>
                         <li><a asp-area="Admin" asp-controller="Shift" asp-action="Index">Shifts</a></li>
+                        <li><a asp-area="Admin" asp-controller="Training" asp-action="Index">Trainings</a></li>
+                        <li><a asp-area="Admin" asp-controller="TrainingSession" asp-action="Index">Training Session</a></li>
+                        <li><a asp-area="Admin" asp-controller="TrainingAssignment" asp-action="Index">Training Assignment</a></li>
+                        @{
+                            var roleName = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value ?? "";
+
+                            if (roleName == "HR-Manager")
+                            {
+                                <li><a asp-area="Admin" asp-controller="Transfer" asp-action="Index">Transfer</a></li>
+                            }
+                        }
                         <li><a asp-area="Admin" asp-controller="Role" asp-action="Index">User Roles</a></li>
                     </ul>
                 </div>
@@ -73,9 +85,6 @@
             <div class="modal-content">
                 <div id="hrmsModalBody" class="modal-body">
                 </div>
-                @* <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div> *@
             </div>
         </div>
     </div>

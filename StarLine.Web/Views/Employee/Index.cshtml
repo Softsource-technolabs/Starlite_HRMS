@@ -12,7 +12,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="tblemployee" class="table table-borderless dataTable" data-url="@Url.Action("AssignTeam", "Employee")">
+                    <table id="tblemployee" class="table table-borderless dataTable" data-url="@Url.Action("AssignTeam", "Employee")" data-assignTeam="@Url.Action("EmployeeTeamAssign", "Employee")">
                         <thead>
                             <tr>
                                 <th></th>
@@ -46,14 +46,10 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.PhoneNumber)
                                     </td>
-                                    <td>
-                                        @if (!string.IsNullOrEmpty(item.TeamName))
+                                    <td class="text-center">
+                                        @if (string.IsNullOrEmpty(item.TeamName))
                                         {
                                             <a href="#" class="btn btn-outline-warning" onclick="assignTeam(@item.Id)">Assign Team</a>
-                                        }
-                                        else
-                                        {
-
                                         }
                                     </td>
                                 </tr>

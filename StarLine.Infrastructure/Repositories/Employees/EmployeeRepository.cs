@@ -5,6 +5,7 @@ using StarLine.Core.Models;
 using StarLine.Core.Session;
 using StarLine.Infrastructure.Models;
 using StarLine.Infrastructure.Repositories.Shifts;
+using System;
 using System.Net.Mail;
 using System.Reflection;
 
@@ -20,12 +21,13 @@ namespace StarLine.Infrastructure.Repositories.Employees
         public async Task<long> AddUpdateEmployee(EmployeeModel employee)
         {
             if (employee.Id > 0)
-                return await AddEmployee(employee);
-            else
                 return await UpdateEmployee(employee);
+            else
+                return await AddEmployee(employee);
         }
         private async Task<long> AddEmployee(EmployeeModel employee)
         {
+            // Get General Shift for setting as default to employee
             var shift = await _shiftRepository.GetShiftGeneralShift();
             if (shift == null)
                 return -1;
@@ -306,39 +308,28 @@ namespace StarLine.Infrastructure.Repositories.Employees
             return 0;
         }
 
-        public async Task<List<EmployeeModel>> GetEmployeeListForAssignTeam()
+        public async Task<List<EmployeeModel>> GetTeamEmployee()
         {
-            var currentUser = _userSession.Current.UserId;
-
-            return await _context.Employees.Include(d => d.Department).Include(_ => _.TeamMembers).ThenInclude(_ => _.Team).Where(_ => _.ReportingManagerId == currentUser).Select(_ => new EmployeeModel
+            var currentUserDetails = await GetEmployeeById(_userSession.Current.UserId);            
+            var employees = await _context.Employees.Include(_ => _.AspNetUser).ThenInclude(_ => _.Roles).Include(_ => _.Department)
+                .Include(_ => _.TeamMembers).ThenInclude(t => t.Team)
+                .Where(_ => _.DepartmentId == currentUserDetails.Data.DepartmentId)
+                .OrderBy(_ => _.AspNetUser.Roles.FirstOrDefault().Name).ToListAsync();
+            if(employees.Count > 0)
             {
-                BloodGroup = CommonFunctions.GetDisplayName<BloodGroup>(Convert.ToInt32(_.BloodGroup)),
-                AspNetUserId = _.AspNetUserId,
-                CurrentAddress = _.CurrentAddress,
-                DateOfBirth = _.DateOfBirth,
-                DepartmentId = _.DepartmentId,
-                DesignationId = (Int64)_.DesignationId,
-                Email = _.Email,
-                EmergencyContactName = _.EmergencyContactName,
-                EmergencyContactNumber = _.EmergencyContactNumber,
-                EmployeeCode = _.EmployeeCode,
-                EmploymentType = _.EmploymentType,
-                ExperienceInYears = (decimal)_.ExperienceInYears,
-                FirstName = _.FirstName,
-                Gender = _.Gender,
-                Id = _.Id,
-                JoiningDate = _.JoiningDate,
-                LastName = _.LastName,
-                LicenseNumber = _.LicenseNumber,
-                PermanentAddress = _.PermanentAddress,
-                PhoneNumber = _.PhoneNumber,
-                Qualification = _.Qualification,
-                ReportingManagerId = _.ReportingManagerId,
-                RoleId = _.AspNetUser.Roles.FirstOrDefault().Id,
-                shiftId = _.ShiftId,
-                UserImages = _.UserImages,
-                TeamName = _.TeamMembers.FirstOrDefault().Team.Name,
-            }).ToListAsync();
+                return _mapper.Map<List<EmployeeModel>>(employees);
+            }
+            return null;
+        }
+
+        private string getTransferStatus(dynamic emp)
+        {
+            string status = "";
+            if (emp.PendingTransferRequest != null && emp.IsUnderCurrentManager)
+            {
+                status = "Transfer Pending Your Approval";
+            }
+            return status;
         }
 
         public async Task<bool> UpdateEmployeeTeamAssign(EmployeeTeamAssignModel model)

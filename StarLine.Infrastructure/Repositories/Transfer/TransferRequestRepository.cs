@@ -1,19 +1,18 @@
 ﻿using AutoMapper;
-using Azure.Core;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using StarLine.Core.Common;
 using StarLine.Core.Models;
 using StarLine.Core.Session;
 using StarLine.Infrastructure.Models;
-using System.Reflection;
 
 namespace StarLine.Infrastructure.Repositories.Transfer
 {
-    public class TransferRequestRepository(StarLiteContext context, IMapper mapper,IUserSession userSession) : ITransferRequestRepository
+    public class TransferRequestRepository(StarLiteContext context, UserManager<IdentityUser> userManager, IMapper mapper, IUserSession userSession) : ITransferRequestRepository
     {
         private readonly StarLiteContext _context = context;
         private readonly IMapper _mapper = mapper;
         private readonly IUserSession _userSession = userSession;
+        private readonly UserManager<IdentityUser> _userManager = userManager;
 
         public Task<long> AddUpdateTransferRequest(TransferRequestModel model)
         {
@@ -40,57 +39,38 @@ namespace StarLine.Infrastructure.Repositories.Transfer
             return false;
         }
 
-        public async Task<PagedResponse<List<TransferRequestModel>>> GetAllTransferRequests(PaginationModel model)
+        public async Task<List<TransferRequestModel>> GetAllTransferRequests()
         {
-            var managerId = _userSession.Current.UserId;
-            var query = _context.TransferRequests.Include(r => r.Employee).Include(_ => _.FromDepartment).Include(_ => _.ToDepartment)
-                .Where(r => r.Employee.ReportingManagerId == managerId && r.Status == (int)TransferStatus.Pending).AsQueryable();
-            
-            int totalCount = await query.CountAsync();
-            
-            if (!string.IsNullOrEmpty(model.StrSearch))
+            var employee = await _context.Employees.Include(_ => _.AspNetUser).ThenInclude(_ => _.Roles).FirstOrDefaultAsync(_ => _.Id == _userSession.Current.UserId);
+            var identityUser = await _userManager.FindByIdAsync(employee.AspNetUserId);
+            var IsManager = await _userManager.IsInRoleAsync(identityUser, "Department-Head");
+            var IsHRManager = await _userManager.IsInRoleAsync(identityUser, "HR-Manager");
+            if (IsManager || IsHRManager)
             {
-                query = query.Where(r => r.Employee.FirstName.Contains(model.StrSearch) || r.Employee.LastName.Contains(model.StrSearch)
-                || r.Employee.EmployeeCode.Contains(model.StrSearch) || r.FromDepartment.DepartmentName.Contains(model.StrSearch)
-                || r.ToDepartment.DepartmentName.Contains(model.StrSearch));
+                var request = await _context.TransferRequests.Include(r => r.Employee).Include(_ => _.FromDepartment).Include(_ => _.ToDepartment).ToListAsync();
+                if (!IsHRManager)
+                    request = request.Where(_ => _.FromDepartmentId == employee.DepartmentId || _.ToDepartmentId == employee.DepartmentId).ToList();
+                return _mapper.Map<List<TransferRequestModel>>(request);
             }
-
-            if (!string.IsNullOrWhiteSpace(model.SortOrder))
-            {
-                var property = typeof(TransferRequest).GetProperty(model.SortColumn ?? "Id", BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
-                string columnName = property != null ? property.Name : "Id";
-                bool isDescending = model.SortOrder.ToLower() == "desc";
-                query = isDescending ? query.OrderByDescending(e => EF.Property<object>(e, columnName))
-                    : query.OrderBy(e => EF.Property<object>(e, columnName));
-            }
-            var count = await query.CountAsync();
-            var data = await query.Skip((model.PageNumber - 1) * model.PageSize).Take(model.PageSize).Select(_ => new TransferRequestModel
-            {
-                Id = _.Id,
-                EmployeeId = _.EmployeeId,
-                CurrentManagerApproval = _.CurrentManagerApproval,
-                EffectiveDate = _.EffectiveDate,
-                EmployeeName = _.Employee.FirstName + " " + _.Employee.LastName,
-                FromDepartmentId = _.FromDepartmentId,
-                FromDepartmentName = _.FromDepartment.DepartmentName,
-                Hrapproval = _.Hrapproval,
-                IsActive = _.IsActive,
-                IsDeleted = _.IsDeleted,
-                Reason = _.Reason,
-                ReceivingManagerApproval = _.ReceivingManagerApproval,
-                Status = _.Status,
-                ToDepartmentId = _.ToDepartmentId,
-                ToDepartmentName = _.ToDepartment.DepartmentName,
-            }).ToListAsync();
-            return new PagedResponse<List<TransferRequestModel>>(data, totalCount, count);
+            return null;
         }
 
         public async Task<TransferRequestModel> GetTransferRequest(long transferId)
         {
-            var model = await _context.TransferRequests.FirstOrDefaultAsync(_ => _.Id == transferId && _.IsDeleted == false && _.IsActive == true);
+            var model = await _context.TransferRequests.Include(r => r.Employee).Include(_ => _.FromDepartment).ThenInclude(_ => _.Employees).Include(_ => _.ToDepartment).ThenInclude(_ => _.Employees).FirstOrDefaultAsync(_ => _.Id == transferId && _.IsDeleted == false && _.IsActive == true);
             if (model != null)
             {
-                return _mapper.Map<TransferRequestModel>(model);
+                var data = _mapper.Map<TransferRequestModel>(model);
+
+                var fromDeptManager = _context.Designations.Include(_ => _.Department).Where(_ => _.HierarchyLevel == 3 && _.Department.Id == model.FromDepartmentId).Select(_ => _.Employees).FirstOrDefault();
+                var toDeptManager = _context.Designations.Include(_ => _.Department).Where(_ => _.HierarchyLevel == 3 && _.Department.Id == model.ToDepartmentId).Select(_ => _.Employees).FirstOrDefault();
+
+                data.fromDepartmentManagerId = fromDeptManager.FirstOrDefault().Id;
+                data.toDepartmentManagerId = toDeptManager.FirstOrDefault().Id;
+
+                data.FromDepartmentManager = fromDeptManager.FirstOrDefault().FirstName + " " + fromDeptManager.FirstOrDefault().LastName;
+                data.ToDepartmentManager = toDeptManager.FirstOrDefault().FirstName + " " + toDeptManager.FirstOrDefault().LastName;
+                return data;
             }
             return null;
         }
@@ -98,6 +78,9 @@ namespace StarLine.Infrastructure.Repositories.Transfer
         private async Task<long> AddTransferRequest(TransferRequestModel request)
         {
             var model = _mapper.Map<TransferRequest>(request);
+            model.CurrentManagerApproval = (int)TransferStatus.Pending;
+            model.ReceivingManagerApproval = (int)TransferStatus.Pending;
+            model.Hrapproval = (int)TransferStatus.Pending;
             model.IsActive = true;
             await _context.TransferRequests.AddAsync(model);
             var result = await _context.SaveChangesAsync();

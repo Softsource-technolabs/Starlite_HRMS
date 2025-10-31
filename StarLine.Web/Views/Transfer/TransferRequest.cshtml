@@ -1,0 +1,131 @@
+﻿@model StarLine.Core.Models.TransferRequestModel
+@using System.Security.Claims
+
+@{
+    ViewData["Title"] = "Transfer Request";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Transfer Request</h4>
+            </div>
+            <form asp-action="TransferRequest">
+                <div class="card-body">
+                    <input asp-for="Id" type="hidden" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="EmployeeId" class="form-control" />
+                    <input type="hidden" asp-for="FromDepartmentId" class="form-control" />
+                    <input type="hidden" asp-for="ToDepartmentId" class="form-control" />
+
+                    <div class="row">
+                        <div class="Col-md-4">
+                            <label asp-for="EffectiveDate" class="control-label">Effective Date</label>
+                            <div class="form-group">
+                                <input asp-for="EffectiveDate" type="date" class="form-control readonly-bg" readonly />
+                                <span asp-validation-for="EffectiveDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="Col-md-12">
+                            <label asp-for="EmployeeName" class="control-label">Employee Name</label>
+                            <div class="form-group">
+                                <input asp-for="EmployeeName" class="form-control readonly-bg" readonly />
+                                <span asp-validation-for="EmployeeName" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label asp-for="FromDepartmentManager" class="control-label">From Department Manager</label>
+                            <div class="form-group">
+                                <input asp-for="FromDepartmentManager" class="form-control readonly-bg" readonly />
+                                <span asp-validation-for="FromDepartmentManager" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="CurrentManagerApproval" class="control-label">Status</label>
+                            <div class="form-group">
+                                @{
+                                    var currentUser = User.Identity?.Name;
+                                    var fromOwnerUser = Model.FromDepartmentManager;
+                                    var toOwnerUser = Model.ToDepartmentManager;
+                                    bool fromIsOwner = string.Equals(currentUser, fromOwnerUser, StringComparison.OrdinalIgnoreCase);
+                                    bool toIsOwner = string.Equals(currentUser, toOwnerUser, StringComparison.OrdinalIgnoreCase) && Model.CurrentManagerApproval == TransferStatus.Approved;
+                                }
+                                <select asp-for="CurrentManagerApproval" class="form-select" disabled="@(!fromIsOwner)" asp-items="Html.GetEnumSelectList<TransferStatus>()">
+                                    <option value="">-- Select Status --</option>
+                                </select>
+                                <span asp-validation-for="CurrentManagerApproval" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label asp-for="ToDepartmentManager" class="control-label">To Department Manager</label>
+                            <div class="form-group">
+                                <input asp-for="ToDepartmentManager" class="form-control readonly-bg" readonly />
+                                <span asp-validation-for="ToDepartmentManager" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="ReceivingManagerApproval" class="control-label">Status</label>
+                            <div class="form-group">
+                                <select asp-for="ReceivingManagerApproval" class="form-select" disabled="@(!toIsOwner)" asp-items="Html.GetEnumSelectList<TransferStatus>()">
+                                    <option value="">-- Select Status --</option>
+                                </select>
+                                <span asp-validation-for="ReceivingManagerApproval" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label asp-for="HrManagerName" class="control-label">HR Manager</label>
+                            <div class="form-group">
+                                <input asp-for="HrManagerName" class="form-control readonly-bg" readonly />
+                                <span asp-validation-for="HrManagerName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label asp-for="Hrapproval" class="control-label">Status</label>
+                            <div class="form-group">
+                                <select asp-for="Hrapproval" class="form-select" disabled="true" asp-items="Html.GetEnumSelectList<TransferStatus>()">
+                                    <option value="">-- Select Status --</option>
+                                </select>
+                                <span asp-validation-for="Hrapproval" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label asp-for="Reason" class="control-label"></label>
+                            <div class="form-group">
+                                <textarea asp-for="Reason" class="form-control" rows="3"></textarea>
+                                <span asp-validation-for="Reason" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        <input type="submit" value="Submit Request" class="btn btn-primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        // Before submitting, enable all disabled inputs/selects
+        $('form').on('submit', function () {
+            debugger;
+            $(this).find(':input:disabled').prop('disabled', false);
+        });
+    </script>
+}

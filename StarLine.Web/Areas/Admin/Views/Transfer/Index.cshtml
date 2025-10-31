@@ -1,0 +1,72 @@
+﻿@model IEnumerable<StarLine.Core.Models.TransferRequestModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Transfer Request List</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered dataTable">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EmployeeName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FromDepartmentName)
+                                </th>
+                                <th>@Html.DisplayNameFor(Model => Model.CurrentManagerApproval)</th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ToDepartmentName)
+                                </th>
+                                <th>@Html.DisplayNameFor(Model => Model.ReceivingManagerApproval)</th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.HrManagerName)
+                                </th>
+                                <th>@Html.DisplayNameFor(Model => Model.Hrapproval)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmployeeName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FromDepartmentName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CurrentManagerApproval)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ToDepartmentName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ReceivingManagerApproval)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HrManagerName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Hrapproval)
+                                    </td>
+                                    <td><a asp-action="TransferRequest" asp-controller="Transfer" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm w-100">Details</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

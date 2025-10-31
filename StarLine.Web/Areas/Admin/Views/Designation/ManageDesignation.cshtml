@@ -24,7 +24,7 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input type="hidden" asp-for="Id" class="form-control" />
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label asp-for="DepartmentId" class="control-label required"></label>
                             <div class="form-group">
                                 <select asp-for="DepartmentId" class="form-control form-select" asp-items="@ViewBag.departmentList">
@@ -33,11 +33,22 @@
                                 <span asp-validation-for="DepartmentId" class="text-danger"></span>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label asp-for="HierarchyLevel" class="control-label required"></label>
                             <div class="form-group">
                                 <select asp-for="HierarchyLevel" class="form-control form-select" asp-items="@ViewBag.hierarchyList"></select>
                                 <span asp-validation-for="HierarchyLevel" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="IsTrainer" class="control-label required"></label>
+                            <div class="form-group">
+                                <select asp-for="IsTrainer" class="form-control form-select">
+                                    <option value="">Select Option</option>
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
+                                </select>
+                                <span asp-validation-for="IsTrainer" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
@@ -80,6 +91,9 @@
 
 @section Scripts {
     @{
+        <script type="text/javascript">
+            const hierarcyId = "@Html.Raw(Model.HierarchyLevel)";
+        </script>
         <script src="~/js/pages/hierarchy.js"></script>
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }

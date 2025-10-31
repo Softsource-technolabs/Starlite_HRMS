@@ -1,0 +1,105 @@
+﻿@model IEnumerable<StarLine.Core.Models.TransferRequestModel>
+@{
+    ViewData["Title"] = "Transfer Request List";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Transfer Request List</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered dataTable">
+                        <thead>
+                            <tr>
+                                <th>Employee Name</th>
+                                <th>From Department</th>
+                                <th>Status</th>
+                                <th>To Department</th>
+                                <th>Status</th>
+                                <th>HR Department</th>
+                                <th>Status</th>
+                                <th>Effective Date</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.EmployeeName</td>
+                                    <td>@item.FromDepartmentName</td>
+                                    <td>
+                                        @if (item.CurrentManagerApproval == TransferStatus.Pending || item.CurrentManagerApproval == TransferStatus.None)
+                                        {
+                                            <span class="text-warning fw-medium">Pending</span>
+                                        }
+                                        else if (item.CurrentManagerApproval == TransferStatus.Approved)
+                                        {
+                                            <span class="text-success fw-medium">Approved</span>
+                                        }
+                                        else if (item.CurrentManagerApproval == TransferStatus.Rejected)
+                                        {
+                                            <span class="text-danger fw-medium">Rejected</span>
+                                        }
+                                    </td>
+                                    <td>@item.ToDepartmentName</td>
+                                    <td>
+                                        @if (item.ReceivingManagerApproval == TransferStatus.Pending || item.ReceivingManagerApproval == TransferStatus.None)
+                                        {
+                                            <span class="text-warning fw-medium">Pending</span>
+                                        }
+                                        else if (item.ReceivingManagerApproval == TransferStatus.Approved)
+                                        {
+                                            <span class="text-success fw-medium">Approved</span>
+                                        }
+                                        else if (item.ReceivingManagerApproval == TransferStatus.Rejected)
+                                        {
+                                            <span class="text-danger fw-medium">Rejected</span>
+                                        }
+                                    </td>
+                                    <td>@item.HrManagerName</td>
+                                    <td>
+                                        @if (item.Hrapproval == TransferStatus.Pending || item.Hrapproval == TransferStatus.None)
+                                        {
+                                            <span class="text-warning fw-medium">Pending</span>
+                                        }
+                                        else if (item.Hrapproval == TransferStatus.Approved)
+                                        {
+                                            <span class="text-success fw-medium">Approved</span>
+                                        }
+                                        else if (item.Hrapproval == TransferStatus.Rejected)
+                                        {
+                                            <span class="text-danger fw-medium">Rejected</span>
+                                        }
+                                    </td>
+                                    <td>@item.EffectiveDate.ToString("MMM dd yyyy")</td>
+                                    <td>
+                                        @if (item.CurrentManagerApproval == TransferStatus.Approved && item.ReceivingManagerApproval == TransferStatus.Approved && item.Hrapproval == TransferStatus.Approved)
+                                        {
+                                            <span class="fw-medium">Pending with HR</span>
+                                        }
+                                        else if (item.CurrentManagerApproval == TransferStatus.Approved && item.ReceivingManagerApproval == TransferStatus.Approved && item.Hrapproval == TransferStatus.Approved)
+                                        {
+                                            <span class="fw-medium">Pending with HR</span>
+                                        }
+                                        else if (item.CurrentManagerApproval == TransferStatus.Rejected && item.ReceivingManagerApproval == TransferStatus.Rejected && item.Hrapproval == TransferStatus.Rejected)
+                                        {
+                                            <span class="text-danger fw-medium">Rejected</span>
+                                        }
+                                        else
+                                        {
+                                            <a asp-action="TransferRequest" asp-controller="Transfer" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm w-100">Details</a>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

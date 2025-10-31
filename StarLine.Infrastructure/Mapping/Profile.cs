@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using StarLine.Core.Common;
 using StarLine.Core.Models;
 using StarLine.Infrastructure.Models;
 
@@ -23,6 +25,7 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.Description, opt => opt.MapFrom(_ => _.Description))
                 .ForMember(_ => _.DepartmentName, opt => opt.MapFrom(_ => _.Department.DepartmentName))
                 .ForMember(_ => _.HierarchyLevel, opt => opt.MapFrom(_ => _.HierarchyLevel))
+                .ForMember(_ => _.IsTrainer, opt => opt.MapFrom(_ => _.IsTrainer))
                 .ForMember(_ => _.IsActive, opt => opt.MapFrom(_ => _.IsActive))
                 .ForMember(_ => _.IsDeleted, opt => opt.MapFrom(_ => _.IsDeleted))
                 .ReverseMap()
@@ -53,10 +56,11 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.PermanentAddress, opt => opt.MapFrom(_ => _.PermanentAddress))
                 .ForMember(_ => _.RoleId, opt => opt.MapFrom(_ => _.AspNetUser.Roles.FirstOrDefault().Id))
                 .ForMember(_ => _.RoleName, opt => opt.MapFrom(_ => _.AspNetUser.Roles.FirstOrDefault().Name))
-                .ForMember(_ => _.shiftId, opt => opt.MapFrom(_ => _.ShiftId))
+                .ForMember(_ => _.ShiftId, opt => opt.MapFrom(_ => _.ShiftId))
                 .ForMember(_ => _.IsActive, opt => opt.MapFrom(_ => _.IsActive))
                 .ForMember(_ => _.IsDeleted, opt => opt.MapFrom(_ => _.IsDeleted))
                 .ForMember(_ => _.DepartmentName, opt => opt.MapFrom(_ => _.Department.DepartmentName))
+                .ForMember(_ => _.TeamName, opt => opt.MapFrom(_ => _.TeamMembers.FirstOrDefault().Team.Name))
                 .ReverseMap()
                 .ForMember(dest => dest.AspNetUser, opt => opt.Ignore())
                 .ForMember(dest => dest.Department, opt => opt.Ignore());
@@ -189,18 +193,64 @@ namespace StarLine.Infrastructure.Mapping
                 .ForMember(_ => _.Remarks, opt => opt.MapFrom(_ => _.Remarks))
                 .ReverseMap();
 
-            CreateMap<TransferRequestModel, TransferRequest>()
+            CreateMap<TransferRequest, TransferRequestModel>()
                 .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
                 .ForMember(_ => _.EmployeeId, opt => opt.MapFrom(_ => _.EmployeeId))
+                .ForMember(_ => _.EmployeeName, opt => opt.MapFrom(_ => _.Employee.FirstName + " " + _.Employee.LastName))
                 .ForMember(_ => _.FromDepartmentId, opt => opt.MapFrom(_ => _.FromDepartmentId))
+                .ForMember(_ => _.FromDepartmentName, opt => opt.MapFrom(_ => _.FromDepartment.DepartmentName))
                 .ForMember(_ => _.ToDepartmentId, opt => opt.MapFrom(_ => _.ToDepartmentId))
+                .ForMember(_ => _.ToDepartmentName, opt => opt.MapFrom(_ => _.ToDepartment.DepartmentName))
                 .ForMember(_ => _.Reason, opt => opt.MapFrom(_ => _.Reason))
-                .ForMember(_ => _.Status, opt => opt.MapFrom(_ => _.Status))
-                .ForMember(_ => _.CurrentManagerApproval, opt => opt.MapFrom(_ => _.CurrentManagerApproval))
-                .ForMember(_ => _.ReceivingManagerApproval, opt => opt.MapFrom(_ => _.ReceivingManagerApproval))
-                .ForMember(_ => _.Hrapproval, opt => opt.MapFrom(_ => _.Hrapproval))
+                .ForMember(_ => _.CurrentManagerApproval, opt => opt.MapFrom(_ => (TransferStatus)_.CurrentManagerApproval))
+                .ForMember(_ => _.ReceivingManagerApproval, opt => opt.MapFrom(_ => (TransferStatus)_.ReceivingManagerApproval))
+                .ForMember(_ => _.Hrapproval, opt => opt.MapFrom(_ => (TransferStatus)_.Hrapproval))
                 .ForMember(_ => _.EffectiveDate, opt => opt.MapFrom(_ => _.EffectiveDate))
+                .ReverseMap()
+                .ForMember(_ => _.FromDepartment, opt => opt.Ignore())
+                .ForMember(_ => _.ToDepartment, opt => opt.Ignore());
+
+            CreateMap<Training, TrainingModel>()
+                .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
+                .ForMember(_ => _.Name, opt => opt.MapFrom(_ => _.Name))
+                .ForMember(_ => _.Category, opt => opt.MapFrom(_ => _.Category))
+                .ForMember(_ => _.Description, opt => opt.MapFrom(_ => _.Description))
+                .ForMember(_ => _.Duration, opt => opt.MapFrom(_ => _.Duration))
+                .ForMember(_ => _.ValidityMonths, opt => opt.MapFrom(_ => _.ValidityMonths))
+                .ForMember(_ => _.IsActive, opt => opt.MapFrom(_ => _.IsActive))
+                .ForMember(_ => _.IsDeleted, opt => opt.MapFrom(_ => _.IsDeleted))
                 .ReverseMap();
+
+            CreateMap<TrainingSession, TrainingSessionModel>()
+                .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
+                .ForMember(_ => _.TrainerId, opt => opt.MapFrom(_ => _.TrainerId))
+                .ForMember(_ => _.TrainingName, opt => opt.MapFrom(_ => _.Training.Name))
+                .ForMember(_ => _.Category, opt => opt.MapFrom(_ => _.Category))
+                .ForMember(_ => _.Description, opt => opt.MapFrom(_ => _.Description))
+                .ForMember(_ => _.TrainingId, opt => opt.MapFrom(_ => _.TrainingId))
+                .ForMember(_ => _.StartDate, opt => opt.MapFrom(_ => _.StartDate))
+                .ForMember(_ => _.EndDate, opt => opt.MapFrom(_ => _.EndDate))
+                .ForMember(_ => _.DurationHours, opt => opt.MapFrom(_ => _.DurationHours))
+                .ForMember(_ => _.Mode, opt => opt.MapFrom(_ => _.Mode))
+                .ForMember(_ => _.Location, opt => opt.MapFrom(_ => _.Location))
+                .ForMember(_ => _.MaxParticipants, opt => opt.MapFrom(_ => _.MaxParticipants))
+                .ForMember(_ => _.IsActive, opt => opt.MapFrom(_ => _.IsActive))
+                .ForMember(_ => _.IsDeleted, opt => opt.MapFrom(_ => _.IsDeleted))
+                .ReverseMap()
+                .ForMember(_ => _.Training, opt => opt.Ignore());
+
+            CreateMap<TrainingAssignment,TrainingAssignmentModel>()
+                .ForMember(_ => _.Id, opt => opt.MapFrom(_ => _.Id))
+                .ForMember(_ => _.TrainingSessionId, opt => opt.MapFrom(_ => _.TrainingSessionId))
+                .ForMember(_ => _.EmployeeId, opt => opt.MapFrom(_ => _.EmployeeId))
+                .ForMember(_ => _.EmployeeName, opt => opt.MapFrom(_ => _.Employee.FirstName + " " + _.Employee.LastName))
+                .ForMember(_ => _.AssignedDate, opt => opt.MapFrom(_ => _.AssignedDate))
+                .ForMember(_ => _.Status, opt => opt.MapFrom(_ => _.Status))
+                .ForMember(_ => _.CompletionDate, opt => opt.MapFrom(_ => _.CompletionDate))
+                .ForMember(_ => _.Remarks, opt => opt.MapFrom(_ => _.Remarks))
+                .ReverseMap()
+                .ForMember(_ => _.Employee, opt => opt.Ignore());
+
         }
     }
 }

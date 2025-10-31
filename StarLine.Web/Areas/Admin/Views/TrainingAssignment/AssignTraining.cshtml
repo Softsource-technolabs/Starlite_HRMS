@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "AssignTraining";
+}
+
+<form id="frmAssignTraining" asp-action="AssignTraining">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Assign Training to Employee</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="sessionId" class="control-label">Select Training session</label>
+                            <div class="form-group">
+                                <select id="sessionId" name="sessionId" class="form-select" required>
+                                    <option value="">-- Select Session --</option>
+                                    @foreach (var s in ViewBag.Sessions)
+                                    {
+                                        <option value="@s.Id">
+                                            @s.TrainingName
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div id="employeeContainer">
+                                    <div class="text-muted">Select a session to load eligible employees...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="form-group">
+                        <input type="submit" id="btnSubmit" value="Assign Training" class="btn btn-sm btn-primary" />
+                        <a asp-action="Index" asp-controller="TrainingAssignment" class="btn btn-sm btn-outline-secondary">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        <script src="~/js/pages/admin/assigntraining.js"></script>
+    }
+}
