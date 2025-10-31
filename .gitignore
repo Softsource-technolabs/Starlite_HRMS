@@ -426,3 +426,5 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+/StarLine.Web/wwwroot/HRMSDocs/Certificates
+/StarLine.Web/wwwroot/UserAvtars
